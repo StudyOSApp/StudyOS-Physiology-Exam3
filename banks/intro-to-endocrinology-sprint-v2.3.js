@@ -1,0 +1,848 @@
+window.INTRO_ENDOCRINOLOGY_SPRINT_BANK = {
+  "schemaVersion": "1.0.0",
+  "bankId": "intro_endocrinology_sprint_v2_3",
+  "bankType": "sprint",
+  "mode": "learn",
+  "sourceLecture": "Introduction to Endocrinology",
+  "questionCount": 27,
+  "questions": [
+    {
+      "id": "ENDO_SPRINT_001",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Chemical Messenger Types",
+      "subtopic": "Endocrine Signaling",
+      "question": "Which feature defines endocrine signaling?",
+      "choices": {
+        "A": "A messenger diffuses to neighboring cells.",
+        "B": "A hormone enters the blood and acts on distant receptor-bearing cells.",
+        "C": "A messenger acts on the cell that released it.",
+        "D": "A neurotransmitter crosses a synaptic cleft."
+      },
+      "correctAnswer": "B",
+      "explanation": "Endocrine hormones travel through the bloodstream to influence distant target cells that possess the appropriate receptors.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Endocrine hormones travel through the bloodstream to influence distant target cells that possess the appropriate receptors.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 1,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Chemical Messenger Types",
+        "concept_group": "Endocrine Signaling",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_002",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Chemical Messenger Types",
+      "subtopic": "Endocrine Signaling",
+      "question": "A secreted messenger reaches a distant kidney cell through the bloodstream. Which signaling type is occurring?",
+      "choices": {
+        "A": "Paracrine signaling",
+        "B": "Autocrine signaling",
+        "C": "Neural signaling",
+        "D": "Endocrine signaling"
+      },
+      "correctAnswer": "D",
+      "explanation": "Blood-borne delivery to a distant target is endocrine signaling; paracrine and autocrine signals remain local.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Blood-borne delivery to a distant target is endocrine signaling; paracrine and autocrine signals remain local.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 2,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Chemical Messenger Types",
+        "concept_group": "Endocrine Signaling",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_003",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Chemical Messenger Types",
+      "subtopic": "Neural Signaling",
+      "question": "How does a neural messenger normally reach its target?",
+      "choices": {
+        "A": "It crosses a synaptic cleft to an adjacent cell.",
+        "B": "It circulates to distant target cells.",
+        "C": "It diffuses through tissue to nearby cells.",
+        "D": "It binds back to the cell that released it."
+      },
+      "correctAnswer": "A",
+      "explanation": "Neural signaling uses neurotransmitter release across a synaptic junction and typically produces a rapid response.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Neural signaling uses neurotransmitter release across a synaptic junction and typically produces a rapid response.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 3,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Chemical Messenger Types",
+        "concept_group": "Neural Signaling",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_004",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Chemical Messenger Types",
+      "subtopic": "Neuroendocrine Signaling",
+      "question": "Sympathetic stimulation causes the adrenal medulla to release epinephrine into blood. Why is this neuroendocrine signaling?",
+      "choices": {
+        "A": "A neurotransmitter remains within one synaptic cleft.",
+        "B": "Epinephrine acts only on the adrenal cell.",
+        "C": "Neural input triggers hormone secretion into the bloodstream.",
+        "D": "The adrenal cell responds without neural stimulation."
+      },
+      "correctAnswer": "C",
+      "explanation": "Neuroendocrine signaling begins with neural stimulation and ends with a hormone entering the circulation.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Neuroendocrine signaling begins with neural stimulation and ends with a hormone entering the circulation.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 4,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Chemical Messenger Types",
+        "concept_group": "Neuroendocrine Signaling",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_005",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Chemical Messenger Types",
+      "subtopic": "Paracrine Signaling",
+      "question": "Which target pattern identifies paracrine signaling?",
+      "choices": {
+        "A": "A hormone reaches distant cells through blood.",
+        "B": "A secreted product affects neighboring cells by local diffusion.",
+        "C": "A product acts on the cell that secreted it.",
+        "D": "A neurotransmitter acts across a synaptic cleft."
+      },
+      "correctAnswer": "B",
+      "explanation": "Paracrine messengers diffuse through extracellular fluid and affect nearby target cells.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Paracrine messengers diffuse through extracellular fluid and affect nearby target cells.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 5,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Chemical Messenger Types",
+        "concept_group": "Paracrine Signaling",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_006",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Chemical Messenger Types",
+      "subtopic": "Autocrine Signaling",
+      "question": "What distinguishes autocrine signaling from paracrine signaling?",
+      "choices": {
+        "A": "The releasing cell also possesses the receptor and responds.",
+        "B": "The messenger reaches a distant target through blood.",
+        "C": "The messenger crosses a synaptic junction.",
+        "D": "Only neighboring cells possess the receptor."
+      },
+      "correctAnswer": "A",
+      "explanation": "An autocrine signal binds receptors on the same cell that released it, allowing self-regulation.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "An autocrine signal binds receptors on the same cell that released it, allowing self-regulation.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 6,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Chemical Messenger Types",
+        "concept_group": "Autocrine Signaling",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_007",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Chemical Messenger Types",
+      "subtopic": "Cytokine Signaling",
+      "question": "Which statement best describes the possible range of cytokine signaling?",
+      "choices": {
+        "A": "A cytokine acts only across synaptic junctions.",
+        "B": "A cytokine always acts on its cell of origin.",
+        "C": "A cytokine always travels to a distant organ.",
+        "D": "A cytokine may act through autocrine, paracrine, or endocrine routes."
+      },
+      "correctAnswer": "D",
+      "explanation": "The lecture describes cytokines as secreted proteins with broad targets that may act locally, on self, or at a distance.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "The lecture describes cytokines as secreted proteins with broad targets that may act locally, on self, or at a distance.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 7,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Chemical Messenger Types",
+        "concept_group": "Cytokine Signaling",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_008",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Nervous vs. Endocrine Systems",
+      "subtopic": "System Comparison",
+      "question": "Which comparison correctly distinguishes the nervous and endocrine systems?",
+      "choices": {
+        "A": "Neural responses use blood, whereas endocrine responses use synapses.",
+        "B": "Neural signals are amplitude-modulated, whereas endocrine signals are frequency-modulated.",
+        "C": "Neural responses are usually rapid and short-term, whereas endocrine responses are slower and longer-lasting.",
+        "D": "Neural signals use hormones, whereas endocrine signals use neurotransmitters."
+      },
+      "correctAnswer": "C",
+      "explanation": "The nervous system communicates rapidly across synapses; endocrine hormones travel in blood and commonly support prolonged regulation.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "The nervous system communicates rapidly across synapses; endocrine hormones travel in blood and commonly support prolonged regulation.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 8,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Nervous vs. Endocrine Systems",
+        "concept_group": "System Comparison",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_009",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Endocrine Glands & Organs",
+      "subtopic": "Primary and Secondary Endocrine Organs",
+      "question": "Which organ is a secondary endocrine organ because hormone secretion is not its primary function?",
+      "choices": {
+        "A": "Kidney",
+        "B": "Pituitary gland",
+        "C": "Thyroid gland",
+        "D": "Adrenal gland"
+      },
+      "correctAnswer": "A",
+      "explanation": "The kidney has major nonendocrine functions but also secretes erythropoietin, so the lecture classifies it as a secondary endocrine organ.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "The kidney has major nonendocrine functions but also secretes erythropoietin, so the lecture classifies it as a secondary endocrine organ.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 9,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Endocrine Glands & Organs",
+        "concept_group": "Primary and Secondary Endocrine Organs",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_010",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Hormone Chemical Classes",
+      "subtopic": "Protein and Peptide Hormones",
+      "question": "Which profile describes a protein or peptide hormone?",
+      "choices": {
+        "A": "It is cholesterol-derived, released immediately, and binds an intracellular receptor.",
+        "B": "It is stored in vesicles, travels freely in blood, and binds a membrane receptor.",
+        "C": "It is lipid-soluble, carrier-bound, and directly alters gene transcription.",
+        "D": "It is tyrosine-derived and always binds a nuclear receptor."
+      },
+      "correctAnswer": "B",
+      "explanation": "Peptide hormones are water-soluble products processed from prohormones, stored in vesicles, and detected by membrane receptors.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Peptide hormones are water-soluble products processed from prohormones, stored in vesicles, and detected by membrane receptors.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 10,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Hormone Chemical Classes",
+        "concept_group": "Protein and Peptide Hormones",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_011",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Hormone Chemical Classes",
+      "subtopic": "Steroid Hormones",
+      "question": "What is the precursor for steroid hormone synthesis?",
+      "choices": {
+        "A": "Tyrosine",
+        "B": "Tryptophan",
+        "C": "Glycogen",
+        "D": "Cholesterol"
+      },
+      "correctAnswer": "D",
+      "explanation": "Steroid hormones are synthesized from cholesterol through enzymatic reactions and are generally not stored before release.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Steroid hormones are synthesized from cholesterol through enzymatic reactions and are generally not stored before release.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 11,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Hormone Chemical Classes",
+        "concept_group": "Steroid Hormones",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_012",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Hormone Chemical Classes",
+      "subtopic": "Amine Hormones",
+      "question": "Why can amine hormones use different receptor locations?",
+      "choices": {
+        "A": "All amines are stored as inactive prohormones.",
+        "B": "All amines require plasma carrier proteins.",
+        "C": "The class includes polar catecholamines and lipid-soluble thyroid hormones.",
+        "D": "The class contains only water-soluble hormones."
+      },
+      "correctAnswer": "C",
+      "explanation": "Amine hormones share an amino-acid origin but differ in solubility: epinephrine uses membrane receptors, whereas T3 and T4 use nuclear receptors.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Amine hormones share an amino-acid origin but differ in solubility: epinephrine uses membrane receptors, whereas T3 and T4 use nuclear receptors.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 12,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Hormone Chemical Classes",
+        "concept_group": "Amine Hormones",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_013",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Hormone Chemical Classes",
+      "subtopic": "Solubility and Receptor Location",
+      "question": "A hormone circulates bound to a carrier and alters gene expression through an intracellular receptor. Which class best fits?",
+      "choices": {
+        "A": "Steroid hormone",
+        "B": "Protein hormone",
+        "C": "Peptide hormone",
+        "D": "Catecholamine hormone"
+      },
+      "correctAnswer": "A",
+      "explanation": "Hydrophobic steroid hormones require carriers in blood and bind intracellular receptors that directly influence gene expression.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Hydrophobic steroid hormones require carriers in blood and bind intracellular receptors that directly influence gene expression.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 13,
+      "learningLevel": "Integrative",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Hormone Chemical Classes",
+        "concept_group": "Solubility and Receptor Location",
+        "learning_level": "Integrative"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_014",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Secretion & Feedback Control",
+      "subtopic": "Humoral Regulation",
+      "question": "An increase in blood glucose directly stimulates pancreatic insulin release. What type of secretory control is this?",
+      "choices": {
+        "A": "Neural control",
+        "B": "Positive feedback",
+        "C": "Cyclical control",
+        "D": "Humoral control"
+      },
+      "correctAnswer": "D",
+      "explanation": "Humoral regulation occurs when changing extracellular ion or nutrient levels directly alter hormone secretion.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Humoral regulation occurs when changing extracellular ion or nutrient levels directly alter hormone secretion.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 14,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Secretion & Feedback Control",
+        "concept_group": "Humoral Regulation",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_015",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Secretion & Feedback Control",
+      "subtopic": "Neural Regulation",
+      "question": "During stress, sympathetic nerves stimulate catecholamine release from the adrenal medulla. Which control mechanism is illustrated?",
+      "choices": {
+        "A": "Humoral control",
+        "B": "Neural control",
+        "C": "Cyclical control",
+        "D": "Positive feedback"
+      },
+      "correctAnswer": "B",
+      "explanation": "The initiating stimulus is direct nerve activity, so the example represents neural regulation of hormone secretion.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "The initiating stimulus is direct nerve activity, so the example represents neural regulation of hormone secretion.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 15,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Secretion & Feedback Control",
+        "concept_group": "Neural Regulation",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_016",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Secretion & Feedback Control",
+      "subtopic": "Negative Feedback",
+      "question": "What is the defining outcome of negative feedback in an endocrine pathway?",
+      "choices": {
+        "A": "The final hormone increases further upstream secretion.",
+        "B": "Hormone release becomes independent of its stimulus.",
+        "C": "The final hormone limits further upstream secretion.",
+        "D": "The target tissue permanently loses its receptors."
+      },
+      "correctAnswer": "C",
+      "explanation": "Negative feedback is self-limiting and stabilizes the regulated system by reducing continued upstream stimulation.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Negative feedback is self-limiting and stabilizes the regulated system by reducing continued upstream stimulation.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 16,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Secretion & Feedback Control",
+        "concept_group": "Negative Feedback",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_017",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Secretion & Feedback Control",
+      "subtopic": "Negative Feedback",
+      "question": "Circulating T3 and T4 increase. What response is expected from an intact thyroid axis?",
+      "choices": {
+        "A": "TRH and TSH secretion increase.",
+        "B": "TRH and TSH secretion decrease.",
+        "C": "TRH increases while TSH remains unchanged.",
+        "D": "TSH increases while TRH decreases."
+      },
+      "correctAnswer": "B",
+      "explanation": "High T3 and T4 feed back on the hypothalamus and anterior pituitary, inhibiting both TRH and TSH release.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "High T3 and T4 feed back on the hypothalamus and anterior pituitary, inhibiting both TRH and TSH release.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 17,
+      "learningLevel": "Integrative",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Secretion & Feedback Control",
+        "concept_group": "Negative Feedback",
+        "learning_level": "Integrative"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_018",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Secretion & Feedback Control",
+      "subtopic": "Positive Feedback",
+      "question": "During labor, cervical stretch promotes oxytocin release and stronger contractions. What makes this positive feedback?",
+      "choices": {
+        "A": "The response increases the original stimulus until delivery.",
+        "B": "The response opposes cervical stretch.",
+        "C": "The response holds oxytocin at a constant level.",
+        "D": "The response reduces further uterine contraction."
+      },
+      "correctAnswer": "A",
+      "explanation": "Positive feedback is self-augmenting: contraction increases cervical stretch, which drives additional oxytocin release until the event is completed.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Positive feedback is self-augmenting: contraction increases cervical stretch, which drives additional oxytocin release until the event is completed.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 18,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Secretion & Feedback Control",
+        "concept_group": "Positive Feedback",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_019",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Secretion & Feedback Control",
+      "subtopic": "Cyclical Regulation",
+      "question": "Growth hormone secretion changes across stages of sleep. Which regulatory pattern does this illustrate?",
+      "choices": {
+        "A": "Humoral regulation",
+        "B": "Receptor down-regulation",
+        "C": "Cyclical regulation",
+        "D": "Positive feedback"
+      },
+      "correctAnswer": "C",
+      "explanation": "Cyclical regulation produces periodic hormone variation associated with sleep, daily rhythms, development, aging, or seasons.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Cyclical regulation produces periodic hormone variation associated with sleep, daily rhythms, development, aging, or seasons.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 19,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Secretion & Feedback Control",
+        "concept_group": "Cyclical Regulation",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_020",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Receptors & Sensitivity",
+      "subtopic": "Target Cells",
+      "question": "Why does a hormone affect some cells but not others?",
+      "choices": {
+        "A": "Only target cells are exposed to circulating blood.",
+        "B": "Only target cells can synthesize proteins.",
+        "C": "Only target cells contain a plasma membrane.",
+        "D": "Only target cells possess the appropriate receptor."
+      },
+      "correctAnswer": "D",
+      "explanation": "A target cell is defined by the presence of a receptor with suitable affinity and specificity for that hormone.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "A target cell is defined by the presence of a receptor with suitable affinity and specificity for that hormone.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 20,
+      "learningLevel": "Foundation",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Receptors & Sensitivity",
+        "concept_group": "Target Cells",
+        "learning_level": "Foundation"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_021",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Receptors & Sensitivity",
+      "subtopic": "Receptor Location",
+      "question": "Which receptor location is expected for a water-soluble peptide hormone?",
+      "choices": {
+        "A": "The cell membrane",
+        "B": "The nuclear DNA strand",
+        "C": "The cytoplasmic matrix",
+        "D": "The mitochondrial genome"
+      },
+      "correctAnswer": "A",
+      "explanation": "Water-soluble peptides cannot readily cross the lipid membrane, so they bind surface receptors and signal through second messengers.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Water-soluble peptides cannot readily cross the lipid membrane, so they bind surface receptors and signal through second messengers.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 21,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Receptors & Sensitivity",
+        "concept_group": "Receptor Location",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_022",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Receptors & Sensitivity",
+      "subtopic": "Hormone Concentration",
+      "question": "If hormone secretion remains constant while clearance slows, what happens to its blood concentration?",
+      "choices": {
+        "A": "It decreases.",
+        "B": "It remains unchanged.",
+        "C": "It increases.",
+        "D": "It becomes independent of secretion."
+      },
+      "correctAnswer": "C",
+      "explanation": "Blood hormone concentration reflects both input by secretion and removal by clearance; slower removal raises the circulating level.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Blood hormone concentration reflects both input by secretion and removal by clearance; slower removal raises the circulating level.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 22,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Receptors & Sensitivity",
+        "concept_group": "Hormone Concentration",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_023",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Receptors & Sensitivity",
+      "subtopic": "Receptor Sensitivity",
+      "question": "Which change would make a target cell more responsive to the same hormone concentration?",
+      "choices": {
+        "A": "A decrease in receptor number and affinity",
+        "B": "An increase in receptor number or affinity",
+        "C": "An increase in hormone clearance",
+        "D": "A decrease in receptor replacement"
+      },
+      "correctAnswer": "B",
+      "explanation": "More receptors increase the maximal response, while higher affinity increases the likelihood of hormone binding.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "More receptors increase the maximal response, while higher affinity increases the likelihood of hormone binding.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 23,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Receptors & Sensitivity",
+        "concept_group": "Receptor Sensitivity",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_024",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Receptors & Sensitivity",
+      "subtopic": "Up-Regulation",
+      "question": "A tissue increases its number of receptors for a hormone. What is the expected result?",
+      "choices": {
+        "A": "Reduced sensitivity to the hormone",
+        "B": "Faster clearance of the hormone",
+        "C": "Loss of target-cell specificity",
+        "D": "Greater sensitivity to the hormone"
+      },
+      "correctAnswer": "D",
+      "explanation": "Up-regulation increases receptor number or affinity and therefore increases tissue sensitivity.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Up-regulation increases receptor number or affinity and therefore increases tissue sensitivity.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 24,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Receptors & Sensitivity",
+        "concept_group": "Up-Regulation",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_025",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Receptors & Sensitivity",
+      "subtopic": "Down-Regulation",
+      "question": "A target tissue reduces its receptor number. What response follows?",
+      "choices": {
+        "A": "Reduced sensitivity to the hormone",
+        "B": "Increased sensitivity to the hormone",
+        "C": "Increased hormone synthesis by the target",
+        "D": "Conversion to positive feedback"
+      },
+      "correctAnswer": "A",
+      "explanation": "Down-regulation decreases receptor availability or affinity and reduces the tissue response to a hormone.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Down-regulation decreases receptor availability or affinity and reduces the tissue response to a hormone.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 25,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Receptors & Sensitivity",
+        "concept_group": "Down-Regulation",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_026",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Agonists, Antagonists & Synergism",
+      "subtopic": "Agonists and Antagonists",
+      "question": "A drug binds a hormone receptor without producing the normal response. How is the drug classified?",
+      "choices": {
+        "A": "Agonist",
+        "B": "Antagonist",
+        "C": "Synergist",
+        "D": "Second messenger"
+      },
+      "correctAnswer": "B",
+      "explanation": "An antagonist occupies the receptor but does not trigger its normal biologic action; an agonist would mimic the endogenous hormone.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "An antagonist occupies the receptor but does not trigger its normal biologic action; an agonist would mimic the endogenous hormone.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 26,
+      "learningLevel": "Applied Reinforcement",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Agonists, Antagonists & Synergism",
+        "concept_group": "Agonists and Antagonists",
+        "learning_level": "Applied Reinforcement"
+      }
+    },
+    {
+      "id": "ENDO_SPRINT_027",
+      "unit": "intro-to-endocrinology",
+      "conceptBlock": "Agonists, Antagonists & Synergism",
+      "subtopic": "Synergism",
+      "question": "Two hormones together produce a response greater than either hormone produces alone. What relationship is present?",
+      "choices": {
+        "A": "Antagonism",
+        "B": "Down-regulation",
+        "C": "Synergism",
+        "D": "Negative feedback"
+      },
+      "correctAnswer": "C",
+      "explanation": "Synergism occurs when combined hormonal actions exceed the effect produced by either hormone alone.",
+      "commonPitfall": "",
+      "teachingTag": "",
+      "teachingCardId": "",
+      "miniGuide": "Synergism occurs when combined hormonal actions exceed the effect produced by either hormone alone.",
+      "bankId": "intro_endocrinology_sprint_v2_3",
+      "bankType": "sprint",
+      "sessionMode": "learn",
+      "sourceLecture": "Introduction to Endocrinology",
+      "sourceOrder": 27,
+      "learningLevel": "Integrative",
+      "metadata": {
+        "source": "Wi 26 Week 10 Lecture - Intro to Endocrinology.pdf",
+        "broad_category": "Agonists, Antagonists & Synergism",
+        "concept_group": "Synergism",
+        "learning_level": "Integrative"
+      }
+    }
+  ]
+};
+window.INTRO_ENDOCRINOLOGY_SPRINT_QUESTIONS = window.INTRO_ENDOCRINOLOGY_SPRINT_BANK.questions;

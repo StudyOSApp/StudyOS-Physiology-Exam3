@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Interactive Learning Guides | StudyOS</title>
+  <link rel="stylesheet" href="shared/ilg-shared.css">
+  <style>
+    .guide-intro { padding: clamp(1.1rem, 3vw, 2rem); margin: .5rem 0 1.2rem; }
+    .guide-intro h2 { margin: 0 0 .35rem; }
+    .guide-intro p { max-width: 760px; margin: 0; color: var(--ilg-muted); }
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1rem; padding-bottom: 2rem; }
+    .guide-card { display: flex; min-height: 260px; flex-direction: column; padding: 1.35rem; }
+    .guide-card h2 { margin: .45rem 0; font-size: 1.35rem; }
+    .guide-card p { color: var(--ilg-muted); }
+    .guide-status { align-self: flex-start; border-radius: 999px; padding: .3rem .65rem; background: var(--ilg-accent-soft); color: var(--ilg-accent-dark); font-size: .78rem; font-weight: 800; }
+    .guide-status.is-pending { border: 1px solid #e3bd82; background: #fff4df; color: #80510f; }
+    .guide-card .ilg-button { align-self: flex-start; margin-top: auto; }
+    .construction-notice { display: grid; gap: .15rem; width: 100%; margin-top: auto; border: 1px dashed #d3a45e; border-radius: 12px; padding: .8rem 1rem; background: #fff8ea; color: #70460d; cursor: not-allowed; }
+    .construction-notice strong { font-size: .95rem; }
+    .construction-notice span { color: #8b632b; font-size: .82rem; }
+  </style>
+</head>
+<body>
+  <header class="ilg-header">
+    <div><p class="ilg-brand">StudyOS · Physiology II</p><h1>Interactive Learning Guides</h1></div>
+    <div class="ilg-header-actions"><a class="ilg-button ilg-secondary" href="../index.html">Return to Quiz Engine</a></div>
+  </header>
+  <main class="ilg-main" tabindex="-1">
+    <section class="ilg-panel guide-intro">
+      <h2>Choose a learning guide</h2>
+      <p>Use these interactive modules to build a visual model of the physiology, then return to the quiz engine for retrieval practice.</p>
+    </section>
+    <section class="guide-grid" aria-label="Available learning guides">
+      <article class="ilg-panel guide-card">
+        <span class="guide-status is-pending">Under construction</span>
+        <h2>Pituitary Hormones and Hypothalamic Control</h2>
+        <p>Use guided lessons, interactive guides, flashcards, and practice to review pituitary control routes.</p>
+        <div class="construction-notice" role="status" aria-label="Pituitary guide under construction">
+          <strong>Under Construction</strong>
+          <span>This learning guide is not available yet.</span>
+        </div>
+      </article>
+      <article class="ilg-panel guide-card">
+        <span class="guide-status">Phase 1 Shell</span>
+        <h2>Glucose, Insulin, and Diabetes Pathway</h2>
+        <p>Follow a carbohydrate-containing meal through digestion, blood-glucose regulation, cellular uptake, storage, fasting, kidney handling, and diabetes.</p>
+        <a class="ilg-button" href="glucose-insulin-pathway/index.html">Open Guide</a>
+      </article>
+    </section>
+  </main>
+  <footer class="ilg-footer">StudyOS learning guides are self-contained and store no clinical measurements.</footer>
+  <script src="shared/ilg-shared.js"></script>
+</body>
+</html>
