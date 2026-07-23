@@ -2431,6 +2431,8 @@
 <script src="banks/intro-to-endocrinology-sprint-v2.3.js"></script>
 <script src="banks/thyroid-sprint-v2.3.js"></script>
 <script src="banks/pituitary-sprint-v2.2.js"></script>
+<script src="banks/adrenal-sprint-v2.3.js"></script>
+<script src="banks/endocrine-pancreas-sprint-v2.3.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   var EXAM_COUNTDOWN = {
@@ -25661,6 +25663,8 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.INTRO_ENDOCRINOLOGY_SPRINT_QUESTIONS)) questions = questions.concat(window.INTRO_ENDOCRINOLOGY_SPRINT_QUESTIONS);
   if (Array.isArray(window.THYROID_SPRINT_QUESTIONS)) questions = questions.concat(window.THYROID_SPRINT_QUESTIONS);
   if (Array.isArray(window.PITUITARY_SPRINT_QUESTIONS)) questions = questions.concat(window.PITUITARY_SPRINT_QUESTIONS);
+  if (Array.isArray(window.ADRENAL_SPRINT_QUESTIONS)) questions = questions.concat(window.ADRENAL_SPRINT_QUESTIONS);
+  if (Array.isArray(window.ENDOCRINE_PANCREAS_SPRINT_QUESTIONS)) questions = questions.concat(window.ENDOCRINE_PANCREAS_SPRINT_QUESTIONS);
 
   var learnBanks = [
     {
@@ -25685,6 +25689,22 @@ document.addEventListener("DOMContentLoaded", function() {
       shortLabel: "Pituitary Hormones",
       topic: "pituitary",
       lectureOrder: 3,
+      enabled: true
+    },
+    {
+      id: "adrenal_sprint_v2_3",
+      label: "Adrenal Glands and Adrenal Hormones",
+      shortLabel: "Adrenal",
+      topic: "adrenal",
+      lectureOrder: 4,
+      enabled: true
+    },
+    {
+      id: "endocrine_pancreas_sprint_v2_3",
+      label: "Endocrine Pancreas",
+      shortLabel: "Endocrine Pancreas",
+      topic: "endocrine-pancreas",
+      lectureOrder: 5,
       enabled: true
     }
   ];
