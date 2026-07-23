@@ -2433,6 +2433,9 @@
 <script src="banks/pituitary-sprint-v2.2.js"></script>
 <script src="banks/adrenal-sprint-v2.3.js"></script>
 <script src="banks/endocrine-pancreas-sprint-v2.3.js"></script>
+<script src="banks/calcium-phosphate-sprint-v2.3.js"></script>
+<script src="banks/body-temperature-sprint-v2.3.js"></script>
+<script src="banks/week12-glossary.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   var EXAM_COUNTDOWN = {
@@ -2660,6 +2663,31 @@ document.addEventListener("DOMContentLoaded", function() {
       "Islet Hormones & Glucose Control",
       "Fuel Metabolism",
       "Diabetes, Diagnosis & Treatment"
+    ]
+  },
+  {
+    "order": 6,
+    "name": "calcium-phosphate",
+    "title": "Calcium & Phosphate",
+    "blocks": [
+      "Calcium and Phosphate Balance",
+      "Bone Structure and Remodeling",
+      "Vitamin D",
+      "Parathyroid Hormone",
+      "Calcitonin and Integrated Control",
+      "Clinical Disorders"
+    ]
+  },
+  {
+    "order": 7,
+    "name": "body-temperature",
+    "title": "Body Temperature",
+    "blocks": [
+      "Temperature Foundations",
+      "Heat Production and Transfer",
+      "Sweating and Acclimatization",
+      "Neural Temperature Control",
+      "Fever"
     ]
   }
 ];
@@ -25665,6 +25693,8 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.PITUITARY_SPRINT_QUESTIONS)) questions = questions.concat(window.PITUITARY_SPRINT_QUESTIONS);
   if (Array.isArray(window.ADRENAL_SPRINT_QUESTIONS)) questions = questions.concat(window.ADRENAL_SPRINT_QUESTIONS);
   if (Array.isArray(window.ENDOCRINE_PANCREAS_SPRINT_QUESTIONS)) questions = questions.concat(window.ENDOCRINE_PANCREAS_SPRINT_QUESTIONS);
+  if (Array.isArray(window.CALCIUM_PHOSPHATE_SPRINT_QUESTIONS)) questions = questions.concat(window.CALCIUM_PHOSPHATE_SPRINT_QUESTIONS);
+  if (Array.isArray(window.BODY_TEMPERATURE_SPRINT_QUESTIONS)) questions = questions.concat(window.BODY_TEMPERATURE_SPRINT_QUESTIONS);
 
   var learnBanks = [
     {
@@ -25705,6 +25735,22 @@ document.addEventListener("DOMContentLoaded", function() {
       shortLabel: "Endocrine Pancreas",
       topic: "endocrine-pancreas",
       lectureOrder: 5,
+      enabled: true
+    },
+    {
+      id: "calcium_phosphate_sprint_v2_3",
+      label: "Calcium and Phosphate Homeostasis",
+      shortLabel: "Calcium & Phosphate",
+      topic: "calcium-phosphate",
+      lectureOrder: 6,
+      enabled: true
+    },
+    {
+      id: "body_temperature_sprint_v2_3",
+      label: "Body Temperature Regulation",
+      shortLabel: "Body Temperature",
+      topic: "body-temperature",
+      lectureOrder: 7,
       enabled: true
     }
   ];
@@ -40112,6 +40158,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 ];
 
+  if (Array.isArray(window.WEEK12_GLOSSARY_ENTRIES)) {
+    glossaryEntries = glossaryEntries.concat(window.WEEK12_GLOSSARY_ENTRIES);
+  }
+
   var studyGuidePages = [];
 
   function normalizeChoices(choices) {
@@ -41528,7 +41578,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (isAllWeeksUnit(unit.name)) {
       return orderedUnitList().filter(function(item) {
-        return !isAllWeeksUnit(item.name);
+        return !isAllWeeksUnit(item.name) && unitQuestions(item.name).length > 0;
       }).map(function(item) {
         var pool = unitQuestions(item.name);
         var answered = 0;
@@ -42472,7 +42522,14 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!tabs) return;
     tabs.innerHTML = "";
 
-    orderedUnitList().forEach(function(unit) {
+    orderedUnitList().filter(function(unit) {
+      if (isAllWeeksUnit(unit.name)) return true;
+      return activeSessionMode === "learn"
+        ? learnQuestionsForUnit(unit.name).length > 0
+        : questions.some(function(question) {
+            return question.unit === unit.name && !isSprintQuestion(question);
+          });
+    }).forEach(function(unit) {
       var btn = document.createElement("button");
       var label = unitCardLabel(unit.name);
       btn.type = "button";
@@ -42510,6 +42567,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     saveActiveUnitProgress();
     activeSessionMode = mode;
+    if (mode !== "learn" && !unitQuestions(activeUnit).length) {
+      activeUnit = units[0].name;
+    }
     if (mode === "learn") syncActiveLearnBankId();
     if (topicFilter) topicFilter.value = "";
     if (countFilter && mode === "learn") countFilter.value = "all";
@@ -42585,6 +42645,9 @@ document.addEventListener("DOMContentLoaded", function() {
   if (["learn", "practice", "exam"].indexOf(launchParams.get("session")) > -1) {
     activeSessionMode = launchParams.get("session");
     launchSessionRequested = true;
+  }
+  if (activeSessionMode !== "learn" && !unitQuestions(activeUnit).length) {
+    activeUnit = units[0].name;
   }
   if (activeSessionMode === "learn") {
     syncActiveLearnBankId();
