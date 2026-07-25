@@ -1,0 +1,2518 @@
+{
+  "schemaVersion": "3.2.0",
+  "moduleId": "intro-to-endocrinology",
+  "title": "StudyOS Production Question Bank",
+  "generatedBy": "StudyOS Question Engine v3.2",
+  "source": "/Users/ryanelmore/Documents/Claude/Projects/Biochem Exam 1/audited-question-banks/StudyOS_AUDITED_Question_Bank_Intro_to_Endocrinology.md",
+  "importedQuestionCount": 44,
+  "questions": [
+    {
+      "question_id": "Q-ENDO-001-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_endocrine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which feature best identifies endocrine signaling?",
+      "choices": {
+        "A": "A messenger enters blood and acts on distant receptor-bearing cells.",
+        "B": "A messenger diffuses locally and acts on neighboring cells.",
+        "C": "A messenger binds receptors on the same cell that released it.",
+        "D": "A neurotransmitter crosses a synaptic cleft to an adjacent target."
+      },
+      "correct_answer": "A",
+      "explanation": "Endocrine signaling is identified by a blood-borne delivery route to distant receptor-bearing targets. Local diffusion to neighbors is paracrine, the closest competing choice.",
+      "distractor_explanations": {
+        "B": "This is paracrine signaling because the messenger remains local and acts on neighboring cells.",
+        "C": "This is autocrine signaling because the releasing cell is also the target.",
+        "D": "This is neural signaling because the messenger crosses a synaptic cleft."
+      },
+      "misconception_remediation": "Learners may confuse endocrine blood-borne delivery with paracrine local diffusion.",
+      "mini_guide": "Endocrine signaling uses circulating blood to carry a chemical messenger to distant receptor-bearing target cells.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Delivery-route recognition",
+      "assessment_role": "Foundational recognition",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-001-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_endocrine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Endocrine Signaling",
+        "CONCEPT_TESTED": "Endocrine Signaling",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Delivery-route recognition",
+        "ASSESSMENT_ROLE": "Foundational recognition",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may confuse endocrine blood-borne delivery with paracrine local diffusion.",
+        "DISTRACTOR_MISCONCEPTIONS": "Paracrine local action; autocrine self-signaling; neural synaptic signaling",
+        "MINI_GUIDE": "Endocrine signaling uses circulating blood to carry a chemical messenger to distant receptor-bearing target cells.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-001-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_endocrine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "A liver cell releases a messenger that alters transport in a distant kidney cell. Which observation makes this endocrine rather than paracrine signaling?",
+      "choices": {
+        "A": "The messenger diffuses only to nearby liver cells.",
+        "B": "The messenger binds the releasing liver cell.",
+        "C": "The messenger crosses a synapse to an adjacent cell.",
+        "D": "The messenger travels in blood to the kidney cell."
+      },
+      "correct_answer": "D",
+      "explanation": "The new scenario is endocrine because the messenger enters circulation and reaches a distant kidney target. A messenger restricted to nearby liver cells would instead be paracrine.",
+      "distractor_explanations": {
+        "A": "This would be paracrine signaling because the target cells are nearby and the route is local diffusion.",
+        "B": "This would be autocrine signaling because the releasing cell is also the target.",
+        "C": "This would be neural signaling because the messenger crosses a synapse."
+      },
+      "misconception_remediation": "Learners may classify any secreted messenger as endocrine without checking whether it enters blood and reaches a distant target.",
+      "mini_guide": "Use both route and distance: blood to a distant target is endocrine; local diffusion to a nearby target is paracrine.",
+      "question_type": "Scenario application",
+      "retrieval_angle": "Endocrine-versus-paracrine route discrimination",
+      "assessment_role": "Scenario application",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-001-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_endocrine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Endocrine Signaling",
+        "CONCEPT_TESTED": "Endocrine Signaling",
+        "QUESTION_TYPE": "Scenario application",
+        "RETRIEVAL_ANGLE": "Endocrine-versus-paracrine route discrimination",
+        "ASSESSMENT_ROLE": "Scenario application",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may classify any secreted messenger as endocrine without checking whether it enters blood and reaches a distant target.",
+        "DISTRACTOR_MISCONCEPTIONS": "Paracrine local diffusion; autocrine self-targeting; neural synaptic delivery",
+        "MINI_GUIDE": "Use both route and distance: blood to a distant target is endocrine; local diffusion to a nearby target is paracrine.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-001-03",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_endocrine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "A cultured cell releases a messenger locally. Researchers remove its receptors from the releasing cell, but nearby cells retain the receptors. The messenger cannot enter circulation. Which response is predicted?",
+      "choices": {
+        "A": "Distant cells respond through endocrine signaling.",
+        "B": "Nearby cells respond, but the releasing cell does not.",
+        "C": "Only the releasing cell responds to the messenger.",
+        "D": "No cells respond because circulation is blocked."
+      },
+      "correct_answer": "B",
+      "explanation": "Removing receptors from the releasing cell eliminates its autocrine response, but neighboring receptor-bearing cells can still respond by paracrine signaling. Lack of circulation prevents a distant endocrine response.",
+      "distractor_explanations": {
+        "A": "A distant endocrine response is not possible because the messenger cannot enter circulation.",
+        "C": "The releasing cell cannot respond after its receptors are removed.",
+        "D": "Local paracrine signaling does not require access to the circulation."
+      },
+      "misconception_remediation": "Learners may assume all secreted signals require circulation or overlook that receptor removal selectively eliminates self-response.",
+      "mini_guide": "Predict signaling by checking route and receptor location: local messenger plus neighboring receptors permits paracrine action; removing receptors from the source cell prevents autocrine action.",
+      "question_type": "Experimental prediction",
+      "retrieval_angle": "Predicting target response from receptor and route constraints",
+      "assessment_role": "Prediction / experimental reasoning",
+      "difficulty": "Moderate",
+      "bloom_level": "Analyze",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-001-03",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_endocrine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Endocrine Signaling",
+        "CONCEPT_TESTED": "Endocrine Signaling",
+        "QUESTION_TYPE": "Experimental prediction",
+        "RETRIEVAL_ANGLE": "Predicting target response from receptor and route constraints",
+        "ASSESSMENT_ROLE": "Prediction / experimental reasoning",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Analyze",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may assume all secreted signals require circulation or overlook that receptor removal selectively eliminates self-response.",
+        "DISTRACTOR_MISCONCEPTIONS": "Assuming endocrine delivery without blood access; ignoring receptor removal; assuming local signaling requires circulation",
+        "MINI_GUIDE": "Predict signaling by checking route and receptor location: local messenger plus neighboring receptors permits paracrine action; removing receptors from the source cell prevents autocrine action.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-002-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_neural_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which observation distinguishes neural signaling from neuroendocrine signaling?",
+      "choices": {
+        "A": "A chemical messenger binds a specific receptor.",
+        "B": "A target cell changes activity after receiving a signal.",
+        "C": "Neural activity begins the signaling sequence.",
+        "D": "A neurotransmitter crosses a synapse instead of entering blood."
+      },
+      "correct_answer": "D",
+      "explanation": "Pure neural signaling uses neurotransmitter release across a synapse. Neural activity can also initiate neuroendocrine signaling, so neural activation alone does not distinguish the two.",
+      "distractor_explanations": {
+        "A": "Both neural and neuroendocrine messengers act through receptors.",
+        "B": "Both signaling modes can change target-cell activity.",
+        "C": "Neural activity may initiate either neural or neuroendocrine signaling, so this is not decisive."
+      },
+      "misconception_remediation": "Learners may classify any signal initiated by neural activity as purely neural.",
+      "mini_guide": "Neural signaling ends with neurotransmitter crossing a synapse; neuroendocrine signaling ends with hormone entering blood.",
+      "question_type": "Comparison",
+      "retrieval_angle": "Neural-versus-neuroendocrine delivery discrimination",
+      "assessment_role": "Comparison / discrimination",
+      "difficulty": "Moderate",
+      "bloom_level": "Understand",
+      "source_section": "Slide 4; Slide 5",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-002-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_neural_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Neural Signaling",
+        "CONCEPT_TESTED": "Neural Signaling",
+        "QUESTION_TYPE": "Comparison",
+        "RETRIEVAL_ANGLE": "Neural-versus-neuroendocrine delivery discrimination",
+        "ASSESSMENT_ROLE": "Comparison / discrimination",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 4; Slide 5",
+        "MISCONCEPTION_DETECTED": "Learners may classify any signal initiated by neural activity as purely neural.",
+        "DISTRACTOR_MISCONCEPTIONS": "Shared receptor use; shared cellular response; shared neural initiation",
+        "MINI_GUIDE": "Neural signaling ends with neurotransmitter crossing a synapse; neuroendocrine signaling ends with hormone entering blood.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-002-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_neural_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "A sympathetic neuron stimulates an adrenal-medullary cell, which releases epinephrine into blood. Why is the overall pathway neuroendocrine rather than purely neural?",
+      "choices": {
+        "A": "The signal remains confined to a synaptic cleft.",
+        "B": "The adrenal cell releases epinephrine without neural input.",
+        "C": "Neural input triggers hormone release into blood.",
+        "D": "Epinephrine acts only on the releasing adrenal cell."
+      },
+      "correct_answer": "C",
+      "explanation": "The pathway begins with neural stimulation but produces a hormone that enters blood and reaches distant targets. Pure neural signaling would end with neurotransmitter action across a synapse.",
+      "distractor_explanations": {
+        "A": "A signal confined to a synaptic cleft would describe purely neural transmission.",
+        "B": "The scenario explicitly begins with sympathetic neural input.",
+        "D": "Action on the releasing cell would be autocrine, not the blood-borne response described."
+      },
+      "misconception_remediation": "Learners may call the entire pathway neural because a neuron initiates it, ignoring the hormone entering blood.",
+      "mini_guide": "The adrenal-medulla pathway is neuroendocrine: sympathetic neural input stimulates release of epinephrine into circulating blood.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Tracing neural initiation to endocrine output",
+      "assessment_role": "Mechanism",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 4; Slide 5",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-002-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_neural_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Neural Signaling",
+        "CONCEPT_TESTED": "Neural Signaling",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Tracing neural initiation to endocrine output",
+        "ASSESSMENT_ROLE": "Mechanism",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 4; Slide 5",
+        "MISCONCEPTION_DETECTED": "Learners may call the entire pathway neural because a neuron initiates it, ignoring the hormone entering blood.",
+        "DISTRACTOR_MISCONCEPTIONS": "Pure synaptic transmission; omission of neural input; autocrine self-targeting",
+        "MINI_GUIDE": "The adrenal-medulla pathway is neuroendocrine: sympathetic neural input stimulates release of epinephrine into circulating blood.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-003-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_neuroendocrine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which sequence defines neuroendocrine signaling?",
+      "choices": {
+        "A": "Messenger release, then binding to the releasing cell.",
+        "B": "Local diffusion, then binding to a neighboring cell.",
+        "C": "Neural activation, then hormone release into blood.",
+        "D": "Action potential, then neurotransmitter release across a synapse."
+      },
+      "correct_answer": "C",
+      "explanation": "Neuroendocrine signaling combines a neural initiating event with endocrine output into the bloodstream. Choice D is the closest distractor because it begins neurally but ends at a synapse.",
+      "distractor_explanations": {
+        "A": "This sequence describes autocrine signaling because the releasing cell is also the target.",
+        "B": "This sequence describes paracrine signaling because the target is a nearby cell.",
+        "D": "This is purely neural signaling because the messenger crosses a synapse rather than entering blood."
+      },
+      "misconception_remediation": "Learners may confuse a neural initiating event with a purely synaptic endpoint.",
+      "mini_guide": "Neuroendocrine signaling begins with neural activity and ends with a hormone entering circulating blood.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Sequence recognition",
+      "assessment_role": "Foundational recognition",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-003-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_neuroendocrine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Neuroendocrine Signaling",
+        "CONCEPT_TESTED": "Neuroendocrine Signaling",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Sequence recognition",
+        "ASSESSMENT_ROLE": "Foundational recognition",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may confuse a neural initiating event with a purely synaptic endpoint.",
+        "DISTRACTOR_MISCONCEPTIONS": "Autocrine self-target; paracrine neighboring target; purely neural synaptic endpoint",
+        "MINI_GUIDE": "Neuroendocrine signaling begins with neural activity and ends with a hormone entering circulating blood.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-004-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_paracrine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which target pattern identifies paracrine rather than endocrine signaling?",
+      "choices": {
+        "A": "Distant targets receive the messenger through blood.",
+        "B": "Nearby cells receive the messenger by local diffusion.",
+        "C": "The releasing cell responds to its own messenger.",
+        "D": "An adjacent cell receives neurotransmitter across a synapse."
+      },
+      "correct_answer": "B",
+      "explanation": "Paracrine signaling acts locally on neighboring cells. Endocrine signaling, the closest distractor, uses blood to reach distant targets.",
+      "distractor_explanations": {
+        "A": "This is endocrine signaling because the messenger travels in blood to distant targets.",
+        "C": "This is autocrine signaling because the releasing cell is also the target.",
+        "D": "This is neural signaling because delivery occurs across a synapse."
+      },
+      "misconception_remediation": "Learners may confuse local paracrine diffusion with blood-borne endocrine delivery.",
+      "mini_guide": "Paracrine signals diffuse locally to neighboring cells; endocrine signals enter blood and reach distant targets.",
+      "question_type": "Comparison",
+      "retrieval_angle": "Target-distance discrimination",
+      "assessment_role": "Comparison / discrimination",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-004-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_paracrine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Paracrine Signaling",
+        "CONCEPT_TESTED": "Paracrine Signaling",
+        "QUESTION_TYPE": "Comparison",
+        "RETRIEVAL_ANGLE": "Target-distance discrimination",
+        "ASSESSMENT_ROLE": "Comparison / discrimination",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may confuse local paracrine diffusion with blood-borne endocrine delivery.",
+        "DISTRACTOR_MISCONCEPTIONS": "Endocrine distant target; autocrine self-target; neural synaptic target",
+        "MINI_GUIDE": "Paracrine signals diffuse locally to neighboring cells; endocrine signals enter blood and reach distant targets.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-004-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_paracrine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "A cultured cell releases a messenger. Only neighboring cells respond because the releasing cell lacks the receptor. Which signaling mode is occurring?",
+      "choices": {
+        "A": "Paracrine signaling",
+        "B": "Autocrine signaling",
+        "C": "Endocrine signaling",
+        "D": "Neural signaling"
+      },
+      "correct_answer": "A",
+      "explanation": "The messenger acts locally on neighboring cells, which defines paracrine signaling. Autocrine signaling is the closest distractor, but it requires the releasing cell to possess the receptor and respond.",
+      "distractor_explanations": {
+        "B": "Autocrine signaling requires the releasing cell to respond to its own messenger, but that cell lacks the receptor.",
+        "C": "Endocrine signaling requires blood-borne delivery to a distant target.",
+        "D": "Neural signaling requires neurotransmitter delivery across a synapse."
+      },
+      "misconception_remediation": "Learners may call any local secretion autocrine without checking whether the releasing cell is also the target.",
+      "mini_guide": "Paracrine signaling targets nearby cells; autocrine signaling requires the releasing cell itself to express the receptor and respond.",
+      "question_type": "Scenario application",
+      "retrieval_angle": "Autocrine-versus-paracrine target identification",
+      "assessment_role": "Scenario application",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-004-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_paracrine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Paracrine Signaling",
+        "CONCEPT_TESTED": "Paracrine Signaling",
+        "QUESTION_TYPE": "Scenario application",
+        "RETRIEVAL_ANGLE": "Autocrine-versus-paracrine target identification",
+        "ASSESSMENT_ROLE": "Scenario application",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may call any local secretion autocrine without checking whether the releasing cell is also the target.",
+        "DISTRACTOR_MISCONCEPTIONS": "Autocrine self-targeting; endocrine distant delivery; neural synaptic delivery",
+        "MINI_GUIDE": "Paracrine signaling targets nearby cells; autocrine signaling requires the releasing cell itself to express the receptor and respond.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-005-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_autocrine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which observation distinguishes autocrine from paracrine signaling?",
+      "choices": {
+        "A": "The releasing cell has the receptor and responds.",
+        "B": "Nearby cells respond after local diffusion.",
+        "C": "Distant cells respond after blood-borne delivery.",
+        "D": "A postsynaptic cell responds to neurotransmitter."
+      },
+      "correct_answer": "A",
+      "explanation": "Autocrine signaling occurs when the releasing cell is also a receptor-bearing target. In paracrine signaling, the closest distractor, neighboring cells respond instead.",
+      "distractor_explanations": {
+        "B": "This is paracrine signaling because neighboring cells are the targets.",
+        "C": "This is endocrine signaling because distant targets receive the messenger through blood.",
+        "D": "This is neural signaling because a postsynaptic cell receives neurotransmitter."
+      },
+      "misconception_remediation": "Learners may confuse self-targeting autocrine signaling with neighboring-cell paracrine signaling.",
+      "mini_guide": "Autocrine means the releasing cell is also the target; paracrine means a nearby different cell is the target.",
+      "question_type": "Comparison",
+      "retrieval_angle": "Same-cell-versus-neighbor discrimination",
+      "assessment_role": "Comparison / discrimination",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-005-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_autocrine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Autocrine Signaling",
+        "CONCEPT_TESTED": "Autocrine Signaling",
+        "QUESTION_TYPE": "Comparison",
+        "RETRIEVAL_ANGLE": "Same-cell-versus-neighbor discrimination",
+        "ASSESSMENT_ROLE": "Comparison / discrimination",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may confuse self-targeting autocrine signaling with neighboring-cell paracrine signaling.",
+        "DISTRACTOR_MISCONCEPTIONS": "Paracrine neighboring target; endocrine distant target; neural postsynaptic target",
+        "MINI_GUIDE": "Autocrine means the releasing cell is also the target; paracrine means a nearby different cell is the target.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-006-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st1_lo1_cytokine_signaling"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st1_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement best describes cytokine signaling?",
+      "choices": {
+        "A": "Cytokines always travel in blood to distant targets.",
+        "B": "Cytokines always cross synapses as neurotransmitters.",
+        "C": "Cytokines always act on the cells that release them.",
+        "D": "Cytokines may act locally, on self, or at a distance."
+      },
+      "correct_answer": "D",
+      "explanation": "Cytokines are signaling proteins whose range depends on context; they can act through autocrine, paracrine, or endocrine routes. The closest distractor is C because some cytokines act autocrinely, but not all do.",
+      "distractor_explanations": {
+        "A": "Some cytokines act at a distance, but many act locally or on the releasing cell.",
+        "B": "Cytokines are not defined by synaptic neurotransmitter delivery.",
+        "C": "Some cytokines act autocrinely, but cytokine signaling is not limited to self-targeting."
+      },
+      "misconception_remediation": "Learners may incorrectly assign all cytokines to one fixed signaling distance.",
+      "mini_guide": "Cytokines are secreted signaling proteins that may act through autocrine, paracrine, or endocrine routes depending on context.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Context-dependent range recognition",
+      "assessment_role": "Foundational recognition",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 4",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-006-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st1_lo1_cytokine_signaling",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st1_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Cytokine Signaling",
+        "CONCEPT_TESTED": "Cytokine Signaling",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Context-dependent range recognition",
+        "ASSESSMENT_ROLE": "Foundational recognition",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 4",
+        "MISCONCEPTION_DETECTED": "Learners may incorrectly assign all cytokines to one fixed signaling distance.",
+        "DISTRACTOR_MISCONCEPTIONS": "Endocrine-only range; neural-only route; autocrine-only range",
+        "MINI_GUIDE": "Cytokines are secreted signaling proteins that may act through autocrine, paracrine, or endocrine routes depending on context.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Section 1 learner-facing quality revision complete",
+        "IMPORT_STATUS": "Validated and ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-007-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st2_lo1_neuro_endocrine_comparison"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st2_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Endocrine vs. Nervous System Comparison?",
+      "choices": {
+        "A": "Organs whose primary function is not hormone secretion but do secrete hormones.",
+        "B": "Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble.",
+        "C": "A comparison of two major homeostatic control systems based on transmission, mediators, speed, duration, and signal modulation.",
+        "D": "Ductless organs that secrete hormones directly into the bloodstream."
+      },
+      "correct_answer": "C",
+      "explanation": "A comparison of two major homeostatic control systems based on transmission, mediators, speed, duration, and signal modulation.",
+      "distractor_explanations": {
+        "A": "This describes Secondary Endocrine Organs, not Endocrine vs. Nervous System Comparison.",
+        "B": "This describes Protein and Peptide Hormones, not Endocrine vs. Nervous System Comparison.",
+        "D": "This describes Major Endocrine Glands, not Endocrine vs. Nervous System Comparison."
+      },
+      "misconception_remediation": "Students memorize the table but fail to connect differences to functional consequences (e.g., why endocrine effects last longer)",
+      "mini_guide": "Endocrine vs. Nervous System Comparison: A comparison of two major homeostatic control systems based on transmission, mediators, speed, duration, and signal modulation. Key physiological connection: Endocrine Signaling is a prerequisite for Endocrine vs. Nervous System Comparison.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 5",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-007-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st2_lo1_neuro_endocrine_comparison",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st2_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Endocrine vs. Nervous System Comparison",
+        "CONCEPT_TESTED": "Endocrine vs. Nervous System Comparison",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 5",
+        "MISCONCEPTION_DETECTED": "Students memorize the table but fail to connect differences to functional consequences (e.g., why endocrine effects last longer)",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Endocrine vs. Nervous System Comparison: A comparison of two major homeostatic control systems based on transmission, mediators, speed, duration, and signal modulation. Key physiological connection: Endocrine Signaling is a prerequisite for Endocrine vs. Nervous System Comparison.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-007-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st2_lo1_neuro_endocrine_comparison"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st2_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Endocrine vs. Nervous System Comparison?",
+      "choices": {
+        "A": "Endocrine Signaling prerequisite of Neural Regulation of Hormone Secretion.",
+        "B": "Endocrine Signaling is a prerequisite for Endocrine vs. Nervous System Comparison.",
+        "C": "Endocrine vs. Nervous System Comparison prerequisite of Endocrine Signaling.",
+        "D": "Endocrine Signaling depends on Endocrine vs. Nervous System Comparison."
+      },
+      "correct_answer": "B",
+      "explanation": "Endocrine Signaling is a prerequisite for Endocrine vs. Nervous System Comparison.",
+      "distractor_explanations": {
+        "A": "The taught relationship connects Endocrine Signaling with Endocrine vs. Nervous System Comparison, not Neural Regulation of Hormone Secretion.",
+        "C": "This reverses the physiological direction between Endocrine Signaling and Endocrine vs. Nervous System Comparison.",
+        "D": "This changes the taught physiological relationship: Endocrine Signaling is a prerequisite for Endocrine vs. Nervous System Comparison."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Endocrine vs. Nervous System Comparison.",
+      "mini_guide": "Endocrine vs. Nervous System Comparison: A comparison of two major homeostatic control systems based on transmission, mediators, speed, duration, and signal modulation. Key physiological connection: Endocrine Signaling is a prerequisite for Endocrine vs. Nervous System Comparison.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 5",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-007-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st2_lo1_neuro_endocrine_comparison",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st2_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Endocrine vs. Nervous System Comparison",
+        "CONCEPT_TESTED": "Endocrine vs. Nervous System Comparison",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 5",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Endocrine vs. Nervous System Comparison.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Endocrine vs. Nervous System Comparison: A comparison of two major homeostatic control systems based on transmission, mediators, speed, duration, and signal modulation. Key physiological connection: Endocrine Signaling is a prerequisite for Endocrine vs. Nervous System Comparison.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-008-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st3_lo1_major_endocrine_glands"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st3_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Major Endocrine Glands?",
+      "choices": {
+        "A": "Hormones derived from cholesterol via enzymatic reactions.",
+        "B": "Ductless organs that secrete hormones directly into the bloodstream.",
+        "C": "Organs whose primary function is not hormone secretion but do secrete hormones.",
+        "D": "Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble."
+      },
+      "correct_answer": "B",
+      "explanation": "Ductless organs that secrete hormones directly into the bloodstream.",
+      "distractor_explanations": {
+        "A": "This describes Steroid Hormones, not Major Endocrine Glands.",
+        "C": "This describes Secondary Endocrine Organs, not Major Endocrine Glands.",
+        "D": "This describes Protein and Peptide Hormones, not Major Endocrine Glands."
+      },
+      "misconception_remediation": "Students often cannot recall gland locations or which hormones each secretes (covered in later lectures)",
+      "mini_guide": "Major Endocrine Glands: Ductless organs that secrete hormones directly into the bloodstream. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 6",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-008-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st3_lo1_major_endocrine_glands",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st3_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Major Endocrine Glands",
+        "CONCEPT_TESTED": "Major Endocrine Glands",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 6",
+        "MISCONCEPTION_DETECTED": "Students often cannot recall gland locations or which hormones each secretes (covered in later lectures)",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Major Endocrine Glands: Ductless organs that secrete hormones directly into the bloodstream. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-008-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st3_lo1_major_endocrine_glands"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st3_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Major Endocrine Glands?",
+      "choices": {
+        "A": "Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+        "B": "Secondary Endocrine Organs is related to Major Endocrine Glands.",
+        "C": "Major Endocrine Glands is unrelated to Secondary Endocrine Organs.",
+        "D": "Major Endocrine Glands is related to Negative Feedback."
+      },
+      "correct_answer": "A",
+      "explanation": "Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+      "distractor_explanations": {
+        "B": "This reverses the physiological direction between Major Endocrine Glands and Secondary Endocrine Organs.",
+        "C": "This changes the taught physiological relationship: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+        "D": "The taught relationship connects Major Endocrine Glands with Secondary Endocrine Organs, not Negative Feedback."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Major Endocrine Glands.",
+      "mini_guide": "Major Endocrine Glands: Ductless organs that secrete hormones directly into the bloodstream. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 6",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-008-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st3_lo1_major_endocrine_glands",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st3_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Major Endocrine Glands",
+        "CONCEPT_TESTED": "Major Endocrine Glands",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 6",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Major Endocrine Glands.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Major Endocrine Glands: Ductless organs that secrete hormones directly into the bloodstream. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-008-03",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st3_lo1_major_endocrine_glands"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st3_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which physiological connection involving Major Endocrine Glands is correct?",
+      "choices": {
+        "A": "Secondary Endocrine Organs prerequisite of Major Endocrine Glands.",
+        "B": "Major Endocrine Glands depends on Secondary Endocrine Organs.",
+        "C": "Major Endocrine Glands prerequisite of Up-Regulation.",
+        "D": "Major Endocrine Glands is a prerequisite for Secondary Endocrine Organs."
+      },
+      "correct_answer": "D",
+      "explanation": "Major Endocrine Glands is a prerequisite for Secondary Endocrine Organs.",
+      "distractor_explanations": {
+        "A": "This reverses the physiological direction between Major Endocrine Glands and Secondary Endocrine Organs.",
+        "B": "This changes the taught physiological relationship: Major Endocrine Glands is a prerequisite for Secondary Endocrine Organs.",
+        "C": "The taught relationship connects Major Endocrine Glands with Secondary Endocrine Organs, not Up-Regulation."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Major Endocrine Glands.",
+      "mini_guide": "Major Endocrine Glands: Ductless organs that secrete hormones directly into the bloodstream. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+      "question_type": "Cause and effect",
+      "retrieval_angle": "Application of physiological relationship",
+      "assessment_role": "Transfer",
+      "difficulty": "Hard",
+      "bloom_level": "Analyze",
+      "source_section": "Slide 6",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-008-03",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st3_lo1_major_endocrine_glands",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st3_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Major Endocrine Glands",
+        "CONCEPT_TESTED": "Major Endocrine Glands",
+        "QUESTION_TYPE": "Cause and effect",
+        "RETRIEVAL_ANGLE": "Application of physiological relationship",
+        "ASSESSMENT_ROLE": "Transfer",
+        "DIFFICULTY": "Hard",
+        "BLOOM_LEVEL": "Analyze",
+        "SOURCE_SECTION": "Slide 6",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Major Endocrine Glands.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Major Endocrine Glands: Ductless organs that secrete hormones directly into the bloodstream. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-009-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st3_lo1_secondary_endocrine_organs"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st3_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Secondary Endocrine Organs?",
+      "choices": {
+        "A": "Organs whose primary function is not hormone secretion but do secrete hormones.",
+        "B": "Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble.",
+        "C": "Hormones derived from cholesterol via enzymatic reactions.",
+        "D": "Hormones derived from amino acid tyrosine (or tryptophan)."
+      },
+      "correct_answer": "A",
+      "explanation": "Organs whose primary function is not hormone secretion but do secrete hormones.",
+      "distractor_explanations": {
+        "B": "This describes Protein and Peptide Hormones, not Secondary Endocrine Organs.",
+        "C": "This describes Steroid Hormones, not Secondary Endocrine Organs.",
+        "D": "This describes Amine Hormones, not Secondary Endocrine Organs."
+      },
+      "misconception_remediation": "Students may list these as primary endocrine glands; they are secondary because hormone secretion is not their primary function",
+      "mini_guide": "Secondary Endocrine Organs: Organs whose primary function is not hormone secretion but do secrete hormones. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 6",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-009-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st3_lo1_secondary_endocrine_organs",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st3_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Secondary Endocrine Organs",
+        "CONCEPT_TESTED": "Secondary Endocrine Organs",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 6",
+        "MISCONCEPTION_DETECTED": "Students may list these as primary endocrine glands; they are secondary because hormone secretion is not their primary function",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Secondary Endocrine Organs: Organs whose primary function is not hormone secretion but do secrete hormones. Key physiological connection: Major Endocrine Glands is directly related to Secondary Endocrine Organs.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-010-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_protein_peptide_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Protein and Peptide Hormones?",
+      "choices": {
+        "A": "Hormones derived from cholesterol via enzymatic reactions.",
+        "B": "Hormones derived from amino acid tyrosine (or tryptophan).",
+        "C": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
+        "D": "Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble."
+      },
+      "correct_answer": "D",
+      "explanation": "Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble.",
+      "distractor_explanations": {
+        "A": "This describes Steroid Hormones, not Protein and Peptide Hormones.",
+        "B": "This describes Amine Hormones, not Protein and Peptide Hormones.",
+        "C": "This describes Humoral Regulation of Hormone Secretion, not Protein and Peptide Hormones."
+      },
+      "misconception_remediation": "Students confuse synthesis (RER) with storage (vesicles) or assume all hormones are stored; also confuse water-soluble vs. lipid-soluble implications",
+      "mini_guide": "Protein and Peptide Hormones: Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-010-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_protein_peptide_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Protein and Peptide Hormones",
+        "CONCEPT_TESTED": "Protein and Peptide Hormones",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Students confuse synthesis (RER) with storage (vesicles) or assume all hormones are stored; also confuse water-soluble vs. lipid-soluble implications",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Protein and Peptide Hormones: Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-010-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_protein_peptide_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Protein and Peptide Hormones?",
+      "choices": {
+        "A": "Protein and Peptide Hormones is unrelated to Steroid Hormones.",
+        "B": "Protein and Peptide Hormones is related to Cyclical Regulation.",
+        "C": "Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "D": "Steroid Hormones is related to Protein and Peptide Hormones."
+      },
+      "correct_answer": "C",
+      "explanation": "Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "distractor_explanations": {
+        "A": "This changes the taught physiological relationship: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "B": "The taught relationship connects Protein and Peptide Hormones with Steroid Hormones, not Cyclical Regulation.",
+        "D": "This reverses the physiological direction between Protein and Peptide Hormones and Steroid Hormones."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Protein and Peptide Hormones.",
+      "mini_guide": "Protein and Peptide Hormones: Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-010-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_protein_peptide_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Protein and Peptide Hormones",
+        "CONCEPT_TESTED": "Protein and Peptide Hormones",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Protein and Peptide Hormones.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Protein and Peptide Hormones: Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-010-03",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_protein_peptide_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which physiological connection involving Protein and Peptide Hormones is correct?",
+      "choices": {
+        "A": "Protein and Peptide Hormones is related to Agonist.",
+        "B": "Protein and Peptide Hormones is directly related to Amine Hormones.",
+        "C": "Amine Hormones is related to Protein and Peptide Hormones.",
+        "D": "Protein and Peptide Hormones is unrelated to Amine Hormones."
+      },
+      "correct_answer": "B",
+      "explanation": "Protein and Peptide Hormones is directly related to Amine Hormones.",
+      "distractor_explanations": {
+        "A": "The taught relationship connects Protein and Peptide Hormones with Amine Hormones, not Agonist.",
+        "C": "This reverses the physiological direction between Protein and Peptide Hormones and Amine Hormones.",
+        "D": "This changes the taught physiological relationship: Protein and Peptide Hormones is directly related to Amine Hormones."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Protein and Peptide Hormones.",
+      "mini_guide": "Protein and Peptide Hormones: Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "question_type": "Cause and effect",
+      "retrieval_angle": "Application of physiological relationship",
+      "assessment_role": "Transfer",
+      "difficulty": "Hard",
+      "bloom_level": "Analyze",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-010-03",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_protein_peptide_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Protein and Peptide Hormones",
+        "CONCEPT_TESTED": "Protein and Peptide Hormones",
+        "QUESTION_TYPE": "Cause and effect",
+        "RETRIEVAL_ANGLE": "Application of physiological relationship",
+        "ASSESSMENT_ROLE": "Transfer",
+        "DIFFICULTY": "Hard",
+        "BLOOM_LEVEL": "Analyze",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Protein and Peptide Hormones.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Protein and Peptide Hormones: Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-011-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_steroid_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Steroid Hormones?",
+      "choices": {
+        "A": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
+        "B": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE).",
+        "C": "Hormones derived from cholesterol via enzymatic reactions.",
+        "D": "Hormones derived from amino acid tyrosine (or tryptophan)."
+      },
+      "correct_answer": "C",
+      "explanation": "Hormones derived from cholesterol via enzymatic reactions.",
+      "distractor_explanations": {
+        "A": "This describes Humoral Regulation of Hormone Secretion, not Steroid Hormones.",
+        "B": "This describes Neural Regulation of Hormone Secretion, not Steroid Hormones.",
+        "D": "This describes Amine Hormones, not Steroid Hormones."
+      },
+      "misconception_remediation": "Students often think all hormones are stored; steroids are NOT stored. Also, lipophilic → carrier proteins → longer half-life is a key but confusing connection.",
+      "mini_guide": "Steroid Hormones: Hormones derived from cholesterol via enzymatic reactions. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-011-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_steroid_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Steroid Hormones",
+        "CONCEPT_TESTED": "Steroid Hormones",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Students often think all hormones are stored; steroids are NOT stored. Also, lipophilic → carrier proteins → longer half-life is a key but confusing connection.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Steroid Hormones: Hormones derived from cholesterol via enzymatic reactions. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-011-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_steroid_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Steroid Hormones?",
+      "choices": {
+        "A": "Protein and Peptide Hormones is related to Target Cell and Receptor Requirements.",
+        "B": "Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "C": "Steroid Hormones is related to Protein and Peptide Hormones.",
+        "D": "Protein and Peptide Hormones is unrelated to Steroid Hormones."
+      },
+      "correct_answer": "B",
+      "explanation": "Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "distractor_explanations": {
+        "A": "The taught relationship connects Protein and Peptide Hormones with Steroid Hormones, not Target Cell and Receptor Requirements.",
+        "C": "This reverses the physiological direction between Protein and Peptide Hormones and Steroid Hormones.",
+        "D": "This changes the taught physiological relationship: Protein and Peptide Hormones is directly related to Steroid Hormones."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Steroid Hormones.",
+      "mini_guide": "Steroid Hormones: Hormones derived from cholesterol via enzymatic reactions. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-011-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_steroid_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Steroid Hormones",
+        "CONCEPT_TESTED": "Steroid Hormones",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Steroid Hormones.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Steroid Hormones: Hormones derived from cholesterol via enzymatic reactions. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-011-03",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_steroid_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which physiological connection involving Steroid Hormones is correct?",
+      "choices": {
+        "A": "Steroid Hormones is directly related to Protein and Peptide Hormones.",
+        "B": "Protein and Peptide Hormones is related to Steroid Hormones.",
+        "C": "Steroid Hormones is unrelated to Protein and Peptide Hormones.",
+        "D": "Steroid Hormones is related to Antagonist."
+      },
+      "correct_answer": "A",
+      "explanation": "Steroid Hormones is directly related to Protein and Peptide Hormones.",
+      "distractor_explanations": {
+        "B": "This reverses the physiological direction between Steroid Hormones and Protein and Peptide Hormones.",
+        "C": "This changes the taught physiological relationship: Steroid Hormones is directly related to Protein and Peptide Hormones.",
+        "D": "The taught relationship connects Steroid Hormones with Protein and Peptide Hormones, not Antagonist."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Steroid Hormones.",
+      "mini_guide": "Steroid Hormones: Hormones derived from cholesterol via enzymatic reactions. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+      "question_type": "Cause and effect",
+      "retrieval_angle": "Application of physiological relationship",
+      "assessment_role": "Transfer",
+      "difficulty": "Hard",
+      "bloom_level": "Analyze",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-011-03",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_steroid_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Steroid Hormones",
+        "CONCEPT_TESTED": "Steroid Hormones",
+        "QUESTION_TYPE": "Cause and effect",
+        "RETRIEVAL_ANGLE": "Application of physiological relationship",
+        "ASSESSMENT_ROLE": "Transfer",
+        "DIFFICULTY": "Hard",
+        "BLOOM_LEVEL": "Analyze",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Steroid Hormones.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Steroid Hormones: Hormones derived from cholesterol via enzymatic reactions. Key physiological connection: Protein and Peptide Hormones is directly related to Steroid Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-012-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_amine_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Amine Hormones?",
+      "choices": {
+        "A": "Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary.",
+        "B": "Hormones derived from amino acid tyrosine (or tryptophan).",
+        "C": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
+        "D": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE)."
+      },
+      "correct_answer": "B",
+      "explanation": "Hormones derived from amino acid tyrosine (or tryptophan).",
+      "distractor_explanations": {
+        "A": "This describes Negative Feedback, not Amine Hormones.",
+        "C": "This describes Humoral Regulation of Hormone Secretion, not Amine Hormones.",
+        "D": "This describes Neural Regulation of Hormone Secretion, not Amine Hormones."
+      },
+      "misconception_remediation": "Amine hormones are a mixed class — some act like peptides (epinephrine → membrane receptors), some act like steroids (thyroid hormones → nuclear receptors). Students confuse the subgroup differences.",
+      "mini_guide": "Amine Hormones: Hormones derived from amino acid tyrosine (or tryptophan). Key physiological connection: Protein and Peptide Hormones is directly related to Amine Hormones.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-012-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_amine_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Amine Hormones",
+        "CONCEPT_TESTED": "Amine Hormones",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Amine hormones are a mixed class — some act like peptides (epinephrine → membrane receptors), some act like steroids (thyroid hormones → nuclear receptors). Students confuse the subgroup differences.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Amine Hormones: Hormones derived from amino acid tyrosine (or tryptophan). Key physiological connection: Protein and Peptide Hormones is directly related to Amine Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-012-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st4_lo1_amine_hormones"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st4_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Amine Hormones?",
+      "choices": {
+        "A": "Protein and Peptide Hormones is directly related to Amine Hormones.",
+        "B": "Amine Hormones is related to Protein and Peptide Hormones.",
+        "C": "Protein and Peptide Hormones is unrelated to Amine Hormones.",
+        "D": "Protein and Peptide Hormones is related to Hormone Clearance and Blood Levels."
+      },
+      "correct_answer": "A",
+      "explanation": "Protein and Peptide Hormones is directly related to Amine Hormones.",
+      "distractor_explanations": {
+        "B": "This reverses the physiological direction between Protein and Peptide Hormones and Amine Hormones.",
+        "C": "This changes the taught physiological relationship: Protein and Peptide Hormones is directly related to Amine Hormones.",
+        "D": "The taught relationship connects Protein and Peptide Hormones with Amine Hormones, not Hormone Clearance and Blood Levels."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Amine Hormones.",
+      "mini_guide": "Amine Hormones: Hormones derived from amino acid tyrosine (or tryptophan). Key physiological connection: Protein and Peptide Hormones is directly related to Amine Hormones.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 7",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-012-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st4_lo1_amine_hormones",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st4_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Amine Hormones",
+        "CONCEPT_TESTED": "Amine Hormones",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 7",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Amine Hormones.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Amine Hormones: Hormones derived from amino acid tyrosine (or tryptophan). Key physiological connection: Protein and Peptide Hormones is directly related to Amine Hormones.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-013-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_humoral_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Humoral Regulation of Hormone Secretion?",
+      "choices": {
+        "A": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
+        "B": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE).",
+        "C": "Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary.",
+        "D": "Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery."
+      },
+      "correct_answer": "A",
+      "explanation": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
+      "distractor_explanations": {
+        "B": "This describes Neural Regulation of Hormone Secretion, not Humoral Regulation of Hormone Secretion.",
+        "C": "This describes Negative Feedback, not Humoral Regulation of Hormone Secretion.",
+        "D": "This describes Positive Feedback, not Humoral Regulation of Hormone Secretion."
+      },
+      "misconception_remediation": "'Humoral' is an unfamiliar term; students may not connect it to blood composition changes",
+      "mini_guide": "Humoral Regulation of Hormone Secretion: Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓. Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 8",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-013-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_humoral_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Humoral Regulation of Hormone Secretion",
+        "CONCEPT_TESTED": "Humoral Regulation of Hormone Secretion",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 8",
+        "MISCONCEPTION_DETECTED": "'Humoral' is an unfamiliar term; students may not connect it to blood composition changes",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Humoral Regulation of Hormone Secretion: Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓. Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-013-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_humoral_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Humoral Regulation of Hormone Secretion?",
+      "choices": {
+        "A": "Neural Regulation of Hormone Secretion is related to Humoral Regulation of Hormone Secretion.",
+        "B": "Humoral Regulation of Hormone Secretion is unrelated to Neural Regulation of Hormone Secretion.",
+        "C": "Humoral Regulation of Hormone Secretion is related to Up-Regulation.",
+        "D": "Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion."
+      },
+      "correct_answer": "D",
+      "explanation": "Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+      "distractor_explanations": {
+        "A": "This reverses the physiological direction between Humoral Regulation of Hormone Secretion and Neural Regulation of Hormone Secretion.",
+        "B": "This changes the taught physiological relationship: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+        "C": "The taught relationship connects Humoral Regulation of Hormone Secretion with Neural Regulation of Hormone Secretion, not Up-Regulation."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Humoral Regulation of Hormone Secretion.",
+      "mini_guide": "Humoral Regulation of Hormone Secretion: Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓. Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 8",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-013-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_humoral_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Humoral Regulation of Hormone Secretion",
+        "CONCEPT_TESTED": "Humoral Regulation of Hormone Secretion",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 8",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Humoral Regulation of Hormone Secretion.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Humoral Regulation of Hormone Secretion: Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓. Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-014-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_neural_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Neural Regulation of Hormone Secretion?",
+      "choices": {
+        "A": "Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary.",
+        "B": "Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery.",
+        "C": "Periodic variation in hormone release.",
+        "D": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE)."
+      },
+      "correct_answer": "D",
+      "explanation": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE).",
+      "distractor_explanations": {
+        "A": "This describes Negative Feedback, not Neural Regulation of Hormone Secretion.",
+        "B": "This describes Positive Feedback, not Neural Regulation of Hormone Secretion.",
+        "C": "This describes Cyclical Regulation, not Neural Regulation of Hormone Secretion."
+      },
+      "misconception_remediation": "Students may confuse this with neuroendocrine signaling; neural regulation is the stimulus, not the signaling type",
+      "mini_guide": "Neural Regulation of Hormone Secretion: Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE). Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 8",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-014-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_neural_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Neural Regulation of Hormone Secretion",
+        "CONCEPT_TESTED": "Neural Regulation of Hormone Secretion",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 8",
+        "MISCONCEPTION_DETECTED": "Students may confuse this with neuroendocrine signaling; neural regulation is the stimulus, not the signaling type",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Neural Regulation of Hormone Secretion: Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE). Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-014-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_neural_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Neural Regulation of Hormone Secretion?",
+      "choices": {
+        "A": "Humoral Regulation of Hormone Secretion is unrelated to Neural Regulation of Hormone Secretion.",
+        "B": "Humoral Regulation of Hormone Secretion is related to Down-Regulation.",
+        "C": "Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+        "D": "Neural Regulation of Hormone Secretion is related to Humoral Regulation of Hormone Secretion."
+      },
+      "correct_answer": "C",
+      "explanation": "Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+      "distractor_explanations": {
+        "A": "This changes the taught physiological relationship: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+        "B": "The taught relationship connects Humoral Regulation of Hormone Secretion with Neural Regulation of Hormone Secretion, not Down-Regulation.",
+        "D": "This reverses the physiological direction between Humoral Regulation of Hormone Secretion and Neural Regulation of Hormone Secretion."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Neural Regulation of Hormone Secretion.",
+      "mini_guide": "Neural Regulation of Hormone Secretion: Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE). Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 8",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-014-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_neural_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Neural Regulation of Hormone Secretion",
+        "CONCEPT_TESTED": "Neural Regulation of Hormone Secretion",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 8",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Neural Regulation of Hormone Secretion.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Neural Regulation of Hormone Secretion: Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE). Key physiological connection: Humoral Regulation of Hormone Secretion is directly related to Neural Regulation of Hormone Secretion.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-015-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_negative_feedback"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Negative Feedback?",
+      "choices": {
+        "A": "Periodic variation in hormone release.",
+        "B": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
+        "C": "Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary.",
+        "D": "Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery."
+      },
+      "correct_answer": "C",
+      "explanation": "Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary.",
+      "distractor_explanations": {
+        "A": "This describes Cyclical Regulation, not Negative Feedback.",
+        "B": "This describes Humoral Regulation of Hormone Secretion, not Negative Feedback.",
+        "D": "This describes Positive Feedback, not Negative Feedback."
+      },
+      "misconception_remediation": "Students confuse negative vs. positive feedback; negative feedback INHIBITS its own production (self-limiting), not the opposite hormone",
+      "mini_guide": "Negative Feedback: Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 8; Slide 9",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-015-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_negative_feedback",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Negative Feedback",
+        "CONCEPT_TESTED": "Negative Feedback",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 8; Slide 9",
+        "MISCONCEPTION_DETECTED": "Students confuse negative vs. positive feedback; negative feedback INHIBITS its own production (self-limiting), not the opposite hormone",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Negative Feedback: Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-015-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_negative_feedback"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Negative Feedback?",
+      "choices": {
+        "A": "Negative Feedback is related to Agonist.",
+        "B": "Negative Feedback is directly related to Positive Feedback.",
+        "C": "Positive Feedback is related to Negative Feedback.",
+        "D": "Negative Feedback is unrelated to Positive Feedback."
+      },
+      "correct_answer": "B",
+      "explanation": "Negative Feedback is directly related to Positive Feedback.",
+      "distractor_explanations": {
+        "A": "The taught relationship connects Negative Feedback with Positive Feedback, not Agonist.",
+        "C": "This reverses the physiological direction between Negative Feedback and Positive Feedback.",
+        "D": "This changes the taught physiological relationship: Negative Feedback is directly related to Positive Feedback."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Negative Feedback.",
+      "mini_guide": "Negative Feedback: Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 8; Slide 9",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-015-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_negative_feedback",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Negative Feedback",
+        "CONCEPT_TESTED": "Negative Feedback",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 8; Slide 9",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Negative Feedback.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Negative Feedback: Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-015-03",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_negative_feedback"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which physiological connection involving Negative Feedback is correct?",
+      "choices": {
+        "A": "Negative Feedback is a prerequisite for Positive Feedback.",
+        "B": "Positive Feedback prerequisite of Negative Feedback.",
+        "C": "Negative Feedback depends on Positive Feedback.",
+        "D": "Negative Feedback prerequisite of Neuroendocrine Signaling."
+      },
+      "correct_answer": "A",
+      "explanation": "Negative Feedback is a prerequisite for Positive Feedback.",
+      "distractor_explanations": {
+        "B": "This reverses the physiological direction between Negative Feedback and Positive Feedback.",
+        "C": "This changes the taught physiological relationship: Negative Feedback is a prerequisite for Positive Feedback.",
+        "D": "The taught relationship connects Negative Feedback with Positive Feedback, not Neuroendocrine Signaling."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Negative Feedback.",
+      "mini_guide": "Negative Feedback: Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+      "question_type": "Cause and effect",
+      "retrieval_angle": "Application of physiological relationship",
+      "assessment_role": "Transfer",
+      "difficulty": "Hard",
+      "bloom_level": "Analyze",
+      "source_section": "Slide 8; Slide 9",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-015-03",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_negative_feedback",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Negative Feedback",
+        "CONCEPT_TESTED": "Negative Feedback",
+        "QUESTION_TYPE": "Cause and effect",
+        "RETRIEVAL_ANGLE": "Application of physiological relationship",
+        "ASSESSMENT_ROLE": "Transfer",
+        "DIFFICULTY": "Hard",
+        "BLOOM_LEVEL": "Analyze",
+        "SOURCE_SECTION": "Slide 8; Slide 9",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Negative Feedback.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Negative Feedback: Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-016-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_positive_feedback"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Positive Feedback?",
+      "choices": {
+        "A": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE).",
+        "B": "Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery.",
+        "C": "Periodic variation in hormone release.",
+        "D": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓."
+      },
+      "correct_answer": "B",
+      "explanation": "Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery.",
+      "distractor_explanations": {
+        "A": "This describes Neural Regulation of Hormone Secretion, not Positive Feedback.",
+        "C": "This describes Cyclical Regulation, not Positive Feedback.",
+        "D": "This describes Humoral Regulation of Hormone Secretion, not Positive Feedback."
+      },
+      "misconception_remediation": "Positive feedback is less common and feels 'unstable' compared to negative feedback; students may confuse the oxytocin loop direction",
+      "mini_guide": "Positive Feedback: Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 9",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-016-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_positive_feedback",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Positive Feedback",
+        "CONCEPT_TESTED": "Positive Feedback",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 9",
+        "MISCONCEPTION_DETECTED": "Positive feedback is less common and feels 'unstable' compared to negative feedback; students may confuse the oxytocin loop direction",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Positive Feedback: Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-016-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_positive_feedback"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Positive Feedback?",
+      "choices": {
+        "A": "Negative Feedback is directly related to Positive Feedback.",
+        "B": "Positive Feedback is related to Negative Feedback.",
+        "C": "Negative Feedback is unrelated to Positive Feedback.",
+        "D": "Negative Feedback is related to Antagonist."
+      },
+      "correct_answer": "A",
+      "explanation": "Negative Feedback is directly related to Positive Feedback.",
+      "distractor_explanations": {
+        "B": "This reverses the physiological direction between Negative Feedback and Positive Feedback.",
+        "C": "This changes the taught physiological relationship: Negative Feedback is directly related to Positive Feedback.",
+        "D": "The taught relationship connects Negative Feedback with Positive Feedback, not Antagonist."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Positive Feedback.",
+      "mini_guide": "Positive Feedback: Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 9",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-016-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_positive_feedback",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Positive Feedback",
+        "CONCEPT_TESTED": "Positive Feedback",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 9",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Positive Feedback.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Positive Feedback: Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery. Key physiological connection: Negative Feedback is directly related to Positive Feedback.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-017-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st5_lo1_cyclical_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st5_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Cyclical Regulation?",
+      "choices": {
+        "A": "Periodic variation in hormone release.",
+        "B": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
+        "C": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE).",
+        "D": "Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary."
+      },
+      "correct_answer": "A",
+      "explanation": "Periodic variation in hormone release.",
+      "distractor_explanations": {
+        "B": "This describes Humoral Regulation of Hormone Secretion, not Cyclical Regulation.",
+        "C": "This describes Neural Regulation of Hormone Secretion, not Cyclical Regulation.",
+        "D": "This describes Negative Feedback, not Cyclical Regulation."
+      },
+      "misconception_remediation": "Students may not recognize this as a distinct regulatory pattern separate from negative/positive feedback",
+      "mini_guide": "Cyclical Regulation: Periodic variation in hormone release. Key physiological connection: Cyclical Regulation is directly related to Negative Feedback.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 9",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-017-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st5_lo1_cyclical_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st5_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Cyclical Regulation",
+        "CONCEPT_TESTED": "Cyclical Regulation",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 9",
+        "MISCONCEPTION_DETECTED": "Students may not recognize this as a distinct regulatory pattern separate from negative/positive feedback",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Cyclical Regulation: Periodic variation in hormone release. Key physiological connection: Cyclical Regulation is directly related to Negative Feedback.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-018-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st6_lo1_target_cell_receptor_requirements"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st6_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Target Cell and Receptor Requirements?",
+      "choices": {
+        "A": "Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly.",
+        "B": "Blood hormone levels determined by rate of secretion AND rate of clearance.",
+        "C": "Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity.",
+        "D": "A specific cell that possesses the appropriate protein receptor for a given hormone."
+      },
+      "correct_answer": "D",
+      "explanation": "A specific cell that possesses the appropriate protein receptor for a given hormone.",
+      "distractor_explanations": {
+        "A": "This describes Down-Regulation, not Target Cell and Receptor Requirements.",
+        "B": "This describes Hormone Clearance and Blood Levels, not Target Cell and Receptor Requirements.",
+        "C": "This describes Up-Regulation, not Target Cell and Receptor Requirements."
+      },
+      "misconception_remediation": "Students may think all cells respond to all hormones; specificity of receptor expression is key",
+      "mini_guide": "Target Cell and Receptor Requirements: A specific cell that possesses the appropriate protein receptor for a given hormone. Key physiological connection: Endocrine Signaling is a prerequisite for Target Cell and Receptor Requirements.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 10",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-018-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st6_lo1_target_cell_receptor_requirements",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st6_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Target Cell and Receptor Requirements",
+        "CONCEPT_TESTED": "Target Cell and Receptor Requirements",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 10",
+        "MISCONCEPTION_DETECTED": "Students may think all cells respond to all hormones; specificity of receptor expression is key",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Target Cell and Receptor Requirements: A specific cell that possesses the appropriate protein receptor for a given hormone. Key physiological connection: Endocrine Signaling is a prerequisite for Target Cell and Receptor Requirements.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-018-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st6_lo1_target_cell_receptor_requirements"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st6_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Target Cell and Receptor Requirements?",
+      "choices": {
+        "A": "Endocrine Signaling depends on Target Cell and Receptor Requirements.",
+        "B": "Endocrine Signaling prerequisite of Neural Signaling.",
+        "C": "Endocrine Signaling is a prerequisite for Target Cell and Receptor Requirements.",
+        "D": "Target Cell and Receptor Requirements prerequisite of Endocrine Signaling."
+      },
+      "correct_answer": "C",
+      "explanation": "Endocrine Signaling is a prerequisite for Target Cell and Receptor Requirements.",
+      "distractor_explanations": {
+        "A": "This changes the taught physiological relationship: Endocrine Signaling is a prerequisite for Target Cell and Receptor Requirements.",
+        "B": "The taught relationship connects Endocrine Signaling with Target Cell and Receptor Requirements, not Neural Signaling.",
+        "D": "This reverses the physiological direction between Endocrine Signaling and Target Cell and Receptor Requirements."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Target Cell and Receptor Requirements.",
+      "mini_guide": "Target Cell and Receptor Requirements: A specific cell that possesses the appropriate protein receptor for a given hormone. Key physiological connection: Endocrine Signaling is a prerequisite for Target Cell and Receptor Requirements.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 10",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-018-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st6_lo1_target_cell_receptor_requirements",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st6_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Target Cell and Receptor Requirements",
+        "CONCEPT_TESTED": "Target Cell and Receptor Requirements",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 10",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Target Cell and Receptor Requirements.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Target Cell and Receptor Requirements: A specific cell that possesses the appropriate protein receptor for a given hormone. Key physiological connection: Endocrine Signaling is a prerequisite for Target Cell and Receptor Requirements.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-019-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st6_lo1_hormone_clearance"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st6_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Hormone Clearance and Blood Levels?",
+      "choices": {
+        "A": "Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity.",
+        "B": "Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly.",
+        "C": "Blood hormone levels determined by rate of secretion AND rate of clearance.",
+        "D": "A specific cell that possesses the appropriate protein receptor for a given hormone."
+      },
+      "correct_answer": "C",
+      "explanation": "Blood hormone levels determined by rate of secretion AND rate of clearance.",
+      "distractor_explanations": {
+        "A": "This describes Up-Regulation, not Hormone Clearance and Blood Levels.",
+        "B": "This describes Down-Regulation, not Hormone Clearance and Blood Levels.",
+        "D": "This describes Target Cell and Receptor Requirements, not Hormone Clearance and Blood Levels."
+      },
+      "misconception_remediation": "Students often focus only on secretion and forget clearance",
+      "mini_guide": "Hormone Clearance and Blood Levels: Blood hormone levels determined by rate of secretion AND rate of clearance.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 10",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-019-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st6_lo1_hormone_clearance",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st6_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Hormone Clearance and Blood Levels",
+        "CONCEPT_TESTED": "Hormone Clearance and Blood Levels",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 10",
+        "MISCONCEPTION_DETECTED": "Students often focus only on secretion and forget clearance",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Hormone Clearance and Blood Levels: Blood hormone levels determined by rate of secretion AND rate of clearance.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-020-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st6_lo1_up_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st6_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Up-Regulation?",
+      "choices": {
+        "A": "A specific cell that possesses the appropriate protein receptor for a given hormone.",
+        "B": "Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity.",
+        "C": "Blood hormone levels determined by rate of secretion AND rate of clearance.",
+        "D": "Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly."
+      },
+      "correct_answer": "B",
+      "explanation": "Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity.",
+      "distractor_explanations": {
+        "A": "This describes Target Cell and Receptor Requirements, not Up-Regulation.",
+        "C": "This describes Hormone Clearance and Blood Levels, not Up-Regulation.",
+        "D": "This describes Down-Regulation, not Up-Regulation."
+      },
+      "misconception_remediation": "The direction is confusing — up-regulation INCREASES sensitivity, which seems counterintuitive if hormone levels are high",
+      "mini_guide": "Up-Regulation: Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity. Key physiological connection: Target Cell and Receptor Requirements is directly related to Up-Regulation.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 10; Slide 11",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-020-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st6_lo1_up_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st6_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Up-Regulation",
+        "CONCEPT_TESTED": "Up-Regulation",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 10; Slide 11",
+        "MISCONCEPTION_DETECTED": "The direction is confusing — up-regulation INCREASES sensitivity, which seems counterintuitive if hormone levels are high",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Up-Regulation: Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity. Key physiological connection: Target Cell and Receptor Requirements is directly related to Up-Regulation.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-020-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st6_lo1_up_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st6_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Up-Regulation?",
+      "choices": {
+        "A": "Target Cell and Receptor Requirements is directly related to Up-Regulation.",
+        "B": "Up-Regulation is related to Target Cell and Receptor Requirements.",
+        "C": "Target Cell and Receptor Requirements is unrelated to Up-Regulation.",
+        "D": "Target Cell and Receptor Requirements is related to Neuroendocrine Signaling."
+      },
+      "correct_answer": "A",
+      "explanation": "Target Cell and Receptor Requirements is directly related to Up-Regulation.",
+      "distractor_explanations": {
+        "B": "This reverses the physiological direction between Target Cell and Receptor Requirements and Up-Regulation.",
+        "C": "This changes the taught physiological relationship: Target Cell and Receptor Requirements is directly related to Up-Regulation.",
+        "D": "The taught relationship connects Target Cell and Receptor Requirements with Up-Regulation, not Neuroendocrine Signaling."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Up-Regulation.",
+      "mini_guide": "Up-Regulation: Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity. Key physiological connection: Target Cell and Receptor Requirements is directly related to Up-Regulation.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 10; Slide 11",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-020-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st6_lo1_up_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st6_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Up-Regulation",
+        "CONCEPT_TESTED": "Up-Regulation",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 10; Slide 11",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Up-Regulation.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Up-Regulation: Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity. Key physiological connection: Target Cell and Receptor Requirements is directly related to Up-Regulation.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-021-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st6_lo1_down_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st6_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Down-Regulation?",
+      "choices": {
+        "A": "Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly.",
+        "B": "Increased number or affinity of receptors → greater sensitivity. Increased hormone sensitivity.",
+        "C": "A specific cell that possesses the appropriate protein receptor for a given hormone.",
+        "D": "Blood hormone levels determined by rate of secretion AND rate of clearance."
+      },
+      "correct_answer": "A",
+      "explanation": "Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly.",
+      "distractor_explanations": {
+        "B": "This describes Up-Regulation, not Down-Regulation.",
+        "C": "This describes Target Cell and Receptor Requirements, not Down-Regulation.",
+        "D": "This describes Hormone Clearance and Blood Levels, not Down-Regulation."
+      },
+      "misconception_remediation": "Students confuse up-regulation and down-regulation or think they are inherently 'bad'",
+      "mini_guide": "Down-Regulation: Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly. Key physiological connection: Target Cell and Receptor Requirements is directly related to Down-Regulation.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 10; Slide 11",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-021-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st6_lo1_down_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st6_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Down-Regulation",
+        "CONCEPT_TESTED": "Down-Regulation",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 10; Slide 11",
+        "MISCONCEPTION_DETECTED": "Students confuse up-regulation and down-regulation or think they are inherently 'bad'",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Down-Regulation: Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly. Key physiological connection: Target Cell and Receptor Requirements is directly related to Down-Regulation.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-021-02",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st6_lo1_down_regulation"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st6_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement correctly describes a physiological relationship involving Down-Regulation?",
+      "choices": {
+        "A": "Down-Regulation is related to Target Cell and Receptor Requirements.",
+        "B": "Target Cell and Receptor Requirements is unrelated to Down-Regulation.",
+        "C": "Target Cell and Receptor Requirements is related to Paracrine Signaling.",
+        "D": "Target Cell and Receptor Requirements is directly related to Down-Regulation."
+      },
+      "correct_answer": "D",
+      "explanation": "Target Cell and Receptor Requirements is directly related to Down-Regulation.",
+      "distractor_explanations": {
+        "A": "This reverses the physiological direction between Target Cell and Receptor Requirements and Down-Regulation.",
+        "B": "This changes the taught physiological relationship: Target Cell and Receptor Requirements is directly related to Down-Regulation.",
+        "C": "The taught relationship connects Target Cell and Receptor Requirements with Down-Regulation, not Paracrine Signaling."
+      },
+      "misconception_remediation": "Reversing or substituting the physiological relationship involving Down-Regulation.",
+      "mini_guide": "Down-Regulation: Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly. Key physiological connection: Target Cell and Receptor Requirements is directly related to Down-Regulation.",
+      "question_type": "Mechanism",
+      "retrieval_angle": "Relationship direction",
+      "assessment_role": "Relationship check",
+      "difficulty": "Moderate",
+      "bloom_level": "Apply",
+      "source_section": "Slide 10; Slide 11",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-021-02",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st6_lo1_down_regulation",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st6_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Down-Regulation",
+        "CONCEPT_TESTED": "Down-Regulation",
+        "QUESTION_TYPE": "Mechanism",
+        "RETRIEVAL_ANGLE": "Relationship direction",
+        "ASSESSMENT_ROLE": "Relationship check",
+        "DIFFICULTY": "Moderate",
+        "BLOOM_LEVEL": "Apply",
+        "SOURCE_SECTION": "Slide 10; Slide 11",
+        "MISCONCEPTION_DETECTED": "Reversing or substituting the physiological relationship involving Down-Regulation.",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Down-Regulation: Decreased number or affinity → reduced sensitivity. Reduced hormone sensitivity; receptors are degraded & replaced regularly. Key physiological connection: Target Cell and Receptor Requirements is directly related to Down-Regulation.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-022-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st7_lo1_agonist"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st7_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Agonist?",
+      "choices": {
+        "A": "Binds to receptors but does NOT provoke the normal biological response — blocks the receptor.",
+        "B": "Two or more hormones acting together produce an effect GREATER than either hormone alone.",
+        "C": "Hormones released from specialized glands enter the circulating blood and influence distant target cells. Hormone secretion → circulation → target cell receptor binding → cellular response. Most hormone systems operate via endocrine signaling.",
+        "D": "Analog of a hormone that binds to a receptor and MIMICS the biological action of the endogenous hormone."
+      },
+      "correct_answer": "D",
+      "explanation": "Analog of a hormone that binds to a receptor and MIMICS the biological action of the endogenous hormone.",
+      "distractor_explanations": {
+        "A": "This describes Antagonist, not Agonist.",
+        "B": "This describes Synergism, not Agonist.",
+        "C": "This describes Endocrine Signaling, not Agonist."
+      },
+      "misconception_remediation": "Students confuse agonist with antagonist; agonist ACTIVATES, antagonist BLOCKS",
+      "mini_guide": "Agonist: Analog of a hormone that binds to a receptor and MIMICS the biological action of the endogenous hormone. Key physiological connection: Target Cell and Receptor Requirements is a prerequisite for Agonist.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 11",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-022-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st7_lo1_agonist",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st7_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Agonist",
+        "CONCEPT_TESTED": "Agonist",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 11",
+        "MISCONCEPTION_DETECTED": "Students confuse agonist with antagonist; agonist ACTIVATES, antagonist BLOCKS",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Agonist: Analog of a hormone that binds to a receptor and MIMICS the biological action of the endogenous hormone. Key physiological connection: Target Cell and Receptor Requirements is a prerequisite for Agonist.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-023-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st7_lo1_antagonist"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st7_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Antagonist?",
+      "choices": {
+        "A": "Hormones released from specialized glands enter the circulating blood and influence distant target cells. Hormone secretion → circulation → target cell receptor binding → cellular response. Most hormone systems operate via endocrine signaling.",
+        "B": "Neurotransmitters released at synaptic junctions act locally on adjacent cells. Synaptic junctions. Action potential → neurotransmitter release → synaptic cleft → postsynaptic receptor binding.",
+        "C": "Binds to receptors but does NOT provoke the normal biological response — blocks the receptor.",
+        "D": "Two or more hormones acting together produce an effect GREATER than either hormone alone."
+      },
+      "correct_answer": "C",
+      "explanation": "Binds to receptors but does NOT provoke the normal biological response — blocks the receptor.",
+      "distractor_explanations": {
+        "A": "This describes Endocrine Signaling, not Antagonist.",
+        "B": "This describes Neural Signaling, not Antagonist.",
+        "D": "This describes Synergism, not Antagonist."
+      },
+      "misconception_remediation": "Students confuse antagonist with agonist; antagonist BLOCKS, agonist ACTIVATES",
+      "mini_guide": "Antagonist: Binds to receptors but does NOT provoke the normal biological response — blocks the receptor. Key physiological connection: Agonist is directly related to Antagonist.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 11",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-023-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st7_lo1_antagonist",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st7_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Antagonist",
+        "CONCEPT_TESTED": "Antagonist",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 11",
+        "MISCONCEPTION_DETECTED": "Students confuse antagonist with agonist; antagonist BLOCKS, agonist ACTIVATES",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Antagonist: Binds to receptors but does NOT provoke the normal biological response — blocks the receptor. Key physiological connection: Agonist is directly related to Antagonist.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    },
+    {
+      "question_id": "Q-ENDO-024-01",
+      "canonical_concept_ids": [
+        "physio1_exam4_endocrinology_st7_lo1_synergism"
+      ],
+      "loid_ids": [
+        "physio1_exam4_endocrinology_st7_lo1"
+      ],
+      "module_id": "intro-to-endocrinology",
+      "format": "multiple-choice",
+      "prompt": "Which statement most accurately characterizes Synergism?",
+      "choices": {
+        "A": "Cells release hormones into blood in response to nervous system stimulation. Neural activation → hormone secretion into bloodstream.",
+        "B": "Two or more hormones acting together produce an effect GREATER than either hormone alone.",
+        "C": "Hormones released from specialized glands enter the circulating blood and influence distant target cells. Hormone secretion → circulation → target cell receptor binding → cellular response. Most hormone systems operate via endocrine signaling.",
+        "D": "Neurotransmitters released at synaptic junctions act locally on adjacent cells. Synaptic junctions. Action potential → neurotransmitter release → synaptic cleft → postsynaptic receptor binding."
+      },
+      "correct_answer": "B",
+      "explanation": "Two or more hormones acting together produce an effect GREATER than either hormone alone.",
+      "distractor_explanations": {
+        "A": "This describes Neuroendocrine Signaling, not Synergism.",
+        "C": "This describes Endocrine Signaling, not Synergism.",
+        "D": "This describes Neural Signaling, not Synergism."
+      },
+      "misconception_remediation": "Students confuse synergism with additive effect; synergism is GREATER than the sum",
+      "mini_guide": "Synergism: Two or more hormones acting together produce an effect GREATER than either hormone alone.",
+      "question_type": "Concept recognition",
+      "retrieval_angle": "Definition-to-concept discrimination",
+      "assessment_role": "Foundation",
+      "difficulty": "Easy",
+      "bloom_level": "Understand",
+      "source_section": "Slide 11",
+      "source_confidence": "Moderate — slides-only; exam and board relevance are inferred",
+      "clinical_tags": "None",
+      "metadata": {
+        "QUESTION_ID": "Q-ENDO-024-01",
+        "CONCEPT_ID": "physio1_exam4_endocrinology_st7_lo1_synergism",
+        "LEARNING_OBJECTIVE_ID": "physio1_exam4_endocrinology_st7_lo1",
+        "TOPIC": "Intro to Endocrinology",
+        "SUBTOPIC": "Synergism",
+        "CONCEPT_TESTED": "Synergism",
+        "QUESTION_TYPE": "Concept recognition",
+        "RETRIEVAL_ANGLE": "Definition-to-concept discrimination",
+        "ASSESSMENT_ROLE": "Foundation",
+        "DIFFICULTY": "Easy",
+        "BLOOM_LEVEL": "Understand",
+        "SOURCE_SECTION": "Slide 11",
+        "MISCONCEPTION_DETECTED": "Students confuse synergism with additive effect; synergism is GREATER than the sum",
+        "DISTRACTOR_MISCONCEPTIONS": "Direction reversal; concept substitution; relationship-type substitution",
+        "MINI_GUIDE": "Synergism: Two or more hormones acting together produce an effect GREATER than either hormone alone.",
+        "SOURCE_CONFIDENCE": "Moderate — slides-only; exam and board relevance are inferred",
+        "BOARD_RELEVANCE": "Inferred; not directly established by supplied source package",
+        "CLINICAL_TAGS": "None",
+        "AUDIT_STATUS": "Source-aligned learner-language audit complete",
+        "IMPORT_STATUS": "Ready for StudyOS quiz-engine conversion"
+      }
+    }
+  ]
+}

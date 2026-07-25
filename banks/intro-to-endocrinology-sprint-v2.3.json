@@ -1,4 +1,4 @@
-window.INTRO_ENDOCRINOLOGY_SPRINT_BANK = {
+{
   "schemaVersion": "1.0.0",
   "bankId": "intro_endocrinology_sprint_v2_3",
   "bankType": "sprint",
@@ -844,5 +844,4 @@ window.INTRO_ENDOCRINOLOGY_SPRINT_BANK = {
       }
     }
   ]
-};
-window.INTRO_ENDOCRINOLOGY_SPRINT_QUESTIONS = window.INTRO_ENDOCRINOLOGY_SPRINT_BANK.questions;
+}

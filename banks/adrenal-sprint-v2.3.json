@@ -1,4 +1,4 @@
-window.ADRENAL_SPRINT_BANK = {
+{
   "schemaVersion": "1.0.0",
   "bankId": "adrenal_sprint_v2_3",
   "bankType": "sprint",
@@ -1247,5 +1247,4 @@ window.ADRENAL_SPRINT_BANK = {
       }
     }
   ]
-};
-window.ADRENAL_SPRINT_QUESTIONS = window.ADRENAL_SPRINT_BANK.questions;
+}

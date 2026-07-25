@@ -335,6 +335,36 @@
       box-shadow:0 0 0 2px rgba(31,111,235,.13);
     }
 
+    .lab-question-type-selector {
+      display:flex;
+      width:max-content;
+      max-width:100%;
+      align-items:center;
+      gap:3px;
+      margin:8px 0 12px;
+      padding:3px;
+      border:1px solid var(--line);
+      border-radius:9px;
+      background:var(--panel);
+      box-shadow:0 5px 14px rgba(21,36,56,.06);
+    }
+
+    .lab-question-type-button {
+      min-height:32px;
+      padding:5px 13px;
+      border-color:transparent;
+      border-radius:7px;
+      background:transparent;
+      line-height:1.1;
+      text-align:center;
+    }
+
+    .lab-question-type-button.active {
+      border-color:var(--blue);
+      background:var(--active);
+      box-shadow:0 0 0 2px rgba(31,111,235,.13);
+    }
+
     .session-mode-caption {
       display:block;
       margin-top:3px;
@@ -378,7 +408,9 @@
     }
 
     body[data-theme="dark"] .pituitary-mode-selector,
-    body[data-theme="dark"] .pituitary-mode-button {
+    body[data-theme="dark"] .pituitary-mode-button,
+    body[data-theme="dark"] .lab-question-type-selector,
+    body[data-theme="dark"] .lab-question-type-button {
       border-color:rgba(255,255,255,.10);
     }
 
@@ -1619,6 +1651,51 @@
 
     .modal-backdrop.hidden { display:none; }
 
+    .new-modes-tour {
+      position:fixed;
+      inset:0;
+      z-index:70;
+      background:rgba(15,23,42,.58);
+    }
+
+    .new-modes-tour.hidden { display:none; }
+
+    body.new-modes-tour-active .pituitary-mode-selector {
+      position:relative;
+      z-index:71;
+      border-color:#62d8c1;
+      box-shadow:
+        0 0 0 4px rgba(98,216,193,.3),
+        0 0 0 9px rgba(255,255,255,.92),
+        0 14px 34px rgba(15,23,42,.34);
+    }
+
+    .new-modes-tour-card {
+      position:fixed;
+      z-index:72;
+      width:min(390px,calc(100vw - 28px));
+      padding:17px 18px;
+      border:1px solid rgba(98,216,193,.72);
+      border-radius:12px;
+      background:var(--panel);
+      box-shadow:0 22px 60px rgba(15,23,42,.34);
+    }
+
+    .new-modes-tour-card h3 {
+      margin:0 0 7px;
+      font-size:1.12rem;
+    }
+
+    .new-modes-tour-card p {
+      margin:0;
+      color:var(--muted);
+      line-height:1.45;
+    }
+
+    .new-modes-tour-card .modal-actions {
+      margin-top:14px;
+    }
+
     .modal-box {
       max-width:520px;
       width:min(100%,520px);
@@ -2051,10 +2128,16 @@
       <div id="pituitaryModeSelector" class="pituitary-mode-selector" aria-label="Study mode">
         <button class="pituitary-mode-button" type="button" data-session-mode="learn">Learn</button>
         <button class="pituitary-mode-button" type="button" data-session-mode="practice">Practice</button>
+        <button class="pituitary-mode-button" type="button" data-session-mode="labs">Labs</button>
       </div>
       <span id="examCountdownPill" class="exam-countdown-pill hidden" aria-live="polite"></span>
     </div>
     <div id="unitTabs" class="unit-tabs" aria-label="Physiology module tabs"></div>
+    <div id="labQuestionTypeSelector" class="lab-question-type-selector hidden" aria-label="Lab question type">
+      <button class="lab-question-type-button" type="button" data-lab-question-type="all">All</button>
+      <button class="lab-question-type-button" type="button" data-lab-question-type="learn">Learn</button>
+      <button class="lab-question-type-button" type="button" data-lab-question-type="mixed">Mixed Review</button>
+    </div>
     <div id="unitIntro" class="big-question">Choose a unit to start.</div>
 
     <div class="practice-panel">
@@ -2273,6 +2356,16 @@
       </div>
     </div>
 
+    <div id="newModesTour" class="new-modes-tour hidden" role="dialog" aria-modal="true" aria-labelledby="newModesTourTitle" aria-describedby="newModesTourBody">
+      <div id="newModesTourCard" class="new-modes-tour-card">
+        <h3 id="newModesTourTitle">New ways to study</h3>
+        <p id="newModesTourBody">Use these tabs to switch between guided Learn questions, full Practice questions, and focused Lab review.</p>
+        <div class="modal-actions">
+          <button id="dismissNewModesTour" type="button">OK</button>
+        </div>
+      </div>
+    </div>
+
     <div id="quizSummaryModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="quizSummaryTitle">
       <div class="modal-box">
         <h3 id="quizSummaryTitle">Quiz Summary</h3>
@@ -2435,7 +2528,17 @@
 <script src="banks/endocrine-pancreas-sprint-v2.3.js"></script>
 <script src="banks/calcium-phosphate-sprint-v2.3.js"></script>
 <script src="banks/body-temperature-sprint-v2.3.js"></script>
+<script src="banks/female-reproduction-sprint-v2.3.js"></script>
+<script src="banks/male-reproduction-sprint-v2.3.js"></script>
+<script src="banks/calcium-phosphate-practice-v1.js"></script>
+<script src="banks/body-temperature-practice-v1.js"></script>
+<script src="banks/female-reproduction-practice-v1.js"></script>
+<script src="banks/male-reproduction-practice-v1.js"></script>
+<script src="banks/lab10-gh-adh-sprint-v2.3.js"></script>
+<script src="banks/lab11-thyroid-adrenal-sprint-v2.3.js"></script>
+<script src="banks/lab12-calcium-diabetes-sprint-v2.3.js"></script>
 <script src="banks/week12-glossary.js"></script>
+<script src="banks/week13-glossary.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   var EXAM_COUNTDOWN = {
@@ -2688,6 +2791,72 @@ document.addEventListener("DOMContentLoaded", function() {
       "Sweating and Acclimatization",
       "Neural Temperature Control",
       "Fever"
+    ]
+  },
+  {
+    "order": 8,
+    "name": "female-reproduction",
+    "title": "Female Reproduction",
+    "blocks": [
+      "Female Reproductive Anatomy",
+      "Ovarian Cycle",
+      "Female Endocrine Regulation",
+      "Ovarian Hormone Effects",
+      "Endometrial Cycle",
+      "Reproductive Transitions and Function"
+    ]
+  },
+  {
+    "order": 9,
+    "name": "male-reproduction",
+    "title": "Male Reproduction",
+    "blocks": [
+      "Male Reproductive Anatomy",
+      "Sperm Production and Development",
+      "Semen and Fertilization",
+      "Male Sexual Response",
+      "Androgen Physiology",
+      "Endocrine Regulation of Male Reproduction"
+    ]
+  },
+  {
+    "order": 10,
+    "name": "lab-10",
+    "title": "Lab 10",
+    "blocks": [
+      "Anterior Pituitary Overview",
+      "GH Physiology & Metabolism",
+      "GH and Bone Growth",
+      "GH Clinical Disorders",
+      "ADH Physiology and Regulation",
+      "ADH Disorders",
+      "Axis Ablation Consequences",
+      "Exogenous Hormone Effects"
+    ]
+  },
+  {
+    "order": 11,
+    "name": "lab-11",
+    "title": "Lab 11",
+    "blocks": [
+      "HPT Axis",
+      "HPA Axis",
+      "RAAS and Aldosterone"
+    ]
+  },
+  {
+    "order": 12,
+    "name": "lab-12",
+    "title": "Lab 12",
+    "blocks": [
+      "Calcium Foundations",
+      "Calcium Hormones",
+      "Calcium Disorders",
+      "Glucose Regulation",
+      "Type 1 Diabetes and DKA",
+      "Type 2 Diabetes",
+      "Diabetes Complications and Care",
+      "Integrated Thermostat Cases"
     ]
   }
 ];
@@ -3183,7 +3352,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "choices": {
       "A": "Organs whose primary function is not hormone secretion but do secrete hormones.",
       "B": "Hormones composed of amino acid chains, synthesized as prohormones, stored in vesicles, water-soluble.",
-      "C": "A comparison of two major homeostatic control systems based on transmission, mediators, speed, duration, and signal modulation.",
+      "C": "Comparison of nervous and endocrine control systems",
       "D": "Ductless organs that secrete hormones directly into the bloodstream."
     },
     "correctAnswer": "C",
@@ -4047,7 +4216,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "choices": {
       "A": "Periodic variation in hormone release.",
       "B": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓.",
-      "C": "Physiologic response feeds back on the secreting gland to decrease its secretion rate; self-limiting; maintains homeostasis. Hypothalamus releases Hormone 1 → Anterior Pituitary releases Hormone 2 → Peripheral Gland releases Hormone 3 → High Hormone 3 INHIBITS Hypothalamus & Anterior Pituitary.",
+      "C": "The response reduces further secretion and maintains homeostasis.",
       "D": "Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery."
     },
     "correctAnswer": "C",
@@ -4190,7 +4359,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "question": "Which statement most accurately characterizes Positive Feedback?",
     "choices": {
       "A": "Secretion in response to nerve stimulation. Stress/exercise → sympathetic activation → adrenal medulla releases catecholamines (Epi/NE).",
-      "B": "Hormone action INCREASES further secretion; self-augmenting; used for events requiring completion. Fetal head pushes cervix → nerve impulses → pituitary releases oxytocin → uterine contractions ↑ → more cervical stretch → cycle repeats until delivery.",
+      "B": "The response increases further secretion until the event is complete.",
       "C": "Periodic variation in hormone release.",
       "D": "Hormone release in response to changes in extracellular fluids (blood ion/nutrient levels). Blood glucose ↑ → pancreas releases insulin → glucose enters cells → blood glucose ↓."
     },
@@ -6253,7 +6422,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "subtopic": "Storage in Colloid",
     "question": "Why can stored thyroid hormone support the body after new synthesis falls?",
     "choices": {
-      "A": "A large thyroglobulin-bound reservoir remains in colloid",
+      "A": "Thyroglobulin-bound hormone remains in colloid",
       "B": "T3 is stored inside C-cells",
       "C": "TSH is stored in the isthmus",
       "D": "Albumin produces new T4"
@@ -6830,7 +6999,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "question": "A thyroid-hormone response requires new protein synthesis. Which mechanism best explains it?",
     "choices": {
       "A": "T3 filling the follicular lumen",
-      "B": "T3 binding a nuclear receptor and changing transcription",
+      "B": "Nuclear T3 changes transcription",
       "C": "T4 binding NIS",
       "D": "Calcitonin activating thyroglobulin"
     },
@@ -6976,7 +7145,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "A": "Loss of all mitochondria",
       "B": "Reduced ATP production",
       "C": "Blocked oxidative phosphorylation",
-      "D": "Increased mitochondrial number and enzymatic activity"
+      "D": "More mitochondria and greater enzyme activity"
     },
     "correctAnswer": "D",
     "explanation": "Thyroid hormone increases mitochondrial capacity, ATP production, and heat. Distractor notes: A: ‘Loss of all mitochondria’ does not match the mechanism or pattern in the stem. Thyroid hormone increases mitochondrial capacity, ATP production, and heat. B: ‘Reduced ATP production’ does not match the mechanism or pattern in the stem. Thyroid hormone increases mitochondrial capacity, ATP production, and heat. C: ‘Blocked oxidative phosphorylation’ does not match the mechanism or pattern in the stem. Thyroid hormone increases mitochondrial capacity, ATP production, and heat.",
@@ -10048,7 +10217,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "A": "Somatostatin inhibits growth-hormone secretion.",
       "B": "TRH stimulates anterior-pituitary TSH secretion.",
       "C": "TSH from thyrotropes stimulates thyroid-hormone secretion.",
-      "D": "FSH from gonadotrophs supports ovarian follicle and ovum maturation in females and sperm maturation in males."
+      "D": "FSH supports ovarian follicle development and sperm maturation."
     },
     "correctAnswer": "D",
     "explanation": "FSH from gonadotrophs supports ovarian follicle and ovum maturation in females and sperm maturation in males. Distractor notes: A: This describes Somatostatin (GHIH), not Follicle-Stimulating Hormone (FSH). B: This describes Thyrotropin-Releasing Hormone (TRH), not Follicle-Stimulating Hormone (FSH). C: This describes Thyroid-Stimulating Hormone (TSH), not Follicle-Stimulating Hormone (FSH).",
@@ -14319,7 +14488,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "choices": {
       "A": "The major human glucocorticoid produced mainly by the zona fasciculata.",
       "B": "A glucocorticoid produced by the adrenal cortex in smaller amounts than cortisol in humans.",
-      "C": "Adrenal steroids that regulate carbohydrate, protein, and fat metabolism and modify stress and inflammatory responses.",
+      "C": "Steroids that regulate metabolism, stress, and inflammation",
       "D": "The principal mineralocorticoid secreted by the zona glomerulosa."
     },
     "correctAnswer": "C",
@@ -18159,7 +18328,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "choices": {
       "A": "A catecholamine-secreting tumor of adrenal-medullary chromaffin tissue.",
       "B": "Failure of the adrenal cortex that reduces glucocorticoid and often mineralocorticoid production.",
-      "C": "An inherited steroidogenic defect that diverts precursors away from mineralocorticoid and glucocorticoid production toward androgen synthesis.",
+      "C": "An inherited steroid defect that increases androgen synthesis",
       "D": "Adrenal androgen excess caused by an androgen-secreting adrenocortical tumor."
     },
     "correctAnswer": "C",
@@ -18686,7 +18855,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "question": "Which statement most accurately characterizes Islets of Langerhans?",
     "choices": {
       "A": "The islet cell type secreting somatostatin; approximately 10 percent of islet cells.",
-      "B": "Discrete clusters of hormone-secreting endocrine cells distributed throughout the pancreas; approximately 1-2 million in number.",
+      "B": "Clusters of endocrine cells distributed throughout the pancreas",
       "C": "The islet cell type that synthesizes and secretes glucagon; approximately 25 percent of islet cells.",
       "D": "The most abundant islet cell type (~60%), secreting insulin and amylin."
     },
@@ -19552,7 +19721,7 @@ document.addEventListener("DOMContentLoaded", function() {
       "A": "Signaling initiated by the insulin receptor, a receptor tyrosine kinase.",
       "B": "The insulin-regulated glucose transport protein of striated muscle and adipose tissue.",
       "C": "Glucose uptake occurring through transporters whose membrane presence does not require insulin.",
-      "D": "The principal anabolic peptide hormone of the body, secreted by pancreatic beta cells, which promotes cellular fuel uptake and storage."
+      "D": "A beta-cell anabolic hormone that promotes fuel uptake and storage"
     },
     "correctAnswer": "D",
     "explanation": "The principal anabolic peptide hormone of the body, secreted by pancreatic beta cells, which promotes cellular fuel uptake and storage. Peptide hormone; short plasma half-life of approximately 6 minutes. Lowers plasma glucose; promotes glycogenesis, lipogenesis, and protein synthesis; inhibits glycogenolysis, gluconeogenesis, lipolysis, and proteolysis. Distractor notes: A: This describes Insulin Receptor Signaling, not Insulin. B: This describes GLUT4, not Insulin. C: This describes Insulin-Independent Glucose Transport, not Insulin.",
@@ -23247,7 +23416,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "choices": {
       "A": "The set of insulin actions producing net protein synthesis and storage.",
       "B": "Complementary actions of insulin and growth hormone on growth and protein metabolism.",
-      "C": "The overproduction of keto acids from hepatic fatty acid oxidation in insulin deficiency, exceeding peripheral utilization and producing metabolic acidosis.",
+      "C": "Excess hepatic ketone production causing metabolic acidosis",
       "D": "The elevation of plasma cholesterol and phospholipids arising from excess hepatic fatty acid delivery in insulin deficiency."
     },
     "correctAnswer": "C",
@@ -23582,7 +23751,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "question": "Which statement most accurately characterizes Metabolic Switching?",
     "choices": {
       "A": "The regulated entry of glucose into skeletal muscle, driven independently by contraction and by insulin.",
-      "B": "The insulin-governed alternation of the body between carbohydrate-dominant and lipid-dominant metabolism, assisted by four counterregulatory hormones.",
+      "B": "Insulin-regulated switching between carbohydrate and fat metabolism",
       "C": "The four hormones - growth hormone, cortisol, epinephrine, and glucagon - that oppose insulin and drive fuel mobilization.",
       "D": "Insulin's central action promoting the sensation of satiety."
     },
@@ -24159,7 +24328,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "choices": {
       "A": "Hemoglobin irreversibly glycated in proportion to ambient glucose exposure.",
       "B": "Detection of glucose in urine.",
-      "C": "Life-threatening metabolic acidosis resulting from keto acid overproduction in absolute insulin deficiency.",
+      "C": "Ketoacid-induced acidosis from severe insulin deficiency",
       "D": "A dynamic test measuring plasma glucose after a standardized oral glucose load."
     },
     "correctAnswer": "C",
@@ -25406,7 +25575,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "question": "Which statement most accurately characterizes Metformin?",
     "choices": {
       "A": "The conditions that produce decreased tissue responsiveness to insulin.",
-      "B": "A biguanide used in type 2 diabetes that primarily reduces hepatic glucose production and improves insulin sensitivity.",
+      "B": "A drug that lowers hepatic glucose output and improves insulin sensitivity",
       "C": "Diabetes characterized by insulin resistance with progressive relative insulin secretory failure.",
       "D": "Reduced biological response to a given insulin concentration."
     },
@@ -25695,6 +25864,15 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.ENDOCRINE_PANCREAS_SPRINT_QUESTIONS)) questions = questions.concat(window.ENDOCRINE_PANCREAS_SPRINT_QUESTIONS);
   if (Array.isArray(window.CALCIUM_PHOSPHATE_SPRINT_QUESTIONS)) questions = questions.concat(window.CALCIUM_PHOSPHATE_SPRINT_QUESTIONS);
   if (Array.isArray(window.BODY_TEMPERATURE_SPRINT_QUESTIONS)) questions = questions.concat(window.BODY_TEMPERATURE_SPRINT_QUESTIONS);
+  if (Array.isArray(window.FEMALE_REPRODUCTION_SPRINT_QUESTIONS)) questions = questions.concat(window.FEMALE_REPRODUCTION_SPRINT_QUESTIONS);
+  if (Array.isArray(window.MALE_REPRODUCTION_SPRINT_QUESTIONS)) questions = questions.concat(window.MALE_REPRODUCTION_SPRINT_QUESTIONS);
+  if (Array.isArray(window.CALCIUM_PHOSPHATE_PRACTICE_QUESTIONS)) questions = questions.concat(window.CALCIUM_PHOSPHATE_PRACTICE_QUESTIONS);
+  if (Array.isArray(window.BODY_TEMPERATURE_PRACTICE_QUESTIONS)) questions = questions.concat(window.BODY_TEMPERATURE_PRACTICE_QUESTIONS);
+  if (Array.isArray(window.FEMALE_REPRODUCTION_PRACTICE_QUESTIONS)) questions = questions.concat(window.FEMALE_REPRODUCTION_PRACTICE_QUESTIONS);
+  if (Array.isArray(window.MALE_REPRODUCTION_PRACTICE_QUESTIONS)) questions = questions.concat(window.MALE_REPRODUCTION_PRACTICE_QUESTIONS);
+  if (Array.isArray(window.LAB10_SPRINT_QUESTIONS)) questions = questions.concat(window.LAB10_SPRINT_QUESTIONS);
+  if (Array.isArray(window.LAB11_SPRINT_QUESTIONS)) questions = questions.concat(window.LAB11_SPRINT_QUESTIONS);
+  if (Array.isArray(window.LAB12_SPRINT_QUESTIONS)) questions = questions.concat(window.LAB12_SPRINT_QUESTIONS);
 
   var learnBanks = [
     {
@@ -25751,6 +25929,49 @@ document.addEventListener("DOMContentLoaded", function() {
       shortLabel: "Body Temperature",
       topic: "body-temperature",
       lectureOrder: 7,
+      enabled: true
+    },
+    {
+      id: "female_reproduction_sprint_v2_3",
+      label: "Female Reproduction",
+      shortLabel: "Female Reproduction",
+      topic: "female-reproduction",
+      lectureOrder: 8,
+      enabled: true
+    },
+    {
+      id: "male_reproduction_sprint_v2_3",
+      label: "Male Reproduction",
+      shortLabel: "Male Reproduction",
+      topic: "male-reproduction",
+      lectureOrder: 9,
+      enabled: true
+    },
+    {
+      id: "lab10_gh_adh_sprint_v2_3",
+      label: "Lab 10: Growth Hormone and ADH",
+      shortLabel: "Lab 10",
+      topic: "lab-10",
+      lectureOrder: 10,
+      group: "labs",
+      enabled: true
+    },
+    {
+      id: "lab11_thyroid_adrenal_sprint_v2_3",
+      label: "Lab 11: Thyroid and Adrenal Hormones",
+      shortLabel: "Lab 11",
+      topic: "lab-11",
+      lectureOrder: 11,
+      group: "labs",
+      enabled: true
+    },
+    {
+      id: "lab12_calcium_diabetes_sprint_v2_3",
+      label: "Lab 12: Calcium Regulation and Diabetes",
+      shortLabel: "Lab 12",
+      topic: "lab-12",
+      lectureOrder: 12,
+      group: "labs",
       enabled: true
     }
   ];
@@ -40161,6 +40382,9 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.WEEK12_GLOSSARY_ENTRIES)) {
     glossaryEntries = glossaryEntries.concat(window.WEEK12_GLOSSARY_ENTRIES);
   }
+  if (Array.isArray(window.WEEK13_GLOSSARY_ENTRIES)) {
+    glossaryEntries = glossaryEntries.concat(window.WEEK13_GLOSSARY_ENTRIES);
+  }
 
   var studyGuidePages = [];
 
@@ -40247,8 +40471,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var activeUnit = units[0].name;
   var activeSessionMode = "practice";
   var activeLearnBankId = "all";
+  var activeLabQuestionType = "all";
   var showVisualGuide = false;
-  var modeIntroSeenThisSession = { learn: false, practice: false };
+  var modeIntroSeenThisSession = { learn: false, practice: false, labs: false };
   var modeIntroReturnFocus = null;
   var launchSessionRequested = false;
   var unitProgress = {};
@@ -40258,6 +40483,8 @@ document.addEventListener("DOMContentLoaded", function() {
   var questionPerformanceKey = storageKey + ":questionPerformance";
   var learnModeIntroSeenKey = "studyos_learn_mode_intro_seen";
   var practiceModeIntroSeenKey = "studyos_practice_mode_intro_seen";
+  var labsModeIntroSeenKey = "studyos_labs_mode_intro_seen";
+  var newModesTourSeenKey = "studyos_physiology_exam3_new_modes_tour_v1";
   var defaultFeedbackSettings = {
     soundsEnabled: false,
     volume: 40,
@@ -40286,9 +40513,24 @@ document.addEventListener("DOMContentLoaded", function() {
     return !!question && question.bankType === "sprint";
   }
 
-  function enabledLearnBanks() {
+  function isStudyBankMode(mode) {
+    return mode === "learn" || mode === "labs";
+  }
+
+  function labQuestionTypeMatches(question) {
+    if (activeSessionMode !== "labs" || activeLabQuestionType === "all") return true;
+    var type = String(question && question.questionType || "").toLowerCase();
+    if (activeLabQuestionType === "learn") return type === "learn";
+    return type === "mixed review";
+  }
+
+  function enabledLearnBanks(mode) {
+    var requestedMode = mode || activeSessionMode;
+    var requestedGroup = requestedMode === "labs" ? "labs" : "learn";
     return learnBanks.filter(function(bank) {
-      return bank.enabled && questions.some(function(question) {
+      return bank.enabled &&
+        (bank.group || "learn") === requestedGroup &&
+        questions.some(function(question) {
         return isSprintQuestion(question) && question.bankId === bank.id;
       });
     }).sort(function(a, b) {
@@ -40297,12 +40539,22 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function learnBankById(bankId) {
-    return enabledLearnBanks().find(function(bank) { return bank.id === bankId; }) || null;
+    return learnBanks.find(function(bank) {
+      return bank.enabled &&
+        bank.id === bankId &&
+        questions.some(function(question) {
+          return isSprintQuestion(question) && question.bankId === bank.id;
+        });
+    }) || null;
   }
 
   function learnQuestions(bankId) {
+    var enabledBankIds = enabledLearnBanks().map(function(bank) { return bank.id; });
     return questions.filter(function(question) {
-      return isSprintQuestion(question) && (bankId === "all" || question.bankId === bankId);
+      return isSprintQuestion(question) &&
+        enabledBankIds.indexOf(question.bankId) > -1 &&
+        labQuestionTypeMatches(question) &&
+        (bankId === "all" || question.bankId === bankId);
     });
   }
 
@@ -40314,7 +40566,9 @@ document.addEventListener("DOMContentLoaded", function() {
       return bank.id;
     });
     return questions.filter(function(question) {
-      return isSprintQuestion(question) && bankIds.indexOf(question.bankId) > -1;
+      return isSprintQuestion(question) &&
+        bankIds.indexOf(question.bankId) > -1 &&
+        labQuestionTypeMatches(question);
     });
   }
 
@@ -40330,21 +40584,25 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function progressKey(unitName) {
-    if (activeSessionMode === "learn") {
+    if (isStudyBankMode(activeSessionMode)) {
       var bank = enabledLearnBanks().find(function(item) { return item.topic === unitName; });
-      return "learn::" + (isAllWeeksUnit(unitName) ? "all" : bank ? bank.id : unitName);
+      return activeSessionMode + "::" +
+        (activeSessionMode === "labs" ? activeLabQuestionType + "::" : "") +
+        (isAllWeeksUnit(unitName) ? "all" : bank ? bank.id : unitName);
     }
     return unitName + "::" + activeSessionMode;
   }
 
   function sessionModeLabel(mode) {
     if (mode === "learn") return "Learn";
+    if (mode === "labs") return "Labs";
     if (mode === "exam") return "Exam";
     return "Practice";
   }
 
   function sessionModeSubtitle(mode) {
     if (mode === "learn") return "Lecture Review · " + learnQuestionsForUnit(activeUnit).length + " Questions";
+    if (mode === "labs") return "Lab Review · " + learnQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "exam") return "Comprehensive Bank";
     return "Mixed Reinforcement";
   }
@@ -40626,13 +40884,16 @@ document.addEventListener("DOMContentLoaded", function() {
   function questionInActiveUnit(question) {
     if (!question) return false;
     if (isSprintQuestion(question)) {
-      if (activeSessionMode !== "learn") return false;
+      if (!isStudyBankMode(activeSessionMode)) return false;
+      if (!labQuestionTypeMatches(question)) return false;
+      var activeBankIds = enabledLearnBanks().map(function(bank) { return bank.id; });
+      if (activeBankIds.indexOf(question.bankId) < 0) return false;
       if (isAllWeeksUnit(activeUnit)) return true;
       return enabledLearnBanks().some(function(bank) {
         return bank.topic === activeUnit && bank.id === question.bankId;
       });
     }
-    if (activeSessionMode === "learn") return false;
+    if (isStudyBankMode(activeSessionMode)) return false;
     return isAllWeeksUnit(activeUnit) || question.unit === activeUnit;
   }
 
@@ -40747,8 +41008,79 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function modeIntroStorageKey(mode) {
-    return mode === "learn" ? learnModeIntroSeenKey : practiceModeIntroSeenKey;
+    if (mode === "learn") return learnModeIntroSeenKey;
+    if (mode === "labs") return labsModeIntroSeenKey;
+    return practiceModeIntroSeenKey;
   }
+
+  function hasSeenNewModesTour() {
+    try {
+      return localStorage.getItem(newModesTourSeenKey) === "true";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function positionNewModesTour() {
+    var selector = document.getElementById("pituitaryModeSelector");
+    var card = document.getElementById("newModesTourCard");
+    if (!selector || !card) return;
+    var rect = selector.getBoundingClientRect();
+    var cardWidth = Math.min(390, window.innerWidth - 28);
+    var left = Math.max(14, Math.min(
+      rect.left + (rect.width - cardWidth) / 2,
+      window.innerWidth - cardWidth - 14
+    ));
+    card.style.left = left + "px";
+    card.style.top = Math.min(rect.bottom + 18, window.innerHeight - card.offsetHeight - 14) + "px";
+  }
+
+  function showNewModesTourIfNeeded() {
+    if (hasSeenNewModesTour()) return;
+    var tour = document.getElementById("newModesTour");
+    var dismiss = document.getElementById("dismissNewModesTour");
+    if (!tour || !dismiss) return;
+    document.body.classList.add("new-modes-tour-active");
+    tour.className = "new-modes-tour";
+    requestAnimationFrame(function() {
+      positionNewModesTour();
+      dismiss.focus();
+    });
+  }
+
+  function dismissNewModesTour() {
+    var tour = document.getElementById("newModesTour");
+    if (!tour || tour.classList.contains("hidden")) return;
+    try {
+      localStorage.setItem(newModesTourSeenKey, "true");
+    } catch (error) {}
+    tour.className = "new-modes-tour hidden";
+    document.body.classList.remove("new-modes-tour-active");
+    var selector = document.getElementById("pituitaryModeSelector");
+    if (selector) {
+      var selected = selector.querySelector(".active");
+      if (selected) selected.focus();
+    }
+  }
+
+  onId("dismissNewModesTour", "click", dismissNewModesTour);
+  window.addEventListener("resize", function() {
+    var tour = document.getElementById("newModesTour");
+    if (tour && !tour.classList.contains("hidden")) positionNewModesTour();
+  });
+  document.addEventListener("keydown", function(event) {
+    var tour = document.getElementById("newModesTour");
+    if (!tour || tour.classList.contains("hidden")) return;
+    if (event.key === "Tab") {
+      event.preventDefault();
+      var dismiss = document.getElementById("dismissNewModesTour");
+      if (dismiss) dismiss.focus();
+    }
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  });
 
   function hasSeenModeIntro(mode) {
     if (modeIntroSeenThisSession[mode]) return true;
@@ -40767,7 +41099,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function showModeIntro(mode, returnFocus) {
-    if (["learn", "practice"].indexOf(mode) < 0 || hasSeenModeIntro(mode)) return;
+    if (["learn", "practice", "labs"].indexOf(mode) < 0 || hasSeenModeIntro(mode)) return;
     var modal = document.getElementById("modeIntroModal");
     var title = document.getElementById("modeIntroTitle");
     var body = document.getElementById("modeIntroBody");
@@ -40775,10 +41107,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!modal || !title || !body || !dismiss) return;
     modeIntroReturnFocus = returnFocus || document.activeElement;
     modal.setAttribute("data-mode", mode);
-    title.textContent = mode === "learn" ? "Learn Mode" : "Practice Mode";
+    title.textContent = mode === "learn" ? "Learn Mode" : mode === "labs" ? "Labs Mode" : "Practice Mode";
     body.innerHTML = mode === "learn"
       ? "<p>Learn questions reinforce the foundational concepts in the selected topic. They support lecture review, concept recognition, and confidence-building before you move into the full practice bank.</p><p><strong>Learn and Practice use separate question banks, so the questions are not identical.</strong></p>"
-      : "<p>Practice questions include the full range of questions available for the selected topic. This bank is separate from Learn Mode and is intended for broader review and exam preparation.</p><p><strong>Learn and Practice use separate question banks, so the questions are not identical.</strong></p>";
+      : mode === "labs"
+        ? "<p>Labs Mode keeps lab-focused questions together for targeted review. Select a lab to work through its foundational and mixed-review questions.</p><p><strong>Lab progress is tracked separately from Learn and Practice.</strong></p>"
+        : "<p>Practice questions include the full range of questions available for the selected topic. This bank is separate from Learn Mode and is intended for broader review and exam preparation.</p><p><strong>Learn and Practice use separate question banks, so the questions are not identical.</strong></p>";
     modal.className = "modal-backdrop mode-intro-modal";
     dismiss.focus();
   }
@@ -40958,6 +41292,7 @@ document.addEventListener("DOMContentLoaded", function() {
           unit: activeUnit,
           sessionMode: activeSessionMode,
           learnBankId: activeLearnBankId,
+          labQuestionType: activeLabQuestionType,
           mode: valueOf(modeFilter, "mc"),
           conceptBlock: valueOf(topicFilter, ""),
           count: valueOf(countFilter, "10"),
@@ -40994,12 +41329,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setSelectValue(modeFilter, saved.settings.mode, "mc");
     if (unitExists(saved.settings.unit)) activeUnit = saved.settings.unit;
-    if (["learn", "practice"].indexOf(saved.settings.sessionMode) > -1) activeSessionMode = saved.settings.sessionMode;
+    if (["learn", "practice", "labs"].indexOf(saved.settings.sessionMode) > -1) activeSessionMode = saved.settings.sessionMode;
+    if (["all", "learn", "mixed"].indexOf(saved.settings.labQuestionType) > -1) {
+      activeLabQuestionType = saved.settings.labQuestionType;
+    }
     if (saved.settings.sessionMode === "exam") activeSessionMode = "practice";
     if (saved.settings.learnBankId === "all" || learnBankById(saved.settings.learnBankId)) {
       activeLearnBankId = saved.settings.learnBankId;
     }
-    if (activeSessionMode === "learn") syncActiveLearnBankId();
+    if (isStudyBankMode(activeSessionMode)) syncActiveLearnBankId();
     populateConceptFilter();
     setSelectValue(topicFilter, saved.settings.conceptBlock || saved.settings.topic, "");
     setSelectValue(countFilter, saved.settings.count, "10");
@@ -41348,8 +41686,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var missedPill = document.getElementById("missedPill");
     if (scorePill) scorePill.textContent = "Score: " + scoreText;
     if (missedPill) missedPill.textContent = "Missed: " + missedQuestions.length;
-    var displayedAttempted = activeSessionMode === "learn" || activeUnit === "pituitary" ? scoreAttempted : sessionAttempted;
-    var displayedCorrect = activeSessionMode === "learn" || activeUnit === "pituitary" ? scoreCorrect : sessionCorrect;
+    var displayedAttempted = isStudyBankMode(activeSessionMode) || activeUnit === "pituitary" ? scoreAttempted : sessionAttempted;
+    var displayedCorrect = isStudyBankMode(activeSessionMode) || activeUnit === "pituitary" ? scoreCorrect : sessionCorrect;
     setText("sessionTotals",
       displayedAttempted + " questions answered · " +
       displayedCorrect + " correct · " +
@@ -41388,8 +41726,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     if (!concepts.length) return "No weak concepts yet.";
-    if (activeSessionMode === "learn") {
-      return "Review missed lecture questions.";
+    if (isStudyBankMode(activeSessionMode)) {
+      return activeSessionMode === "labs" ? "Review missed lab questions." : "Review missed lecture questions.";
     }
     return concepts.slice(0, 2).map(function(concept) {
       return concept + " (" + misses[concept] + ")";
@@ -41398,9 +41736,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function labelForFilters() {
     var conceptBlock = valueOf(topicFilter, "") || "All Questions";
-    if (activeSessionMode === "learn") {
+    if (isStudyBankMode(activeSessionMode)) {
       var learnBank = enabledLearnBanks().find(function(bank) { return bank.topic === activeUnit; });
-      return (isAllWeeksUnit(activeUnit) ? "All Learn Questions" : learnBank ? learnBank.shortLabel : unitCardLabel(activeUnit)) + " · Learn";
+      var allLabel = activeSessionMode === "labs" ? "All Lab Questions" : "All Learn Questions";
+      return (isAllWeeksUnit(activeUnit) ? allLabel : learnBank ? learnBank.shortLabel : unitCardLabel(activeUnit)) + " · " + sessionModeLabel(activeSessionMode);
     }
     var modeLabel = " · " + sessionModeLabel(activeSessionMode);
     return activeUnit + modeLabel + " · " + conceptBlock;
@@ -41692,9 +42031,9 @@ document.addEventListener("DOMContentLoaded", function() {
       return catCounts[b] - catCounts[a];
     });
     var mainWeakness = catKeys.length ? catKeys[0] : "None";
-    var learnSession = activeSessionMode === "learn";
+    var learnSession = isStudyBankMode(activeSessionMode);
     if (learnSession) {
-      mainWeakness = missed.length ? "Lecture Review concepts" : "None";
+      mainWeakness = missed.length ? (activeSessionMode === "labs" ? "Lab Review concepts" : "Lecture Review concepts") : "None";
       catCounts = {};
     }
     var details = document.createElement("details");
@@ -42439,7 +42778,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function unitQuestions(unitName) {
-    if (activeSessionMode === "learn") return learnQuestionsForUnit(unitName);
+    if (isStudyBankMode(activeSessionMode)) return learnQuestionsForUnit(unitName);
     if (isAllWeeksUnit(unitName)) {
       return questions.filter(function(q) { return !isSprintQuestion(q); });
     }
@@ -42451,7 +42790,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function conceptBlocksForUnit(unit) {
-    if (activeSessionMode === "learn") {
+    if (isStudyBankMode(activeSessionMode)) {
       var seen = {};
       return learnQuestionsForUnit(activeUnit).map(function(question) {
         return question.conceptBlock;
@@ -42524,7 +42863,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     orderedUnitList().filter(function(unit) {
       if (isAllWeeksUnit(unit.name)) return true;
-      return activeSessionMode === "learn"
+      return isStudyBankMode(activeSessionMode)
         ? learnQuestionsForUnit(unit.name).length > 0
         : questions.some(function(question) {
             return question.unit === unit.name && !isSprintQuestion(question);
@@ -42555,25 +42894,52 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     var conceptControl = document.getElementById("conceptBlockControl");
     if (conceptControl) {
-      conceptControl.className = activeSessionMode === "learn" ? "hidden" : "";
+      conceptControl.className = isStudyBankMode(activeSessionMode) ? "hidden" : "";
     }
+    renderLabQuestionTypeSelector();
+  }
+
+  function renderLabQuestionTypeSelector() {
+    var selector = document.getElementById("labQuestionTypeSelector");
+    if (!selector) return;
+    selector.className = activeSessionMode === "labs" ? "lab-question-type-selector" : "lab-question-type-selector hidden";
+    selector.querySelectorAll("[data-lab-question-type]").forEach(function(button) {
+      var selected = button.getAttribute("data-lab-question-type") === activeLabQuestionType;
+      button.className = "lab-question-type-button" + (selected ? " active" : "");
+      button.setAttribute("aria-pressed", selected ? "true" : "false");
+    });
+  }
+
+  function setLabQuestionType(type) {
+    if (["all", "learn", "mixed"].indexOf(type) < 0 || type === activeLabQuestionType) return;
+    saveActiveUnitProgress();
+    activeLabQuestionType = type;
+    if (countFilter) countFilter.value = "all";
+    populateConceptFilter();
+    renderLabQuestionTypeSelector();
+    restoreUnitProgress(activeUnit, true);
+    setHtml("questionList", "");
+    var questionList = byId("questionList");
+    if (questionList) questionList.setAttribute("data-open", "false");
+    setText("listQs", "Show Filtered List");
+    saveState();
   }
 
   function setSessionMode(mode, returnFocus) {
-    if (["learn", "practice", "exam"].indexOf(mode) < 0) return;
+    if (["learn", "practice", "labs", "exam"].indexOf(mode) < 0) return;
     if (mode === activeSessionMode) {
       showModeIntro(mode, returnFocus);
       return;
     }
     saveActiveUnitProgress();
     activeSessionMode = mode;
-    if (mode !== "learn" && !unitQuestions(activeUnit).length) {
+    if (!unitQuestions(activeUnit).length) {
       activeUnit = units[0].name;
     }
-    if (mode === "learn") syncActiveLearnBankId();
+    if (isStudyBankMode(mode)) syncActiveLearnBankId();
     if (topicFilter) topicFilter.value = "";
-    if (countFilter && mode === "learn") countFilter.value = "all";
-    if (modeFilter && mode === "learn") modeFilter.value = "mc";
+    if (countFilter && isStudyBankMode(mode)) countFilter.value = "all";
+    if (modeFilter && isStudyBankMode(mode)) modeFilter.value = "mc";
     populateConceptFilter();
     renderUnitTabs();
     renderPituitaryModeSelector();
@@ -42592,15 +42958,16 @@ document.addEventListener("DOMContentLoaded", function() {
     var scoreText = progress.answered ? progress.percent + "% · " : "— · ";
     var title = unit.title || activeUnit;
     var subtitle = "";
-    if (activeSessionMode === "learn") {
+    if (isStudyBankMode(activeSessionMode)) {
       var selectedBank = enabledLearnBanks().find(function(bank) { return bank.topic === activeUnit; });
-      title = (isAllWeeksUnit(activeUnit) ? "All Learn Questions" : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit)) + " — Learn";
+      var allTitle = activeSessionMode === "labs" ? "All Lab Questions" : "All Learn Questions";
+      title = (isAllWeeksUnit(activeUnit) ? allTitle : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit)) + " — " + sessionModeLabel(activeSessionMode);
       subtitle = "<span class=\"session-mode-caption\">" + htmlEscape(sessionModeSubtitle(activeSessionMode)) + "</span>";
     } else if (activeUnit === "pituitary") {
       title = "Pituitary Hormones — " + sessionModeLabel(activeSessionMode);
       subtitle = "<span class=\"session-mode-caption\">" + htmlEscape(sessionModeSubtitle(activeSessionMode)) + "</span>";
     }
-    var breakdown = activeSessionMode === "learn"
+    var breakdown = isStudyBankMode(activeSessionMode)
       ? ""
       : "<div class=\"concept-breakdown\">" + conceptBreakdownHtml(unit) + "</div>";
     setHtml("unitIntro",
@@ -42612,7 +42979,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function setActiveUnit(unitName) {
     saveActiveUnitProgress();
     activeUnit = unitName;
-    if (activeSessionMode === "learn") syncActiveLearnBankId();
+    if (isStudyBankMode(activeSessionMode)) syncActiveLearnBankId();
     if (topicFilter) topicFilter.value = "";
     if (isAllWeeksUnit(activeUnit) && countFilter) countFilter.value = "all";
     populateConceptFilter();
@@ -42642,14 +43009,14 @@ document.addEventListener("DOMContentLoaded", function() {
     activeUnit = launchParams.get("unit");
     launchSessionRequested = true;
   }
-  if (["learn", "practice", "exam"].indexOf(launchParams.get("session")) > -1) {
+  if (["learn", "practice", "labs", "exam"].indexOf(launchParams.get("session")) > -1) {
     activeSessionMode = launchParams.get("session");
     launchSessionRequested = true;
   }
-  if (activeSessionMode !== "learn" && !unitQuestions(activeUnit).length) {
+  if (!unitQuestions(activeUnit).length) {
     activeUnit = units[0].name;
   }
-  if (activeSessionMode === "learn") {
+  if (isStudyBankMode(activeSessionMode)) {
     syncActiveLearnBankId();
   }
   populateConceptFilter();
@@ -42664,6 +43031,11 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll("#pituitaryModeSelector [data-session-mode]").forEach(function(button) {
     button.addEventListener("click", function() {
       setSessionMode(button.getAttribute("data-session-mode"), button);
+    });
+  });
+  document.querySelectorAll("#labQuestionTypeSelector [data-lab-question-type]").forEach(function(button) {
+    button.addEventListener("click", function() {
+      setLabQuestionType(button.getAttribute("data-lab-question-type"));
     });
   });
   onId("flagQuestion", "click", toggleCurrentFlag);
@@ -42902,6 +43274,7 @@ document.addEventListener("DOMContentLoaded", function() {
   updateVisualGuideVisibility();
   rebuildDeck();
   restoreSavedProgress(savedState);
+  showNewModesTourIfNeeded();
 });
 </script>
 </body>

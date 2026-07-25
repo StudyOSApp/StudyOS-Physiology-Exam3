@@ -1,4 +1,4 @@
-window.ENDOCRINE_PANCREAS_SPRINT_BANK = {
+{
   "schemaVersion": "1.0.0",
   "bankId": "endocrine_pancreas_sprint_v2_3",
   "bankType": "sprint",
@@ -1433,5 +1433,4 @@ window.ENDOCRINE_PANCREAS_SPRINT_BANK = {
       }
     }
   ]
-};
-window.ENDOCRINE_PANCREAS_SPRINT_QUESTIONS = window.ENDOCRINE_PANCREAS_SPRINT_BANK.questions;
+}

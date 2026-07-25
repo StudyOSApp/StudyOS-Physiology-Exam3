@@ -1,0 +1,398 @@
+window.WEEK13_GLOSSARY_ENTRIES = [
+  {
+    "id": "GLOSSARY-HCG",
+    "term": "hCG",
+    "aliases": [
+      "hCG",
+      "human chorionic gonadotropin"
+    ],
+    "standsFor": "Human chorionic gonadotropin",
+    "source": "Produced during pregnancy by placental tissue.",
+    "target": "The ovarian corpus luteum and, during fetal development, testicular Leydig cells.",
+    "action": "Maintains the corpus luteum in early pregnancy and stimulates fetal testicular testosterone production.",
+    "definition": "Human chorionic gonadotropin is a pregnancy hormone that maintains the corpus luteum and can stimulate fetal Leydig cells.",
+    "module": "Reproduction"
+  },
+  {
+    "id": "GLOSSARY-ESTROGEN",
+    "term": "Estrogen",
+    "aliases": [
+      "estrogen",
+      "estrogens"
+    ],
+    "source": "Produced mainly by ovarian follicles, with additional production by the corpus luteum and placenta.",
+    "target": "Reproductive tissues, breasts, bone, skin, and the hypothalamic-pituitary axis.",
+    "action": "Supports female reproductive development, endometrial proliferation, secondary sex characteristics, and cycle feedback.",
+    "definition": "A family of ovarian steroid hormones that supports reproductive development, proliferative endometrial growth, and cycle regulation.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-ESTRADIOL",
+    "term": "Estradiol",
+    "aliases": [
+      "estradiol",
+      "E2"
+    ],
+    "source": "Produced mainly by ovarian follicles through coordinated theca-cell and granulosa-cell steroid synthesis.",
+    "target": "Female reproductive organs, breasts, bone, skin, and hypothalamic-pituitary feedback centers.",
+    "action": "Acts as the principal estrogen during much of the reproductive cycle.",
+    "definition": "The most important estrogen in the lecture and a major ovarian signal for reproductive-tissue growth and cycle feedback.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-PROGESTERONE",
+    "term": "Progesterone",
+    "aliases": [
+      "progesterone"
+    ],
+    "source": "Secreted mainly by the corpus luteum during the luteal phase and by the placenta during pregnancy.",
+    "target": "Uterus, fallopian tubes, breasts, and the hypothalamic-pituitary axis.",
+    "action": "Creates a secretory endometrium, reduces uterine contractility, and supports breast lobular and alveolar development.",
+    "definition": "A steroid hormone that prepares the endometrium for implantation and helps maintain conditions favorable for pregnancy.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-TESTOSTERONE",
+    "term": "Testosterone",
+    "aliases": [
+      "testosterone"
+    ],
+    "source": "Secreted primarily by testicular Leydig cells in response to LH.",
+    "target": "Male reproductive organs, muscle, bone, skin, brain, and other androgen-responsive tissues.",
+    "action": "Supports male reproductive development, secondary sex characteristics, anabolic effects, and spermatogenesis.",
+    "definition": "The principal testicular androgen, produced by Leydig cells and acting on reproductive and systemic tissues.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-DHT",
+    "term": "DHT",
+    "aliases": [
+      "DHT",
+      "dihydrotestosterone"
+    ],
+    "standsFor": "Dihydrotestosterone",
+    "source": "Formed from testosterone within certain target tissues.",
+    "target": "Androgen-responsive tissues.",
+    "action": "Provides potent local androgen signaling.",
+    "definition": "Dihydrotestosterone is a potent androgen formed from testosterone in target tissues.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-INHIBIN",
+    "term": "Inhibin",
+    "aliases": [
+      "inhibin"
+    ],
+    "source": "Produced by Sertoli cells in the testes and by ovarian cells in females.",
+    "target": "Anterior pituitary gonadotrophs.",
+    "action": "Decreases FSH secretion and helps regulate gamete production.",
+    "definition": "A reproductive feedback hormone that suppresses anterior-pituitary FSH secretion.",
+    "module": "Reproduction"
+  },
+  {
+    "id": "GLOSSARY-NITRIC-OXIDE",
+    "term": "Nitric Oxide",
+    "aliases": [
+      "nitric oxide",
+      "NO"
+    ],
+    "source": "Released locally from nerves and vascular tissues during sexual arousal.",
+    "target": "Smooth muscle in genital blood vessels and erectile tissue.",
+    "action": "Promotes smooth-muscle relaxation and vasodilation.",
+    "definition": "A local gaseous messenger that relaxes smooth muscle and increases blood flow during erectile responses.",
+    "module": "Reproduction"
+  },
+  {
+    "id": "GLOSSARY-PROSTAGLANDINS-REPRO",
+    "term": "Prostaglandins",
+    "aliases": [
+      "prostaglandin",
+      "prostaglandins"
+    ],
+    "source": "Included in seminal-vesicle secretion in the male reproductive tract.",
+    "target": "Smooth muscle and mucus within the female reproductive tract.",
+    "action": "May promote contractions and cervical-mucus changes that assist sperm transport.",
+    "definition": "Local lipid messengers in seminal fluid that may help sperm move through the female reproductive tract.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-OVARIAN-FOLLICLE",
+    "term": "Ovarian Follicle",
+    "aliases": [
+      "ovarian follicle",
+      "follicle",
+      "follicles"
+    ],
+    "definition": "An ovarian structure containing a developing ovum surrounded by supporting cells that change as the follicle matures.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-GRANULOSA-CELL",
+    "term": "Granulosa Cell",
+    "aliases": [
+      "granulosa cell",
+      "granulosa cells"
+    ],
+    "definition": "A follicular support cell that responds strongly to FSH and converts theca-derived androgens into estrogens through aromatase.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-THECA-INTERNA",
+    "term": "Theca Interna",
+    "aliases": [
+      "theca interna",
+      "thecal cell",
+      "thecal cells"
+    ],
+    "definition": "The vascular, steroid-secreting inner thecal layer of a developing ovarian follicle.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-ANTRUM",
+    "term": "Follicular Antrum",
+    "aliases": [
+      "follicular antrum",
+      "antrum"
+    ],
+    "definition": "A fluid-filled space that forms among granulosa cells as an ovarian follicle reaches the antral stage.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-OVULATION",
+    "term": "Ovulation",
+    "aliases": [
+      "ovulation",
+      "ovulatory"
+    ],
+    "definition": "Release of the ovum from a mature ovarian follicle, triggered by the preovulatory LH surge.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-CORPUS-LUTEUM",
+    "term": "Corpus Luteum",
+    "aliases": [
+      "corpus luteum"
+    ],
+    "definition": "A temporary endocrine structure formed from the ruptured follicle after ovulation. It secretes large amounts of progesterone and some estrogen.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-CORPUS-ALBICANS",
+    "term": "Corpus Albicans",
+    "aliases": [
+      "corpus albicans"
+    ],
+    "definition": "The fibrous scar that remains after an unsupported corpus luteum involutes.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-ATRESIA",
+    "term": "Atresia",
+    "aliases": [
+      "atresia",
+      "atretic"
+    ],
+    "definition": "Degeneration and involution of an ovarian follicle that does not continue to ovulation.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-LUTEAL-PHASE",
+    "term": "Luteal Phase",
+    "aliases": [
+      "luteal phase"
+    ],
+    "definition": "The postovulatory portion of the ovarian cycle, when the corpus luteum secretes progesterone and estrogen.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-ENDOMETRIUM",
+    "term": "Endometrium",
+    "aliases": [
+      "endometrium",
+      "endometrial"
+    ],
+    "definition": "The inner uterine lining that proliferates, becomes secretory, receives an implanting blastocyst, and sheds during menstruation.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-MYOMETRIUM",
+    "term": "Myometrium",
+    "aliases": [
+      "myometrium",
+      "myometrial"
+    ],
+    "definition": "The thick smooth-muscle layer of the uterus that generates uterine contractions.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-AROMATASE",
+    "term": "Aromatase",
+    "aliases": [
+      "aromatase"
+    ],
+    "definition": "An enzyme in granulosa cells that converts androgen precursors into estrogens under FSH stimulation.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-MENOPAUSE",
+    "term": "Menopause",
+    "aliases": [
+      "menopause",
+      "postmenopausal"
+    ],
+    "definition": "The transition in which responsive ovarian follicles are depleted, ovulation stops, ovarian steroids fall, and LH and FSH rise.",
+    "module": "Female Reproduction"
+  },
+  {
+    "id": "GLOSSARY-SPERMATOGENESIS",
+    "term": "Spermatogenesis",
+    "aliases": [
+      "spermatogenesis"
+    ],
+    "definition": "The approximately 74-day process in the seminiferous tubules that produces haploid sperm from germ cells.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-SEMINIFEROUS-TUBULE",
+    "term": "Seminiferous Tubule",
+    "aliases": [
+      "seminiferous tubule",
+      "seminiferous tubules"
+    ],
+    "definition": "A tightly coiled testicular tubule containing developing germ cells and Sertoli cells; it is the site of sperm production.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-SERTOLI-CELL",
+    "term": "Sertoli Cell",
+    "aliases": [
+      "Sertoli cell",
+      "Sertoli cells"
+    ],
+    "definition": "A seminiferous-tubule support cell that nourishes developing sperm, responds to FSH, and secretes inhibin.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-LEYDIG-CELL",
+    "term": "Leydig Cell",
+    "aliases": [
+      "Leydig cell",
+      "Leydig cells",
+      "interstitial cell",
+      "interstitial cells"
+    ],
+    "definition": "A testicular interstitial cell stimulated by LH to synthesize and secrete testosterone.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-EPIDIDYMIS",
+    "term": "Epididymis",
+    "aliases": [
+      "epididymis",
+      "epididymal"
+    ],
+    "definition": "A coiled duct attached to the testis where sperm mature, gain the capacity for motility, and are stored.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-VAS-DEFERENS",
+    "term": "Vas Deferens",
+    "aliases": [
+      "vas deferens",
+      "ductus deferens"
+    ],
+    "definition": "A muscular duct that transports sperm from the epididymis toward the ejaculatory duct.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-SPERMATID",
+    "term": "Spermatid",
+    "aliases": [
+      "spermatid",
+      "spermatids"
+    ],
+    "definition": "A haploid cell produced by meiosis that remodels into a mature spermatozoon.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-SPERMATOZOON",
+    "term": "Spermatozoon",
+    "aliases": [
+      "spermatozoon",
+      "spermatozoa",
+      "sperm cell",
+      "sperm cells"
+    ],
+    "definition": "A mature male gamete with a nuclear head, enzyme-containing acrosome, energy-producing middle piece, and motile tail.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-ACROSOME",
+    "term": "Acrosome",
+    "aliases": [
+      "acrosome",
+      "acrosomal"
+    ],
+    "definition": "An enzyme-containing cap on the sperm head that helps the sperm penetrate the layers surrounding the ovum.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-CAPACITATION",
+    "term": "Capacitation",
+    "aliases": [
+      "capacitation",
+      "capacitated"
+    ],
+    "definition": "Final functional activation of ejaculated sperm in the female reproductive tract, preparing them for fertilization.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-POLYSPERMY",
+    "term": "Polyspermy",
+    "aliases": [
+      "polyspermy"
+    ],
+    "definition": "Entry of more than one sperm into an ovum. A calcium-dependent cortical reaction normally helps prevent it.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-SEMINAL-VESICLE",
+    "term": "Seminal Vesicle",
+    "aliases": [
+      "seminal vesicle",
+      "seminal vesicles"
+    ],
+    "definition": "An accessory gland that contributes most semen volume and supplies fructose, prostaglandins, and clotting components.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-PROSTATE-GLAND",
+    "term": "Prostate Gland",
+    "aliases": [
+      "prostate gland",
+      "prostate",
+      "prostatic"
+    ],
+    "definition": "A male accessory gland that adds thin, milky, slightly alkaline fluid and enzymes to semen.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-EMISSION",
+    "term": "Emission",
+    "aliases": [
+      "emission"
+    ],
+    "definition": "The sympathetic movement of sperm and accessory-gland secretions into the internal urethra before ejaculation.",
+    "module": "Male Reproduction"
+  },
+  {
+    "id": "GLOSSARY-EJACULATION",
+    "term": "Ejaculation",
+    "aliases": [
+      "ejaculation",
+      "ejaculatory"
+    ],
+    "definition": "Reflex expulsion of semen from the urethra through coordinated muscular contractions.",
+    "module": "Male Reproduction"
+  }
+];

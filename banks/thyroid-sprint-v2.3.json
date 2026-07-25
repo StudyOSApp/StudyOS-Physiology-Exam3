@@ -1,4 +1,4 @@
-window.THYROID_SPRINT_BANK = {
+{
   "schemaVersion": "1.0.0",
   "bankId": "thyroid_sprint_v2_3",
   "bankType": "sprint",
@@ -1278,5 +1278,4 @@ window.THYROID_SPRINT_BANK = {
       }
     }
   ]
-};
-window.THYROID_SPRINT_QUESTIONS = window.THYROID_SPRINT_BANK.questions;
+}
