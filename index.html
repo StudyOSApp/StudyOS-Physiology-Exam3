@@ -2129,6 +2129,7 @@
         <button class="pituitary-mode-button" type="button" data-session-mode="learn">Learn</button>
         <button class="pituitary-mode-button" type="button" data-session-mode="practice">Practice</button>
         <button class="pituitary-mode-button" type="button" data-session-mode="labs">Labs</button>
+        <button class="pituitary-mode-button" type="button" data-session-mode="lab-practical">Lab Practical</button>
       </div>
       <span id="examCountdownPill" class="exam-countdown-pill hidden" aria-live="polite"></span>
     </div>
@@ -2137,6 +2138,11 @@
       <button class="lab-question-type-button" type="button" data-lab-question-type="all">All</button>
       <button class="lab-question-type-button" type="button" data-lab-question-type="learn">Learn</button>
       <button class="lab-question-type-button" type="button" data-lab-question-type="mixed">Mixed Review</button>
+    </div>
+    <div id="labPracticalTypeSelector" class="lab-question-type-selector hidden" aria-label="Lab practical question type">
+      <button class="lab-question-type-button" type="button" data-lab-practical-type="all">All 75</button>
+      <button class="lab-question-type-button" type="button" data-lab-practical-type="standard">Standard</button>
+      <button class="lab-question-type-button" type="button" data-lab-practical-type="vignette">Clinical Vignettes</button>
     </div>
     <div id="unitIntro" class="big-question">Choose a unit to start.</div>
 
@@ -2537,6 +2543,7 @@
 <script src="banks/lab10-gh-adh-sprint-v2.3.js"></script>
 <script src="banks/lab11-thyroid-adrenal-sprint-v2.3.js"></script>
 <script src="banks/lab12-calcium-diabetes-sprint-v2.3.js"></script>
+<script src="banks/endocrine-lab-practical-challenge-v1.js"></script>
 <script src="banks/week12-glossary.js"></script>
 <script src="banks/week13-glossary.js"></script>
 <script>
@@ -2857,6 +2864,20 @@ document.addEventListener("DOMContentLoaded", function() {
       "Type 2 Diabetes",
       "Diabetes Complications and Care",
       "Integrated Thermostat Cases"
+    ]
+  },
+  {
+    "order": 13,
+    "name": "endocrine-lab-practical",
+    "title": "Endocrine Practical",
+    "blocks": [
+      "GH",
+      "ADH",
+      "Thyroid",
+      "HPA/Cortisol",
+      "RAAS",
+      "Calcium",
+      "DM"
     ]
   }
 ];
@@ -25873,6 +25894,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.LAB10_SPRINT_QUESTIONS)) questions = questions.concat(window.LAB10_SPRINT_QUESTIONS);
   if (Array.isArray(window.LAB11_SPRINT_QUESTIONS)) questions = questions.concat(window.LAB11_SPRINT_QUESTIONS);
   if (Array.isArray(window.LAB12_SPRINT_QUESTIONS)) questions = questions.concat(window.LAB12_SPRINT_QUESTIONS);
+  if (Array.isArray(window.ENDOCRINE_LAB_PRACTICAL_QUESTIONS)) questions = questions.concat(window.ENDOCRINE_LAB_PRACTICAL_QUESTIONS);
 
   var learnBanks = [
     {
@@ -25972,6 +25994,15 @@ document.addEventListener("DOMContentLoaded", function() {
       topic: "lab-12",
       lectureOrder: 12,
       group: "labs",
+      enabled: true
+    },
+    {
+      id: "endocrine_lab_practical_challenge_v1",
+      label: "Endocrine Lab Practical Challenge Bank",
+      shortLabel: "Endocrine Practical",
+      topic: "endocrine-lab-practical",
+      lectureOrder: 13,
+      group: "lab-practical",
       enabled: true
     }
   ];
@@ -40472,8 +40503,9 @@ document.addEventListener("DOMContentLoaded", function() {
   var activeSessionMode = "practice";
   var activeLearnBankId = "all";
   var activeLabQuestionType = "all";
+  var activeLabPracticalType = "all";
   var showVisualGuide = false;
-  var modeIntroSeenThisSession = { learn: false, practice: false, labs: false };
+  var modeIntroSeenThisSession = { learn: false, practice: false, labs: false, "lab-practical": false };
   var modeIntroReturnFocus = null;
   var launchSessionRequested = false;
   var unitProgress = {};
@@ -40484,6 +40516,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var learnModeIntroSeenKey = "studyos_learn_mode_intro_seen";
   var practiceModeIntroSeenKey = "studyos_practice_mode_intro_seen";
   var labsModeIntroSeenKey = "studyos_labs_mode_intro_seen";
+  var labPracticalModeIntroSeenKey = "studyos_lab_practical_mode_intro_seen";
   var newModesTourSeenKey = "studyos_physiology_exam3_new_modes_tour_v1";
   var defaultFeedbackSettings = {
     soundsEnabled: false,
@@ -40514,7 +40547,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function isStudyBankMode(mode) {
-    return mode === "learn" || mode === "labs";
+    return mode === "learn" || mode === "labs" || mode === "lab-practical";
   }
 
   function labQuestionTypeMatches(question) {
@@ -40524,9 +40557,16 @@ document.addEventListener("DOMContentLoaded", function() {
     return type === "mixed review";
   }
 
+  function labPracticalTypeMatches(question) {
+    if (activeSessionMode !== "lab-practical" || activeLabPracticalType === "all") return true;
+    return String(question && question.practicalFormat || "").toLowerCase() === activeLabPracticalType;
+  }
+
   function enabledLearnBanks(mode) {
     var requestedMode = mode || activeSessionMode;
-    var requestedGroup = requestedMode === "labs" ? "labs" : "learn";
+    var requestedGroup = requestedMode === "labs"
+      ? "labs"
+      : requestedMode === "lab-practical" ? "lab-practical" : "learn";
     return learnBanks.filter(function(bank) {
       return bank.enabled &&
         (bank.group || "learn") === requestedGroup &&
@@ -40554,6 +40594,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return isSprintQuestion(question) &&
         enabledBankIds.indexOf(question.bankId) > -1 &&
         labQuestionTypeMatches(question) &&
+        labPracticalTypeMatches(question) &&
         (bankId === "all" || question.bankId === bankId);
     });
   }
@@ -40568,7 +40609,8 @@ document.addEventListener("DOMContentLoaded", function() {
     return questions.filter(function(question) {
       return isSprintQuestion(question) &&
         bankIds.indexOf(question.bankId) > -1 &&
-        labQuestionTypeMatches(question);
+        labQuestionTypeMatches(question) &&
+        labPracticalTypeMatches(question);
     });
   }
 
@@ -40588,6 +40630,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var bank = enabledLearnBanks().find(function(item) { return item.topic === unitName; });
       return activeSessionMode + "::" +
         (activeSessionMode === "labs" ? activeLabQuestionType + "::" : "") +
+        (activeSessionMode === "lab-practical" ? activeLabPracticalType + "::" : "") +
         (isAllWeeksUnit(unitName) ? "all" : bank ? bank.id : unitName);
     }
     return unitName + "::" + activeSessionMode;
@@ -40596,6 +40639,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function sessionModeLabel(mode) {
     if (mode === "learn") return "Learn";
     if (mode === "labs") return "Labs";
+    if (mode === "lab-practical") return "Lab Practical";
     if (mode === "exam") return "Exam";
     return "Practice";
   }
@@ -40603,6 +40647,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function sessionModeSubtitle(mode) {
     if (mode === "learn") return "Lecture Review · " + learnQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "labs") return "Lab Review · " + learnQuestionsForUnit(activeUnit).length + " Questions";
+    if (mode === "lab-practical") return "Practical Challenge · " + learnQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "exam") return "Comprehensive Bank";
     return "Mixed Reinforcement";
   }
@@ -40886,6 +40931,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (isSprintQuestion(question)) {
       if (!isStudyBankMode(activeSessionMode)) return false;
       if (!labQuestionTypeMatches(question)) return false;
+      if (!labPracticalTypeMatches(question)) return false;
       var activeBankIds = enabledLearnBanks().map(function(bank) { return bank.id; });
       if (activeBankIds.indexOf(question.bankId) < 0) return false;
       if (isAllWeeksUnit(activeUnit)) return true;
@@ -41010,6 +41056,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function modeIntroStorageKey(mode) {
     if (mode === "learn") return learnModeIntroSeenKey;
     if (mode === "labs") return labsModeIntroSeenKey;
+    if (mode === "lab-practical") return labPracticalModeIntroSeenKey;
     return practiceModeIntroSeenKey;
   }
 
@@ -41099,7 +41146,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function showModeIntro(mode, returnFocus) {
-    if (["learn", "practice", "labs"].indexOf(mode) < 0 || hasSeenModeIntro(mode)) return;
+    if (["learn", "practice", "labs", "lab-practical"].indexOf(mode) < 0 || hasSeenModeIntro(mode)) return;
     var modal = document.getElementById("modeIntroModal");
     var title = document.getElementById("modeIntroTitle");
     var body = document.getElementById("modeIntroBody");
@@ -41107,11 +41154,17 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!modal || !title || !body || !dismiss) return;
     modeIntroReturnFocus = returnFocus || document.activeElement;
     modal.setAttribute("data-mode", mode);
-    title.textContent = mode === "learn" ? "Learn Mode" : mode === "labs" ? "Labs Mode" : "Practice Mode";
+    title.textContent = mode === "learn"
+      ? "Learn Mode"
+      : mode === "labs" ? "Labs Mode"
+      : mode === "lab-practical" ? "Lab Practical Mode"
+      : "Practice Mode";
     body.innerHTML = mode === "learn"
       ? "<p>Learn questions reinforce the foundational concepts in the selected topic. They support lecture review, concept recognition, and confidence-building before you move into the full practice bank.</p><p><strong>Learn and Practice use separate question banks, so the questions are not identical.</strong></p>"
       : mode === "labs"
         ? "<p>Labs Mode keeps lab-focused questions together for targeted review. Select a lab to work through its foundational and mixed-review questions.</p><p><strong>Lab progress is tracked separately from Learn and Practice.</strong></p>"
+        : mode === "lab-practical"
+          ? "<p>Lab Practical Mode contains 75 endocrine pathway-reasoning questions grounded in Labs 9–12. Use the filters to study the standard questions, the clinical vignettes, or the complete bank together.</p><p><strong>Practical progress is tracked separately from the other modes.</strong></p>"
         : "<p>Practice questions include the full range of questions available for the selected topic. This bank is separate from Learn Mode and is intended for broader review and exam preparation.</p><p><strong>Learn and Practice use separate question banks, so the questions are not identical.</strong></p>";
     modal.className = "modal-backdrop mode-intro-modal";
     dismiss.focus();
@@ -41293,6 +41346,7 @@ document.addEventListener("DOMContentLoaded", function() {
           sessionMode: activeSessionMode,
           learnBankId: activeLearnBankId,
           labQuestionType: activeLabQuestionType,
+          labPracticalType: activeLabPracticalType,
           mode: valueOf(modeFilter, "mc"),
           conceptBlock: valueOf(topicFilter, ""),
           count: valueOf(countFilter, "10"),
@@ -41329,9 +41383,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setSelectValue(modeFilter, saved.settings.mode, "mc");
     if (unitExists(saved.settings.unit)) activeUnit = saved.settings.unit;
-    if (["learn", "practice", "labs"].indexOf(saved.settings.sessionMode) > -1) activeSessionMode = saved.settings.sessionMode;
+    if (["learn", "practice", "labs", "lab-practical"].indexOf(saved.settings.sessionMode) > -1) activeSessionMode = saved.settings.sessionMode;
     if (["all", "learn", "mixed"].indexOf(saved.settings.labQuestionType) > -1) {
       activeLabQuestionType = saved.settings.labQuestionType;
+    }
+    if (["all", "standard", "vignette"].indexOf(saved.settings.labPracticalType) > -1) {
+      activeLabPracticalType = saved.settings.labPracticalType;
     }
     if (saved.settings.sessionMode === "exam") activeSessionMode = "practice";
     if (saved.settings.learnBankId === "all" || learnBankById(saved.settings.learnBankId)) {
@@ -41727,7 +41784,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!concepts.length) return "No weak concepts yet.";
     if (isStudyBankMode(activeSessionMode)) {
-      return activeSessionMode === "labs" ? "Review missed lab questions." : "Review missed lecture questions.";
+      return activeSessionMode === "labs"
+        ? "Review missed lab questions."
+        : activeSessionMode === "lab-practical" ? "Review missed lab practical questions." : "Review missed lecture questions.";
     }
     return concepts.slice(0, 2).map(function(concept) {
       return concept + " (" + misses[concept] + ")";
@@ -41738,7 +41797,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var conceptBlock = valueOf(topicFilter, "") || "All Questions";
     if (isStudyBankMode(activeSessionMode)) {
       var learnBank = enabledLearnBanks().find(function(bank) { return bank.topic === activeUnit; });
-      var allLabel = activeSessionMode === "labs" ? "All Lab Questions" : "All Learn Questions";
+      var allLabel = activeSessionMode === "labs"
+        ? "All Lab Questions"
+        : activeSessionMode === "lab-practical" ? "All Practical Questions" : "All Learn Questions";
       return (isAllWeeksUnit(activeUnit) ? allLabel : learnBank ? learnBank.shortLabel : unitCardLabel(activeUnit)) + " · " + sessionModeLabel(activeSessionMode);
     }
     var modeLabel = " · " + sessionModeLabel(activeSessionMode);
@@ -42033,7 +42094,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var mainWeakness = catKeys.length ? catKeys[0] : "None";
     var learnSession = isStudyBankMode(activeSessionMode);
     if (learnSession) {
-      mainWeakness = missed.length ? (activeSessionMode === "labs" ? "Lab Review concepts" : "Lecture Review concepts") : "None";
+      mainWeakness = missed.length
+        ? (activeSessionMode === "labs"
+          ? "Lab Review concepts"
+          : activeSessionMode === "lab-practical" ? "Lab Practical concepts" : "Lecture Review concepts")
+        : "None";
       catCounts = {};
     }
     var details = document.createElement("details");
@@ -42484,7 +42549,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function metaHtml(question, mode) {
-    if (isSprintQuestion(question)) return "<span class=\"tag\">Lecture Review</span>";
+    if (isSprintQuestion(question)) {
+      var label = question.contentGroup === "lab-practical"
+        ? (question.practicalFormat === "vignette" ? "Clinical Vignette" : "Lab Practical")
+        : question.contentGroup === "labs" ? "Lab Review" : "Lecture Review";
+      return "<span class=\"tag\">" + htmlEscape(label) + "</span>";
+    }
     return "<span class=\"tag\">" + htmlEscape(question.conceptBlock) + "</span>";
   }
 
@@ -42747,7 +42817,9 @@ document.addEventListener("DOMContentLoaded", function() {
         ? q.unit + " · " + q.conceptBlock
         : q.conceptBlock;
       card.innerHTML =
-        "<summary>" + htmlEscape(isSprintQuestion(q) ? "Lecture Review" : summaryLabel) + " - " + htmlEscape(q.q) + "</summary>" +
+        "<summary>" + htmlEscape(isSprintQuestion(q)
+          ? (q.contentGroup === "lab-practical" ? "Lab Practical" : q.contentGroup === "labs" ? "Lab Review" : "Lecture Review")
+          : summaryLabel) + " - " + htmlEscape(q.q) + "</summary>" +
         "<div><b>Answer:</b> " + htmlEscape(q.a) +
         "<p><b>Explanation:</b> " + htmlEscape(q.why) + "</p></div>";
       list.appendChild(card);
@@ -42897,6 +42969,7 @@ document.addEventListener("DOMContentLoaded", function() {
       conceptControl.className = isStudyBankMode(activeSessionMode) ? "hidden" : "";
     }
     renderLabQuestionTypeSelector();
+    renderLabPracticalTypeSelector();
   }
 
   function renderLabQuestionTypeSelector() {
@@ -42925,8 +42998,34 @@ document.addEventListener("DOMContentLoaded", function() {
     saveState();
   }
 
+  function renderLabPracticalTypeSelector() {
+    var selector = document.getElementById("labPracticalTypeSelector");
+    if (!selector) return;
+    selector.className = activeSessionMode === "lab-practical" ? "lab-question-type-selector" : "lab-question-type-selector hidden";
+    selector.querySelectorAll("[data-lab-practical-type]").forEach(function(button) {
+      var selected = button.getAttribute("data-lab-practical-type") === activeLabPracticalType;
+      button.className = "lab-question-type-button" + (selected ? " active" : "");
+      button.setAttribute("aria-pressed", selected ? "true" : "false");
+    });
+  }
+
+  function setLabPracticalType(type) {
+    if (["all", "standard", "vignette"].indexOf(type) < 0 || type === activeLabPracticalType) return;
+    saveActiveUnitProgress();
+    activeLabPracticalType = type;
+    if (countFilter) countFilter.value = "all";
+    populateConceptFilter();
+    renderLabPracticalTypeSelector();
+    restoreUnitProgress(activeUnit, true);
+    setHtml("questionList", "");
+    var questionList = byId("questionList");
+    if (questionList) questionList.setAttribute("data-open", "false");
+    setText("listQs", "Show Filtered List");
+    saveState();
+  }
+
   function setSessionMode(mode, returnFocus) {
-    if (["learn", "practice", "labs", "exam"].indexOf(mode) < 0) return;
+    if (["learn", "practice", "labs", "lab-practical", "exam"].indexOf(mode) < 0) return;
     if (mode === activeSessionMode) {
       showModeIntro(mode, returnFocus);
       return;
@@ -42960,7 +43059,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var subtitle = "";
     if (isStudyBankMode(activeSessionMode)) {
       var selectedBank = enabledLearnBanks().find(function(bank) { return bank.topic === activeUnit; });
-      var allTitle = activeSessionMode === "labs" ? "All Lab Questions" : "All Learn Questions";
+      var allTitle = activeSessionMode === "labs"
+        ? "All Lab Questions"
+        : activeSessionMode === "lab-practical" ? "All Practical Questions" : "All Learn Questions";
       title = (isAllWeeksUnit(activeUnit) ? allTitle : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit)) + " — " + sessionModeLabel(activeSessionMode);
       subtitle = "<span class=\"session-mode-caption\">" + htmlEscape(sessionModeSubtitle(activeSessionMode)) + "</span>";
     } else if (activeUnit === "pituitary") {
@@ -43009,7 +43110,7 @@ document.addEventListener("DOMContentLoaded", function() {
     activeUnit = launchParams.get("unit");
     launchSessionRequested = true;
   }
-  if (["learn", "practice", "labs", "exam"].indexOf(launchParams.get("session")) > -1) {
+  if (["learn", "practice", "labs", "lab-practical", "exam"].indexOf(launchParams.get("session")) > -1) {
     activeSessionMode = launchParams.get("session");
     launchSessionRequested = true;
   }
@@ -43036,6 +43137,11 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll("#labQuestionTypeSelector [data-lab-question-type]").forEach(function(button) {
     button.addEventListener("click", function() {
       setLabQuestionType(button.getAttribute("data-lab-question-type"));
+    });
+  });
+  document.querySelectorAll("#labPracticalTypeSelector [data-lab-practical-type]").forEach(function(button) {
+    button.addEventListener("click", function() {
+      setLabPracticalType(button.getAttribute("data-lab-practical-type"));
     });
   });
   onId("flagQuestion", "click", toggleCurrentFlag);
