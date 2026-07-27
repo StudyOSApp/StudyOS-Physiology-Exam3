@@ -1903,7 +1903,7 @@ question_type: Mixed Review
 
 ### Question 86
 
-Which paired ECG relationship is correct?
+Which option correctly matches low or high serum calcium with its expected effect on the ECG QT interval?
 
 A. Hypocalcemia shortens QT; hypercalcemia prolongs QT  
 B. Both conditions shorten QT  

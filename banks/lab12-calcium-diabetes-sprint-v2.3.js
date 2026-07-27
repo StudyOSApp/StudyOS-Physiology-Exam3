@@ -2902,7 +2902,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Calcium Disorders",
       "subtopic": "Calcium and ECG",
-      "question": "Which paired ECG relationship is correct?",
+      "question": "Which option correctly matches low or high serum calcium with its expected effect on the ECG QT interval?",
       "choices": {
         "A": "Hypocalcemia shortens QT; hypercalcemia prolongs QT",
         "B": "Both conditions shorten QT",
