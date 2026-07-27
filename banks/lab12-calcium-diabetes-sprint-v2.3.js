@@ -862,7 +862,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Glucose Regulation",
       "subtopic": "Fasting Glucose Ranges",
-      "question": "A fasting glucose of 130 mg/dL on two separate occasions meets which category?",
+      "question": "A fasting glucose of 130 mg/dL (high) on two separate occasions meets which category?",
       "choices": {
         "A": "Diabetes mellitus",
         "B": "Normal fasting glucose",
@@ -2018,12 +2018,12 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Integrated Thermostat Cases",
       "subtopic": "Case 3 and Case 4",
-      "question": "How do the parathyroid failures in Cases 3 and 4 differ?",
+      "question": "How do primary hyperparathyroidism and postsurgical hypoparathyroidism differ?",
       "choices": {
-        "A": "Both cases have excessive PTH",
-        "B": "Case 3 has loss of PTH; Case 4 has excessive PTH",
-        "C": "Both cases have normal PTH responses",
-        "D": "Case 3: excess PTH; Case 4: deficient PTH"
+        "A": "Both disorders have excessive PTH",
+        "B": "Primary hyperparathyroidism has deficient PTH; postsurgical hypoparathyroidism has excessive PTH",
+        "C": "Both disorders have normal PTH responses",
+        "D": "Primary hyperparathyroidism has excessive PTH; postsurgical hypoparathyroidism has deficient PTH"
       },
       "correctAnswer": "D",
       "explanation": "Primary hyperparathyroidism is a gain-of-secretion failure, whereas postsurgical hypoparathyroidism is loss of the hormone source.",
@@ -2154,7 +2154,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Calcium Foundations",
       "subtopic": "Plasma Calcium Range",
-      "question": "A total calcium of 11.2 mg/dL is best classified as what?",
+      "question": "A total calcium of 11.2 mg/dL (high) is best classified as what?",
       "choices": {
         "A": "Hypocalcemia",
         "B": "Hypercalcemia",
@@ -2970,7 +2970,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Glucose Regulation",
       "subtopic": "Fasting Glucose Ranges",
-      "question": "A fasting glucose of 124 mg/dL should be classified as what?",
+      "question": "A fasting glucose of 124 mg/dL (high) should be classified as what?",
       "choices": {
         "A": "Normal fasting glucose",
         "B": "Diabetes on this value alone",
@@ -3140,7 +3140,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Type 1 Diabetes and DKA",
       "subtopic": "Case 1 Recognition",
-      "question": "A teen has polyuria, weight loss, glucose 480 mg/dL, ketonuria, and fruity breath. Which condition is most likely?",
+      "question": "A teen has polyuria, weight loss, glucose 480 mg/dL (high), ketonuria, and fruity breath. Which condition is most likely?",
       "choices": {
         "A": "Compensated type 2 diabetes",
         "B": "Type 1 diabetes presenting with DKA",
@@ -3446,7 +3446,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Type 2 Diabetes",
       "subtopic": "Case 2 Recognition",
-      "question": "An adult has fasting glucose 190 mg/dL, high insulin, high C-peptide, and acanthosis nigricans. What is the main defect?",
+      "question": "An adult has fasting glucose 190 mg/dL (high), high insulin, high C-peptide, and acanthosis nigricans. What is the main defect?",
       "choices": {
         "A": "Absolute insulin deficiency from beta-cell destruction",
         "B": "Insulin resistance in target tissues",
@@ -3480,7 +3480,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Type 2 Diabetes",
       "subtopic": "Acanthosis Nigricans",
-      "question": "Acanthosis nigricans in the Lab 12 case is a visible clue to what state?",
+      "question": "Acanthosis nigricans is a visible clue to what physiologic state?",
       "choices": {
         "A": "Absolute lack of insulin",
         "B": "Severe hypocalcemia",
@@ -3548,7 +3548,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Type 2 Diabetes",
       "subtopic": "C-Peptide Interpretation",
-      "question": "Why does high C-peptide help distinguish the type 2 case from the type 1 case?",
+      "question": "Why does high C-peptide help distinguish type 2 diabetes from type 1 diabetes?",
       "choices": {
         "A": "It proves the patient is receiving injected insulin",
         "B": "It confirms ongoing endogenous insulin production",
@@ -3888,12 +3888,12 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Integrated Thermostat Cases",
       "subtopic": "Case 1 vs Case 2",
-      "question": "What is the key loop-location difference between the two diabetes cases?",
+      "question": "What is the key feedback-loop difference between type 1 and early type 2 diabetes?",
       "choices": {
-        "A": "Both cases lose the insulin source",
-        "B": "Case 1 has resistant targets; Case 2 loses the insulin source",
-        "C": "Both cases have normal insulin signaling",
-        "D": "Case 1 lacks insulin; Case 2 resists insulin"
+        "A": "Both disorders lose the insulin source",
+        "B": "Type 1 has resistant targets; type 2 loses the insulin source",
+        "C": "Both disorders have normal insulin signaling",
+        "D": "Type 1 lacks insulin; early type 2 resists insulin"
       },
       "correctAnswer": "D",
       "explanation": "Type 1 is a hormone-source failure, while early type 2 is primarily a receiver or target-tissue failure.",
@@ -3956,7 +3956,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Integrated Thermostat Cases",
       "subtopic": "Case 2 Mechanism",
-      "question": "Why can the adult in Case 2 have high glucose and high insulin at the same time?",
+      "question": "Why can an adult with early type 2 diabetes have high glucose and high insulin at the same time?",
       "choices": {
         "A": "Injected insulin always raises glucose",
         "B": "Resistant tissues need abnormally high insulin",
@@ -3990,7 +3990,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Integrated Thermostat Cases",
       "subtopic": "Case 3 Mechanism",
-      "question": "In Case 3, which feedback relationship is broken?",
+      "question": "In primary hyperparathyroidism, which feedback relationship is broken?",
       "choices": {
         "A": "Low glucose fails to stimulate insulin",
         "B": "High phosphate fails to stimulate calcitonin",
@@ -4058,7 +4058,7 @@ window.LAB12_SPRINT_BANK = {
       "unit": "lab-12",
       "conceptBlock": "Integrated Thermostat Cases",
       "subtopic": "Cross-System Comparison",
-      "question": "Which case pairing represents a hormone-source failure in both feedback systems?",
+      "question": "Which pairing represents a hormone-source failure in both feedback systems?",
       "choices": {
         "A": "Type 2 diabetes and primary hyperparathyroidism",
         "B": "Type 2 diabetes and normal calcium feedback",

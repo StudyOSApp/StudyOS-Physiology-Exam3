@@ -1032,7 +1032,7 @@ window.LAB11_SPRINT_BANK = {
       "unit": "lab-11",
       "conceptBlock": "HPT Axis",
       "subtopic": "Lesion Localization",
-      "question": "Patient A has TSH 8.2, free T4 0.6, and low oxygen consumption. Where is the most likely defect?",
+      "question": "A patient has TSH 8.2 (high), free T4 0.6 (low), and low oxygen consumption. Where is the most likely defect?",
       "choices": {
         "A": "Anterior pituitary",
         "B": "Hypothalamus",
@@ -1066,7 +1066,7 @@ window.LAB11_SPRINT_BANK = {
       "unit": "lab-11",
       "conceptBlock": "HPT Axis",
       "subtopic": "Lesion Localization",
-      "question": "Patient B has low TSH, low free T4, and low oxygen consumption. Which location best explains the pattern?",
+      "question": "A patient has low TSH, low free T4, and low oxygen consumption. Which location best explains the pattern?",
       "choices": {
         "A": "Thyroid gland",
         "B": "Adrenal medulla",
@@ -1100,7 +1100,7 @@ window.LAB11_SPRINT_BANK = {
       "unit": "lab-11",
       "conceptBlock": "HPT Axis",
       "subtopic": "Lesion Localization",
-      "question": "Patient C has high TSH, high free T4, and high oxygen consumption. Which explanation is supported by the lab?",
+      "question": "A patient has high TSH, high free T4, and high oxygen consumption. Which explanation is supported by this pattern?",
       "choices": {
         "A": "A TSH-secreting pituitary adenoma",
         "B": "Complete thyroid removal",

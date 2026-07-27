@@ -2392,7 +2392,7 @@ window.LAB10_SPRINT_BANK = {
       "unit": "lab-10",
       "conceptBlock": "ADH Disorders",
       "subtopic": "Central diabetes insipidus",
-      "question": "A patient sustains head trauma and now produces 10 L/day of dilute urine with elevated serum sodium; serum ADH is low. The diagnosis and localization are:",
+      "question": "A patient sustains head trauma and now produces 10 L/day (high) of dilute urine with elevated serum sodium; serum ADH is low. The diagnosis and localization are:",
       "choices": {
         "A": "Nephrogenic DI localized to the kidney",
         "B": "SIADH localized to the hypothalamus",

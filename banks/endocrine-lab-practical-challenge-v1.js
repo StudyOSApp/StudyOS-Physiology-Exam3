@@ -389,7 +389,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "ADH",
       "subtopic": "mechanism localization; ADH level as discriminator",
-      "question": "A patient with a recent pituitary stalk injury from a motorcycle accident presents with polyuria (14 L/day), extreme thirst, and serum sodium 152. Which best identifies the diagnosis and expected serum ADH?",
+      "question": "A patient with a recent pituitary stalk injury from a motorcycle accident presents with polyuria (14 L/day, high), extreme thirst, and serum sodium 152 (high). Which best identifies the diagnosis and expected serum ADH?",
       "choices": {
         "A": "Central diabetes insipidus; serum ADH low",
         "B": "Nephrogenic diabetes insipidus; serum ADH normal or high",
@@ -465,7 +465,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "ADH",
       "subtopic": "SIADH mechanism; ectopic hormone secretion",
-      "question": "A patient with small cell lung carcinoma is admitted confused. Labs: serum sodium 116 mEq/L, serum osmolality low, urine osmolality inappropriately high. The patient is euvolemic. What best explains the urine finding?",
+      "question": "A patient with small cell lung carcinoma is admitted confused. Labs: serum sodium 116 mEq/L (low), serum osmolality low, urine osmolality inappropriately high. The patient is euvolemic. What best explains the urine finding?",
       "choices": {
         "A": "Aldosterone deficiency causing renal sodium wasting",
         "B": "Excess atrial natriuretic peptide suppressing renin",
@@ -845,7 +845,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "Thyroid",
       "subtopic": "recognizing loss-of-feedback pattern at pituitary",
-      "question": "A patient has TSH mildly elevated (6.5), Free T4 elevated (2.4), and oxygen consumption elevated (18 L/hr). Which is the most likely explanation?",
+      "question": "A patient has TSH 6.5 (high), Free T4 2.4 (high), and oxygen consumption 18 L/hr (high). Which is the most likely explanation?",
       "choices": {
         "A": "Primary hyperthyroidism from Graves' disease",
         "B": "Exogenous levothyroxine overdose",
@@ -1529,7 +1529,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "HPA",
       "subtopic": "ectopic ACTH; localization when pituitary is normal",
-      "question": "The same three Cushing's patients from Q40 are compared. Patient 3 has \"very high\" ACTH with no identifiable pituitary abnormality on imaging. Which is the most likely source?",
+      "question": "A patient with cortisol excess has very high ACTH and no identifiable pituitary abnormality on imaging. Which is the most likely ACTH source?",
       "choices": {
         "A": "Autonomous CRH secretion from the hypothalamus",
         "B": "Bilateral adrenal hyperplasia driving ACTH",
@@ -2441,7 +2441,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "DM",
       "subtopic": "identifying failure point in the two-thermostat framework",
-      "question": "A 14-year-old presents with two weeks of polyuria, polydipsia, and weight loss despite eating normally. Today: nausea, deep rapid breathing, fruity breath. Glucose 480, bicarbonate low, urine positive for glucose and ketones. Which best identifies the failure point in the glucose control loop?",
+      "question": "A 14-year-old presents with two weeks of polyuria, polydipsia, and weight loss despite eating normally. Today: nausea, deep rapid breathing, fruity breath. Glucose 480 (high), bicarbonate low, urine positive for glucose and ketones. Which best identifies the failure point in the glucose control loop?",
       "choices": {
         "A": "Insulin resistance at peripheral target tissues",
         "B": "Absolute insulin deficiency from autoimmune β-cell destruction",
@@ -2555,7 +2555,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "DM",
       "subtopic": "distinguishing hormone deficiency from target resistance",
-      "question": "A 52-year-old with BMI 34 has fasting glucose 190, HbA1c 8.9%, fasting insulin elevated, C-peptide elevated, and acanthosis nigricans. Which best identifies the failure point?",
+      "question": "A 52-year-old with BMI 34 (high) has fasting glucose 190 (high), HbA1c 8.9% (high), fasting insulin elevated, C-peptide elevated, and acanthosis nigricans. Which best identifies the failure point?",
       "choices": {
         "A": "Absolute insulin deficiency",
         "B": "Insulin resistance at peripheral target tissues",
@@ -2593,7 +2593,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "DM",
       "subtopic": "mechanism of DKA resistance in T2DM",
-      "question": "The same T2DM patient from Q68 has not developed DKA. Which best explains the absence?",
+      "question": "A patient with type 2 diabetes has high glucose, elevated insulin and C-peptide, but no DKA. Which best explains the absence of DKA?",
       "choices": {
         "A": "His glucose is below the renal threshold",
         "B": "Glucagon is being suppressed by chronic hyperglycemia",
@@ -2783,7 +2783,7 @@ window.ENDOCRINE_LAB_PRACTICAL_BANK = {
       "unit": "endocrine-lab-practical",
       "conceptBlock": "DM",
       "subtopic": "renal threshold; osmotic diuresis",
-      "question": "A T2DM patient's fasting glucose reads 240 mg/dL and glycosuria is documented. What is the most likely mechanism for the glycosuria?",
+      "question": "A patient with type 2 diabetes has fasting glucose 240 mg/dL (high) and documented glycosuria. What is the most likely mechanism for the glycosuria?",
       "choices": {
         "A": "Renal artery stenosis",
         "B": "Blood glucose has exceeded the renal glucose threshold (~180 mg/dL)",

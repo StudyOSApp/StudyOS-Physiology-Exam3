@@ -1077,7 +1077,7 @@ window.BODY_TEMPERATURE_PRACTICE_QUESTIONS = [
     "unit": "body-temperature",
     "conceptBlock": "Fever",
     "subtopic": "Fever onset",
-    "question": "A febrile patient is shivering even though core temperature is already 100°F. Why?",
+    "question": "A febrile patient is shivering even though core temperature is already 100°F (high). Why?",
     "choices": {
       "A": "The set point has fallen below normal",
       "B": "Sweat evaporation is excessive",

@@ -1396,7 +1396,7 @@ window.CALCIUM_PHOSPHATE_PRACTICE_QUESTIONS = [
     "unit": "calcium-phosphate",
     "conceptBlock": "Clinical Disorders",
     "subtopic": "Osteoporosis",
-    "question": "A postmenopausal patient has a T-score of -2.7. How should this be classified?",
+    "question": "A postmenopausal patient has a T-score of -2.7 (low). How should this be classified?",
     "choices": {
       "A": "Normal bone density",
       "B": "Osteopenia",
