@@ -306,34 +306,6 @@
       box-shadow:0 0 0 2px rgba(31,111,235,.13);
     }
 
-    .cumulative-subcategory-tabs {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-      gap:8px;
-      margin:2px 0 12px;
-      padding:10px;
-      border:1px solid var(--line);
-      border-radius:10px;
-      background:var(--panel);
-    }
-
-    .cumulative-subcategory-tab {
-      min-height:42px;
-      padding:7px 10px;
-      border-color:#c9d4e2;
-      background:var(--unit-card);
-      text-align:left;
-      font-size:.88rem;
-      font-weight:800;
-      line-height:1.2;
-    }
-
-    .cumulative-subcategory-tab.active {
-      border-color:var(--blue);
-      background:var(--active);
-      box-shadow:0 0 0 2px rgba(31,111,235,.13);
-    }
-
     .pituitary-mode-selector {
       display:flex;
       align-items:center;
@@ -443,15 +415,13 @@
       box-shadow:0 8px 24px rgba(0,0,0,.16);
     }
 
-    body[data-theme="dark"] .unit-tab,
-    body[data-theme="dark"] .cumulative-subcategory-tab {
+    body[data-theme="dark"] .unit-tab {
       border-color:rgba(255,255,255,.08);
       box-shadow:0 8px 18px rgba(0,0,0,.14);
     }
 
     body[data-theme="dark"] .pituitary-mode-selector,
     body[data-theme="dark"] .pituitary-mode-button,
-    body[data-theme="dark"] .cumulative-subcategory-tabs,
     body[data-theme="dark"] .lab-question-type-selector,
     body[data-theme="dark"] .lab-question-type-button {
       border-color:rgba(255,255,255,.10);
@@ -483,6 +453,10 @@
       gap:5px 18px;
       font-size:.9rem;
       line-height:1.25;
+    }
+
+    .cumulative-category-breakdown .concept-row {
+      grid-template-columns:minmax(0,1fr) 6.4rem 4.2rem;
     }
 
     .concept-row {
@@ -2179,7 +2153,6 @@
       <span id="examCountdownPill" class="exam-countdown-pill hidden" aria-live="polite"></span>
     </div>
     <div id="unitTabs" class="unit-tabs" aria-label="Physiology module tabs"></div>
-    <div id="cumulativeSubcategoryTabs" class="cumulative-subcategory-tabs hidden" aria-label="Cumulative Final topic tabs"></div>
     <div id="labQuestionTypeSelector" class="lab-question-type-selector hidden" aria-label="Lab question type">
       <button class="lab-question-type-button" type="button" data-lab-question-type="all">All</button>
       <button class="lab-question-type-button" type="button" data-lab-question-type="learn">Learn</button>
@@ -2411,7 +2384,7 @@
     <div id="newModesTour" class="new-modes-tour hidden" role="dialog" aria-modal="true" aria-labelledby="newModesTourTitle" aria-describedby="newModesTourBody">
       <div id="newModesTourCard" class="new-modes-tour-card">
         <h3 id="newModesTourTitle">New ways to study</h3>
-        <p id="newModesTourBody">Cumulative Final opens by default. Choose a PowerPoint on the top row, then use the focused topic row beneath it for narrower drilling; earlier exam and lab sections remain available here.</p>
+        <p id="newModesTourBody">Cumulative Final opens by default. Choose a PowerPoint on the top row to see its category question counts and your accuracy above the quiz; earlier exam and lab sections remain available here.</p>
         <div class="modal-actions">
           <button id="dismissNewModesTour" type="button">OK</button>
         </div>
@@ -40627,7 +40600,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var questionTimerInterval = null;
   var activeUnit = units[0].name;
   var activeSessionMode = "cumulative-final";
-  var activeCumulativeCategory = "all";
   var activeLearnBankId = "all";
   var activeLabQuestionType = "all";
   var activeLabPracticalType = "all";
@@ -40721,16 +40693,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }).slice(0, 8);
   }
 
-  function cumulativeFinalCategoryExists(unitName, categoryName) {
-    return categoryName === "all" || cumulativeFinalSubcategoriesForUnit(unitName).indexOf(categoryName) > -1;
-  }
-
   function cumulativeFinalQuestionsForUnit(unitName) {
-    var pool = cumulativeFinalSubjectQuestions(unitName);
-    if (isAllWeeksUnit(unitName) || activeCumulativeCategory === "all") return pool;
-    return pool.filter(function(question) {
-      return question.broadCategory === activeCumulativeCategory;
-    });
+    return cumulativeFinalSubjectQuestions(unitName);
   }
 
   function isSprintQuestion(question) {
@@ -40846,7 +40810,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function progressKey(unitName) {
     if (isStudyBankMode(activeSessionMode)) {
-      if (activeSessionMode === "cumulative-final") return "cumulative-final::" + unitName + "::" + activeCumulativeCategory;
+      if (activeSessionMode === "cumulative-final") return "cumulative-final::" + unitName;
       if (activeSessionMode === "lecture-exam-3") return "lecture-exam-3::" + unitName;
       var bank = enabledLearnBanks().find(function(item) { return item.topic === unitName; });
       return activeSessionMode + "::" +
@@ -41587,7 +41551,6 @@ document.addEventListener("DOMContentLoaded", function() {
         settings: {
           unit: activeUnit,
           sessionMode: activeSessionMode,
-          cumulativeCategory: activeCumulativeCategory,
           learnBankId: activeLearnBankId,
           labQuestionType: activeLabQuestionType,
           labPracticalType: activeLabPracticalType,
@@ -41640,9 +41603,6 @@ document.addEventListener("DOMContentLoaded", function() {
       } else if (isAllWeeksUnit(saved.settings.unit)) {
         activeUnit = units[0].name;
       }
-      activeCumulativeCategory = cumulativeFinalCategoryExists(activeUnit, saved.settings.cumulativeCategory)
-        ? saved.settings.cumulativeCategory
-        : "all";
     } else if (unitExists(saved.settings.unit)) {
       activeUnit = saved.settings.unit;
     }
@@ -41922,7 +41882,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     if (
       activeSessionMode === "cumulative-final" &&
-      activeCumulativeCategory === "all" &&
       !restoredConceptBlock &&
       !checkedOf(missedOnlyToggle, false) &&
       !flaggedOnlyEnabled()
@@ -42053,7 +42012,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     bankAttempts.forEach(function(item) {
       if (!item.correct && item.question) {
-        var concept = item.question.conceptBlock || item.question.cat || "General";
+        var concept = activeSessionMode === "cumulative-final"
+          ? (item.question.broadCategory || item.question.conceptBlock || item.question.cat || "General")
+          : (item.question.conceptBlock || item.question.cat || "General");
         misses[concept] = (misses[concept] || 0) + 1;
       }
     });
@@ -42063,10 +42024,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     if (!concepts.length) return "No weak concepts yet.";
+    if (activeSessionMode === "cumulative-final") {
+      return concepts.slice(0, 2).map(function(concept) {
+        return concept + " (" + misses[concept] + ")";
+      }).join(", ");
+    }
     if (isStudyBankMode(activeSessionMode)) {
-      return activeSessionMode === "cumulative-final"
-        ? "Review missed cumulative-final questions."
-        : activeSessionMode === "labs"
+      return activeSessionMode === "labs"
         ? "Review missed lab questions."
         : activeSessionMode === "lab-practical"
           ? "Review missed lab practical questions."
@@ -42325,6 +42289,49 @@ document.addEventListener("DOMContentLoaded", function() {
         "<div class=\"concept-label\"><span class=\"concept-name\">" + htmlEscape(item.concept) +
         "</span><span class=\"concept-leader\" aria-hidden=\"true\"></span></div>" +
         "<span class=\"concept-answered\">" + item.answered + "/" + item.count + "</span>" +
+        "<span class=\"concept-percent " + statusClass + "\">" + percentText + "</span>" +
+      "</div>";
+    }).join("");
+  }
+
+  function cumulativeCategoryStatsForUnit(unitName) {
+    var pool = cumulativeFinalSubjectQuestions(unitName);
+    var poolIds = {};
+    var counts = {};
+    var attempts = {};
+
+    pool.forEach(function(question) {
+      poolIds[question.id] = true;
+      counts[question.broadCategory] = (counts[question.broadCategory] || 0) + 1;
+    });
+
+    bankAttempts.forEach(function(item) {
+      if (!item.question || !poolIds[item.question.id]) return;
+      var category = item.question.broadCategory;
+      if (!attempts[category]) attempts[category] = { correct: 0, total: 0 };
+      attempts[category].total += 1;
+      if (item.correct) attempts[category].correct += 1;
+    });
+
+    return cumulativeFinalSubcategoriesForUnit(unitName).map(function(category) {
+      var data = attempts[category];
+      return {
+        concept: category,
+        count: counts[category] || 0,
+        answered: data ? data.total : 0,
+        percent: data && data.total ? Math.round((data.correct / data.total) * 100) : null
+      };
+    });
+  }
+
+  function cumulativeCategoryBreakdownHtml(unitName) {
+    return cumulativeCategoryStatsForUnit(unitName).map(function(item) {
+      var statusClass = masteryClass(item.percent);
+      var percentText = item.percent === null ? "—" : item.percent + "%";
+      return "<div class=\"concept-row\">" +
+        "<div class=\"concept-label\"><span class=\"concept-name\">" + htmlEscape(item.concept) +
+        "</span><span class=\"concept-leader\" aria-hidden=\"true\"></span></div>" +
+        "<span class=\"concept-answered\">" + item.count + " questions</span>" +
         "<span class=\"concept-percent " + statusClass + "\">" + percentText + "</span>" +
       "</div>";
     }).join("");
@@ -43247,52 +43254,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  function renderCumulativeSubcategoryTabs() {
-    var tabs = document.getElementById("cumulativeSubcategoryTabs");
-    if (!tabs) return;
-    var subject = cumulativeFinalSubjectByName(activeUnit);
-    if (activeSessionMode !== "cumulative-final" || !subject) {
-      tabs.innerHTML = "";
-      tabs.className = "cumulative-subcategory-tabs hidden";
-      return;
-    }
-
-    tabs.innerHTML = "";
-    tabs.className = "cumulative-subcategory-tabs";
-    cumulativeFinalSubcategoriesForUnit(activeUnit).forEach(function(categoryName) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "cumulative-subcategory-tab" + (categoryName === activeCumulativeCategory ? " active" : "");
-      btn.setAttribute("data-cumulative-category", categoryName);
-      btn.setAttribute("aria-pressed", categoryName === activeCumulativeCategory ? "true" : "false");
-      btn.textContent = categoryName;
-      btn.addEventListener("click", function() {
-        setActiveCumulativeCategory(categoryName);
-      });
-      tabs.appendChild(btn);
-    });
-  }
-
-  function setActiveCumulativeCategory(categoryName) {
-    if (
-      activeSessionMode !== "cumulative-final" ||
-      !cumulativeFinalCategoryExists(activeUnit, categoryName) ||
-      categoryName === activeCumulativeCategory
-    ) return;
-    saveActiveUnitProgress();
-    activeCumulativeCategory = categoryName;
-    if (countFilter) countFilter.value = "all";
-    populateConceptFilter();
-    renderCumulativeSubcategoryTabs();
-    restoreUnitProgress(activeUnit, true);
-    updateUnitIntro();
-    setHtml("questionList", "");
-    var questionList = byId("questionList");
-    if (questionList) questionList.setAttribute("data-open", "false");
-    setText("listQs", "Show Filtered List");
-    saveState();
-  }
-
   function renderUnitTabs() {
     var tabs = document.getElementById("unitTabs");
     if (!tabs) return;
@@ -43320,8 +43281,6 @@ document.addEventListener("DOMContentLoaded", function() {
       });
       tabs.appendChild(btn);
     });
-
-    renderCumulativeSubcategoryTabs();
   }
 
   function renderPituitaryModeSelector() {
@@ -43401,7 +43360,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     saveActiveUnitProgress();
     activeSessionMode = mode;
-    if (mode === "cumulative-final") activeCumulativeCategory = "all";
     if (!unitQuestions(activeUnit).length) {
       activeUnit = units[0].name;
     }
@@ -43437,18 +43395,23 @@ document.addEventListener("DOMContentLoaded", function() {
             ? "All 200 Questions"
             : activeSessionMode === "cumulative-final" ? "All 392 Questions" : "All Learn Questions";
       var selectedTitle = isAllWeeksUnit(activeUnit) ? allTitle : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit);
-      if (activeSessionMode === "cumulative-final" && activeCumulativeCategory !== "all") {
-        selectedTitle = activeCumulativeCategory;
+      if (activeSessionMode === "cumulative-final") {
+        title = isAllWeeksUnit(activeUnit)
+          ? allTitle + " — " + sessionModeLabel(activeSessionMode)
+          : unitCardLabel(activeUnit) + " Cumulative Review";
+      } else {
+        title = selectedTitle + " — " + sessionModeLabel(activeSessionMode);
+        subtitle = "<span class=\"session-mode-caption\">" + htmlEscape(sessionModeSubtitle(activeSessionMode)) + "</span>";
       }
-      title = selectedTitle + " — " + sessionModeLabel(activeSessionMode);
-      subtitle = "<span class=\"session-mode-caption\">" + htmlEscape(sessionModeSubtitle(activeSessionMode)) + "</span>";
     } else if (activeUnit === "pituitary") {
       title = "Pituitary Hormones — " + sessionModeLabel(activeSessionMode);
       subtitle = "<span class=\"session-mode-caption\">" + htmlEscape(sessionModeSubtitle(activeSessionMode)) + "</span>";
     }
-    var breakdown = isStudyBankMode(activeSessionMode)
-      ? ""
-      : "<div class=\"concept-breakdown\">" + conceptBreakdownHtml(unit) + "</div>";
+    var breakdown = activeSessionMode === "cumulative-final" && cumulativeFinalSubjectByName(activeUnit)
+      ? "<div class=\"concept-breakdown cumulative-category-breakdown\">" + cumulativeCategoryBreakdownHtml(activeUnit) + "</div>"
+      : isStudyBankMode(activeSessionMode)
+        ? ""
+        : "<div class=\"concept-breakdown\">" + conceptBreakdownHtml(unit) + "</div>";
     setHtml("unitIntro",
       "<div class=\"bank-detail-title\"><span>" + htmlEscape(title) + subtitle +
       "</span><span>" + scoreText + progress.answered + " / " + progress.total + " answered</span></div>" +
@@ -43458,7 +43421,6 @@ document.addEventListener("DOMContentLoaded", function() {
   function setActiveUnit(unitName) {
     saveActiveUnitProgress();
     activeUnit = unitName;
-    if (activeSessionMode === "cumulative-final") activeCumulativeCategory = "all";
     if (isStudyBankMode(activeSessionMode)) syncActiveLearnBankId();
     if (topicFilter) topicFilter.value = "";
     if ((isAllWeeksUnit(activeUnit) || activeSessionMode === "cumulative-final") && countFilter) countFilter.value = "all";
@@ -43495,7 +43457,6 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     activeSessionMode = "cumulative-final";
     activeUnit = units[0].name;
-    activeCumulativeCategory = "all";
   }
   if (activeSessionMode === "cumulative-final") {
     var launchLegacyCategory = cumulativeFinalCategories.find(function(category) {
@@ -43504,14 +43465,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (launchLegacyCategory && launchLegacyCategory.ids.length) {
       var launchSubject = cumulativeFinalSubjectForQuestionId(launchLegacyCategory.ids[0]);
       activeUnit = launchSubject ? launchSubject.name : units[0].name;
-      activeCumulativeCategory = "all";
     }
     if (!isAllWeeksUnit(activeUnit) && !cumulativeFinalSubjectByName(activeUnit)) {
       activeUnit = units[0].name;
-      activeCumulativeCategory = "all";
-    }
-    if (!cumulativeFinalCategoryExists(activeUnit, activeCumulativeCategory)) {
-      activeCumulativeCategory = "all";
     }
   }
   if (activeSessionMode === "cumulative-final" && countFilter) {
