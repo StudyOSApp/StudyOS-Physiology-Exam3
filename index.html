@@ -2566,6 +2566,7 @@
 <script src="banks/lecture-exam-3-curated-v1.js"></script>
 <script src="banks/cumulative-final-v1.js"></script>
 <script src="banks/cumulative-final-endocrine-v1.js"></script>
+<script src="banks/cumulative-final-membrane-muscle-reflexes-v1.js"></script>
 <script src="banks/week12-glossary.js"></script>
 <script src="banks/week13-glossary.js"></script>
 <script>
@@ -25967,8 +25968,8 @@ document.addEventListener("DOMContentLoaded", function() {
       cumulativeFinalQuestionMap[question.id] = question;
     }
   });
-  if (cumulativeFinalQuestions.length !== 472) {
-    console.error("Cumulative Final expected 472 questions but loaded " + cumulativeFinalQuestions.length + ".");
+  if (cumulativeFinalQuestions.length !== 516) {
+    console.error("Cumulative Final expected 516 questions but loaded " + cumulativeFinalQuestions.length + ".");
   }
 
   var cumulativeFinalSubjects = [
@@ -25976,7 +25977,8 @@ document.addEventListener("DOMContentLoaded", function() {
     { order: 2, name: "cumulative-final-renal", title: "Renal", prefix: "CF-RENAL-" },
     { order: 3, name: "cumulative-final-gi", title: "GI", prefix: "CF-GI-" },
     { order: 4, name: "cumulative-final-cardiovascular", title: "Cardiovascular", prefix: "CF-CV-" },
-    { order: 5, name: "cumulative-final-endocrine", title: "Endocrine", prefix: "CF-ENDO-" }
+    { order: 5, name: "cumulative-final-endocrine", title: "Endocrine", prefix: "CF-ENDO-" },
+    { order: 6, name: "cumulative-final-membrane-muscle-reflexes", title: "Membrane, Muscle & Spinal Reflexes", prefix: "CF-MMSR-" }
   ];
 
   var learnBanks = [
