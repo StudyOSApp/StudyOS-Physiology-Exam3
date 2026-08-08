@@ -306,6 +306,34 @@
       box-shadow:0 0 0 2px rgba(31,111,235,.13);
     }
 
+    .cumulative-subcategory-tabs {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+      gap:8px;
+      margin:2px 0 12px;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--panel);
+    }
+
+    .cumulative-subcategory-tab {
+      min-height:42px;
+      padding:7px 10px;
+      border-color:#c9d4e2;
+      background:var(--unit-card);
+      text-align:left;
+      font-size:.88rem;
+      font-weight:800;
+      line-height:1.2;
+    }
+
+    .cumulative-subcategory-tab.active {
+      border-color:var(--blue);
+      background:var(--active);
+      box-shadow:0 0 0 2px rgba(31,111,235,.13);
+    }
+
     .pituitary-mode-selector {
       display:flex;
       align-items:center;
@@ -415,13 +443,15 @@
       box-shadow:0 8px 24px rgba(0,0,0,.16);
     }
 
-    body[data-theme="dark"] .unit-tab {
+    body[data-theme="dark"] .unit-tab,
+    body[data-theme="dark"] .cumulative-subcategory-tab {
       border-color:rgba(255,255,255,.08);
       box-shadow:0 8px 18px rgba(0,0,0,.14);
     }
 
     body[data-theme="dark"] .pituitary-mode-selector,
     body[data-theme="dark"] .pituitary-mode-button,
+    body[data-theme="dark"] .cumulative-subcategory-tabs,
     body[data-theme="dark"] .lab-question-type-selector,
     body[data-theme="dark"] .lab-question-type-button {
       border-color:rgba(255,255,255,.10);
@@ -2149,6 +2179,7 @@
       <span id="examCountdownPill" class="exam-countdown-pill hidden" aria-live="polite"></span>
     </div>
     <div id="unitTabs" class="unit-tabs" aria-label="Physiology module tabs"></div>
+    <div id="cumulativeSubcategoryTabs" class="cumulative-subcategory-tabs hidden" aria-label="Cumulative Final topic tabs"></div>
     <div id="labQuestionTypeSelector" class="lab-question-type-selector hidden" aria-label="Lab question type">
       <button class="lab-question-type-button" type="button" data-lab-question-type="all">All</button>
       <button class="lab-question-type-button" type="button" data-lab-question-type="learn">Learn</button>
@@ -2380,7 +2411,7 @@
     <div id="newModesTour" class="new-modes-tour hidden" role="dialog" aria-modal="true" aria-labelledby="newModesTourTitle" aria-describedby="newModesTourBody">
       <div id="newModesTourCard" class="new-modes-tour-card">
         <h3 id="newModesTourTitle">New ways to study</h3>
-        <p id="newModesTourBody">Cumulative Final opens by default. Use the topic tabs below it for focused lung, cardiovascular, renal, gastrointestinal, and acid–base drilling; earlier exam and lab sections remain available here.</p>
+        <p id="newModesTourBody">Cumulative Final opens by default. Choose a PowerPoint on the top row, then use the focused topic row beneath it for narrower drilling; earlier exam and lab sections remain available here.</p>
         <div class="modal-actions">
           <button id="dismissNewModesTour" type="button">OK</button>
         </div>
@@ -25966,6 +25997,13 @@ document.addEventListener("DOMContentLoaded", function() {
     console.error("Cumulative Final expected 392 questions but loaded " + cumulativeFinalQuestions.length + ".");
   }
 
+  var cumulativeFinalSubjects = [
+    { order: 1, name: "cumulative-final-pulmonary", title: "Pulmonary", prefix: "CF-LUNG-" },
+    { order: 2, name: "cumulative-final-renal", title: "Renal", prefix: "CF-RENAL-" },
+    { order: 3, name: "cumulative-final-gi", title: "GI", prefix: "CF-GI-" },
+    { order: 4, name: "cumulative-final-cardiovascular", title: "Cardiovascular", prefix: "CF-CV-" }
+  ];
+
   var learnBanks = [
     {
       id: "intro_endocrinology_sprint_v2_3",
@@ -40589,6 +40627,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var questionTimerInterval = null;
   var activeUnit = units[0].name;
   var activeSessionMode = "cumulative-final";
+  var activeCumulativeCategory = "all";
   var activeLearnBankId = "all";
   var activeLabQuestionType = "all";
   var activeLabPracticalType = "all";
@@ -40642,15 +40681,56 @@ document.addEventListener("DOMContentLoaded", function() {
     }).filter(Boolean);
   }
 
-  function cumulativeFinalQuestionsForUnit(unitName) {
+  function cumulativeFinalSubjectByName(unitName) {
+    return cumulativeFinalSubjects.find(function(subject) {
+      return subject.name === unitName;
+    }) || null;
+  }
+
+  function cumulativeFinalSubjectForQuestionId(questionId) {
+    return cumulativeFinalSubjects.find(function(subject) {
+      return String(questionId || "").indexOf(subject.prefix) === 0;
+    }) || null;
+  }
+
+  function cumulativeFinalSubjectQuestions(unitName) {
     if (isAllWeeksUnit(unitName)) return cumulativeFinalQuestions.slice();
-    var category = cumulativeFinalCategories.find(function(item) {
+    var subject = cumulativeFinalSubjectByName(unitName);
+    if (subject) {
+      return cumulativeFinalQuestions.filter(function(question) {
+        return String(question.id || "").indexOf(subject.prefix) === 0;
+      });
+    }
+    var legacyCategory = cumulativeFinalCategories.find(function(item) {
       return item.name === unitName;
     });
-    if (!category) return [];
-    return category.ids.map(function(questionId) {
+    if (!legacyCategory) return [];
+    return legacyCategory.ids.map(function(questionId) {
       return cumulativeFinalQuestionMap[questionId];
     }).filter(Boolean);
+  }
+
+  function cumulativeFinalSubcategoriesForUnit(unitName) {
+    var seen = {};
+    return cumulativeFinalSubjectQuestions(unitName).map(function(question) {
+      return question.broadCategory;
+    }).filter(function(category) {
+      if (!category || seen[category]) return false;
+      seen[category] = true;
+      return true;
+    }).slice(0, 8);
+  }
+
+  function cumulativeFinalCategoryExists(unitName, categoryName) {
+    return categoryName === "all" || cumulativeFinalSubcategoriesForUnit(unitName).indexOf(categoryName) > -1;
+  }
+
+  function cumulativeFinalQuestionsForUnit(unitName) {
+    var pool = cumulativeFinalSubjectQuestions(unitName);
+    if (isAllWeeksUnit(unitName) || activeCumulativeCategory === "all") return pool;
+    return pool.filter(function(question) {
+      return question.broadCategory === activeCumulativeCategory;
+    });
   }
 
   function isSprintQuestion(question) {
@@ -40766,7 +40846,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function progressKey(unitName) {
     if (isStudyBankMode(activeSessionMode)) {
-      if (activeSessionMode === "cumulative-final") return "cumulative-final::" + unitName;
+      if (activeSessionMode === "cumulative-final") return "cumulative-final::" + unitName + "::" + activeCumulativeCategory;
       if (activeSessionMode === "lecture-exam-3") return "lecture-exam-3::" + unitName;
       var bank = enabledLearnBanks().find(function(item) { return item.topic === unitName; });
       return activeSessionMode + "::" +
@@ -40788,7 +40868,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function sessionModeSubtitle(mode) {
-    if (mode === "cumulative-final") return "Lung, Cardiovascular, Renal, GI & Acid–Base Review · " + cumulativeFinalQuestionsForUnit(activeUnit).length + " Questions";
+    if (mode === "cumulative-final") {
+      var subject = cumulativeFinalSubjectByName(activeUnit);
+      var label = subject ? subject.title + " Review" : "Pulmonary, Cardiovascular, Renal & GI Review";
+      return label + " · " + cumulativeFinalQuestionsForUnit(activeUnit).length + " Questions";
+    }
     if (mode === "learn") return "Lecture Review · " + learnQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "labs") return "Lab Review · " + learnQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "lab-practical") return "Practical Challenge · " + learnQuestionsForUnit(activeUnit).length + " Questions";
@@ -41503,6 +41587,7 @@ document.addEventListener("DOMContentLoaded", function() {
         settings: {
           unit: activeUnit,
           sessionMode: activeSessionMode,
+          cumulativeCategory: activeCumulativeCategory,
           learnBankId: activeLearnBankId,
           labQuestionType: activeLabQuestionType,
           labPracticalType: activeLabPracticalType,
@@ -41541,8 +41626,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     setSelectValue(modeFilter, saved.settings.mode, "mc");
-    if (unitExists(saved.settings.unit)) activeUnit = saved.settings.unit;
     if (["cumulative-final", "learn", "practice", "labs", "lab-practical", "lecture-exam-3"].indexOf(saved.settings.sessionMode) > -1) activeSessionMode = saved.settings.sessionMode;
+    if (activeSessionMode === "cumulative-final") {
+      var savedSubject = cumulativeFinalSubjectByName(saved.settings.unit);
+      var savedLegacyCategory = cumulativeFinalCategories.find(function(category) {
+        return category.name === saved.settings.unit;
+      });
+      if (savedSubject) {
+        activeUnit = savedSubject.name;
+      } else if (savedLegacyCategory && savedLegacyCategory.ids.length) {
+        var migratedSubject = cumulativeFinalSubjectForQuestionId(savedLegacyCategory.ids[0]);
+        activeUnit = migratedSubject ? migratedSubject.name : units[0].name;
+      } else if (isAllWeeksUnit(saved.settings.unit)) {
+        activeUnit = units[0].name;
+      }
+      activeCumulativeCategory = cumulativeFinalCategoryExists(activeUnit, saved.settings.cumulativeCategory)
+        ? saved.settings.cumulativeCategory
+        : "all";
+    } else if (unitExists(saved.settings.unit)) {
+      activeUnit = saved.settings.unit;
+    }
     if (["all", "learn", "mixed"].indexOf(saved.settings.labQuestionType) > -1) {
       activeLabQuestionType = saved.settings.labQuestionType;
     }
@@ -41557,7 +41660,7 @@ document.addEventListener("DOMContentLoaded", function() {
     populateConceptFilter();
     setSelectValue(topicFilter, saved.settings.conceptBlock || saved.settings.topic, "");
     setSelectValue(countFilter, saved.settings.count, "10");
-    if (isAllWeeksUnit(activeUnit) && countFilter) countFilter.value = "all";
+    if ((isAllWeeksUnit(activeUnit) || activeSessionMode === "cumulative-final") && countFilter) countFilter.value = "all";
     setShuffleQuestionsValue(saved.settings.shuffle || "on");
     if (explainToggle) explainToggle.checked = saved.settings.explain !== false;
     if (teachingCardsToggle) teachingCardsToggle.checked = !!saved.settings.teachingCards;
@@ -41819,7 +41922,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     if (
       activeSessionMode === "cumulative-final" &&
-      isAllWeeksUnit(activeUnit) &&
+      activeCumulativeCategory === "all" &&
       !restoredConceptBlock &&
       !checkedOf(missedOnlyToggle, false) &&
       !flaggedOnlyEnabled()
@@ -43034,6 +43137,8 @@ document.addEventListener("DOMContentLoaded", function() {
       return unit.name === unitName;
     }) || lectureExam3Categories.some(function(category) {
       return category.name === unitName;
+    }) || cumulativeFinalSubjects.some(function(subject) {
+      return subject.name === unitName;
     }) || cumulativeFinalCategories.some(function(category) {
       return category.name === unitName;
     });
@@ -43049,7 +43154,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function orderedUnitList() {
     if (activeSessionMode === "cumulative-final") {
-      return [units[0]].concat(cumulativeFinalCategories.slice().sort(function(a, b) {
+      return [units[0]].concat(cumulativeFinalSubjects.slice().sort(function(a, b) {
         return a.order - b.order;
       }));
     }
@@ -43142,6 +43247,52 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  function renderCumulativeSubcategoryTabs() {
+    var tabs = document.getElementById("cumulativeSubcategoryTabs");
+    if (!tabs) return;
+    var subject = cumulativeFinalSubjectByName(activeUnit);
+    if (activeSessionMode !== "cumulative-final" || !subject) {
+      tabs.innerHTML = "";
+      tabs.className = "cumulative-subcategory-tabs hidden";
+      return;
+    }
+
+    tabs.innerHTML = "";
+    tabs.className = "cumulative-subcategory-tabs";
+    cumulativeFinalSubcategoriesForUnit(activeUnit).forEach(function(categoryName) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "cumulative-subcategory-tab" + (categoryName === activeCumulativeCategory ? " active" : "");
+      btn.setAttribute("data-cumulative-category", categoryName);
+      btn.setAttribute("aria-pressed", categoryName === activeCumulativeCategory ? "true" : "false");
+      btn.textContent = categoryName;
+      btn.addEventListener("click", function() {
+        setActiveCumulativeCategory(categoryName);
+      });
+      tabs.appendChild(btn);
+    });
+  }
+
+  function setActiveCumulativeCategory(categoryName) {
+    if (
+      activeSessionMode !== "cumulative-final" ||
+      !cumulativeFinalCategoryExists(activeUnit, categoryName) ||
+      categoryName === activeCumulativeCategory
+    ) return;
+    saveActiveUnitProgress();
+    activeCumulativeCategory = categoryName;
+    if (countFilter) countFilter.value = "all";
+    populateConceptFilter();
+    renderCumulativeSubcategoryTabs();
+    restoreUnitProgress(activeUnit, true);
+    updateUnitIntro();
+    setHtml("questionList", "");
+    var questionList = byId("questionList");
+    if (questionList) questionList.setAttribute("data-open", "false");
+    setText("listQs", "Show Filtered List");
+    saveState();
+  }
+
   function renderUnitTabs() {
     var tabs = document.getElementById("unitTabs");
     if (!tabs) return;
@@ -43149,6 +43300,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     orderedUnitList().filter(function(unit) {
       if (isAllWeeksUnit(unit.name)) return true;
+      if (activeSessionMode === "cumulative-final") {
+        return cumulativeFinalSubjectQuestions(unit.name).length > 0;
+      }
       return isStudyBankMode(activeSessionMode)
         ? learnQuestionsForUnit(unit.name).length > 0
         : questions.some(function(question) {
@@ -43167,6 +43321,7 @@ document.addEventListener("DOMContentLoaded", function() {
       tabs.appendChild(btn);
     });
 
+    renderCumulativeSubcategoryTabs();
   }
 
   function renderPituitaryModeSelector() {
@@ -43246,6 +43401,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     saveActiveUnitProgress();
     activeSessionMode = mode;
+    if (mode === "cumulative-final") activeCumulativeCategory = "all";
     if (!unitQuestions(activeUnit).length) {
       activeUnit = units[0].name;
     }
@@ -43280,7 +43436,11 @@ document.addEventListener("DOMContentLoaded", function() {
           : activeSessionMode === "lecture-exam-3"
             ? "All 200 Questions"
             : activeSessionMode === "cumulative-final" ? "All 392 Questions" : "All Learn Questions";
-      title = (isAllWeeksUnit(activeUnit) ? allTitle : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit)) + " — " + sessionModeLabel(activeSessionMode);
+      var selectedTitle = isAllWeeksUnit(activeUnit) ? allTitle : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit);
+      if (activeSessionMode === "cumulative-final" && activeCumulativeCategory !== "all") {
+        selectedTitle = activeCumulativeCategory;
+      }
+      title = selectedTitle + " — " + sessionModeLabel(activeSessionMode);
       subtitle = "<span class=\"session-mode-caption\">" + htmlEscape(sessionModeSubtitle(activeSessionMode)) + "</span>";
     } else if (activeUnit === "pituitary") {
       title = "Pituitary Hormones — " + sessionModeLabel(activeSessionMode);
@@ -43298,9 +43458,10 @@ document.addEventListener("DOMContentLoaded", function() {
   function setActiveUnit(unitName) {
     saveActiveUnitProgress();
     activeUnit = unitName;
+    if (activeSessionMode === "cumulative-final") activeCumulativeCategory = "all";
     if (isStudyBankMode(activeSessionMode)) syncActiveLearnBankId();
     if (topicFilter) topicFilter.value = "";
-    if (isAllWeeksUnit(activeUnit) && countFilter) countFilter.value = "all";
+    if ((isAllWeeksUnit(activeUnit) || activeSessionMode === "cumulative-final") && countFilter) countFilter.value = "all";
     populateConceptFilter();
     renderUnitTabs();
     renderPituitaryModeSelector();
@@ -43334,6 +43495,24 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     activeSessionMode = "cumulative-final";
     activeUnit = units[0].name;
+    activeCumulativeCategory = "all";
+  }
+  if (activeSessionMode === "cumulative-final") {
+    var launchLegacyCategory = cumulativeFinalCategories.find(function(category) {
+      return category.name === activeUnit;
+    });
+    if (launchLegacyCategory && launchLegacyCategory.ids.length) {
+      var launchSubject = cumulativeFinalSubjectForQuestionId(launchLegacyCategory.ids[0]);
+      activeUnit = launchSubject ? launchSubject.name : units[0].name;
+      activeCumulativeCategory = "all";
+    }
+    if (!isAllWeeksUnit(activeUnit) && !cumulativeFinalSubjectByName(activeUnit)) {
+      activeUnit = units[0].name;
+      activeCumulativeCategory = "all";
+    }
+    if (!cumulativeFinalCategoryExists(activeUnit, activeCumulativeCategory)) {
+      activeCumulativeCategory = "all";
+    }
   }
   if (activeSessionMode === "cumulative-final" && countFilter) {
     countFilter.value = "all";
