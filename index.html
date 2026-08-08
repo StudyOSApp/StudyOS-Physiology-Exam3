@@ -2565,6 +2565,7 @@
 <script src="banks/endocrine-lab-practical-challenge-v1.js"></script>
 <script src="banks/lecture-exam-3-curated-v1.js"></script>
 <script src="banks/cumulative-final-v1.js"></script>
+<script src="banks/cumulative-final-endocrine-v1.js"></script>
 <script src="banks/week12-glossary.js"></script>
 <script src="banks/week13-glossary.js"></script>
 <script>
@@ -25966,15 +25967,16 @@ document.addEventListener("DOMContentLoaded", function() {
       cumulativeFinalQuestionMap[question.id] = question;
     }
   });
-  if (cumulativeFinalQuestions.length !== 392) {
-    console.error("Cumulative Final expected 392 questions but loaded " + cumulativeFinalQuestions.length + ".");
+  if (cumulativeFinalQuestions.length !== 472) {
+    console.error("Cumulative Final expected 472 questions but loaded " + cumulativeFinalQuestions.length + ".");
   }
 
   var cumulativeFinalSubjects = [
     { order: 1, name: "cumulative-final-pulmonary", title: "Pulmonary", prefix: "CF-LUNG-" },
     { order: 2, name: "cumulative-final-renal", title: "Renal", prefix: "CF-RENAL-" },
     { order: 3, name: "cumulative-final-gi", title: "GI", prefix: "CF-GI-" },
-    { order: 4, name: "cumulative-final-cardiovascular", title: "Cardiovascular", prefix: "CF-CV-" }
+    { order: 4, name: "cumulative-final-cardiovascular", title: "Cardiovascular", prefix: "CF-CV-" },
+    { order: 5, name: "cumulative-final-endocrine", title: "Endocrine", prefix: "CF-ENDO-" }
   ];
 
   var learnBanks = [
@@ -40685,12 +40687,16 @@ document.addEventListener("DOMContentLoaded", function() {
   function cumulativeFinalSubcategoriesForUnit(unitName) {
     var seen = {};
     return cumulativeFinalSubjectQuestions(unitName).map(function(question) {
-      return question.broadCategory;
+      return cumulativeFinalCategoryName(question);
     }).filter(function(category) {
       if (!category || seen[category]) return false;
       seen[category] = true;
       return true;
     }).slice(0, 8);
+  }
+
+  function cumulativeFinalCategoryName(question) {
+    return question && (question.cumulativeCategory || question.broadCategory) || "General";
   }
 
   function cumulativeFinalQuestionsForUnit(unitName) {
@@ -42013,7 +42019,7 @@ document.addEventListener("DOMContentLoaded", function() {
     bankAttempts.forEach(function(item) {
       if (!item.correct && item.question) {
         var concept = activeSessionMode === "cumulative-final"
-          ? (item.question.broadCategory || item.question.conceptBlock || item.question.cat || "General")
+          ? (cumulativeFinalCategoryName(item.question) || item.question.conceptBlock || item.question.cat || "General")
           : (item.question.conceptBlock || item.question.cat || "General");
         misses[concept] = (misses[concept] || 0) + 1;
       }
@@ -42053,7 +42059,7 @@ document.addEventListener("DOMContentLoaded", function() {
           ? "All Practical Questions"
           : activeSessionMode === "lecture-exam-3"
             ? "All 200 Questions"
-            : activeSessionMode === "cumulative-final" ? "All 392 Questions" : "All Learn Questions";
+            : activeSessionMode === "cumulative-final" ? "All " + cumulativeFinalQuestions.length + " Questions" : "All Learn Questions";
       return (isAllWeeksUnit(activeUnit) ? allLabel : learnBank ? learnBank.shortLabel : unitCardLabel(activeUnit)) + " · " + sessionModeLabel(activeSessionMode);
     }
     var modeLabel = " · " + sessionModeLabel(activeSessionMode);
@@ -42302,12 +42308,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     pool.forEach(function(question) {
       poolIds[question.id] = true;
-      counts[question.broadCategory] = (counts[question.broadCategory] || 0) + 1;
+      var category = cumulativeFinalCategoryName(question);
+      counts[category] = (counts[category] || 0) + 1;
     });
 
     bankAttempts.forEach(function(item) {
       if (!item.question || !poolIds[item.question.id]) return;
-      var category = item.question.broadCategory;
+      var category = cumulativeFinalCategoryName(item.question);
       if (!attempts[category]) attempts[category] = { correct: 0, total: 0 };
       attempts[category].total += 1;
       if (item.correct) attempts[category].correct += 1;
@@ -43393,7 +43400,7 @@ document.addEventListener("DOMContentLoaded", function() {
           ? "All Practical Questions"
           : activeSessionMode === "lecture-exam-3"
             ? "All 200 Questions"
-            : activeSessionMode === "cumulative-final" ? "All 392 Questions" : "All Learn Questions";
+            : activeSessionMode === "cumulative-final" ? "All " + cumulativeFinalQuestions.length + " Questions" : "All Learn Questions";
       var selectedTitle = isAllWeeksUnit(activeUnit) ? allTitle : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit);
       if (activeSessionMode === "cumulative-final") {
         title = isAllWeeksUnit(activeUnit)
