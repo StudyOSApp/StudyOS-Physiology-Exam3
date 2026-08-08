@@ -1,9 +1,10 @@
-# StudyOS Physiology Exam 3
+# StudyOS Physiology II
 
-StudyOS Physiology II Exam 3 interactive quiz engine and learning guides.
+StudyOS Physiology II interactive quiz engine and learning guides, with Cumulative Final review opening by default.
 
 ## Question banks
 
+- Cumulative Final: 392 questions across pulmonary/acid–base, renal, gastrointestinal, and cardiovascular physiology, organized into 24 focused categories
 - Learn: 288 lecture-reinforcement questions across seven topics
 - Practice: 479 comprehensive questions across the five completed Practice topics
 - Calcium & Phosphate and Body Temperature are currently available in Learn only
