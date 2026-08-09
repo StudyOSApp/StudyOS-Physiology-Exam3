@@ -43168,6 +43168,22 @@ document.addEventListener("DOMContentLoaded", function() {
         return /^CF-MMSR-/.test(String(question.id || "")) &&
           /\b(?:isotonic|isometric|isokinetic|concentric|eccentric)\b/i.test(context + " " + choiceText);
       }
+    },
+    {
+      key: "obstructive-lung-disease",
+      title: "Obstructive Lung Disease",
+      subtitle: "Airflow limitation, compliance, and spirometry",
+      cardText: "COPD, emphysema, chronic bronchitis, asthma, air trapping, and reduced expiratory flow.",
+      src: "assets/visual-guides/obstructive-lung-disease.png",
+      alt: "Obstructive lung disease visual guide showing airway narrowing, reduced FEV1, and increased residual volume",
+      matches: function(question, context) {
+        var choiceText = Object.keys(question.choices || {}).map(function(key) {
+          return question.choices[key];
+        }).join(" ");
+        var fullContext = [question.q, question.question, question.conceptBlock, question.subtopic, choiceText].join(" ");
+        return /\b(?:obstructive|obstruction|COPD|emphysema|chronic bronchitis|asthma|bronchiectasis|air trapping)\b/i.test(fullContext) ||
+          (/^CF-LUNG-/.test(String(question.id || "")) && question.conceptBlock === "FEV₁");
+      }
     }
   ];
 
