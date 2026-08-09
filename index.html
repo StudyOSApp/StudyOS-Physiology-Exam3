@@ -43153,6 +43153,21 @@ document.addEventListener("DOMContentLoaded", function() {
         return ["CF-MMSR-034", "CF-MMSR-036", "CF-MMSR-038", "CF-MMSR-039", "CF-MMSR-040", "CF-MMSR-043"]
           .includes(String(question.id || ""));
       }
+    },
+    {
+      key: "muscle-contraction-types",
+      title: "Muscle Contraction Types",
+      subtitle: "Isometric, isotonic, and isokinetic exercise",
+      cardText: "Static versus dynamic exercise, concentric and eccentric actions, and constant-speed movement.",
+      src: "assets/visual-guides/muscle-contraction-types.png",
+      alt: "Muscle contraction types visual guide comparing isometric, isotonic, and isokinetic exercise",
+      matches: function(question, context) {
+        var choiceText = Object.keys(question.choices || {}).map(function(key) {
+          return question.choices[key];
+        }).join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          /\b(?:isotonic|isometric|isokinetic|concentric|eccentric)\b/i.test(context + " " + choiceText);
+      }
     }
   ];
 
