@@ -43401,6 +43401,20 @@ document.addEventListener("DOMContentLoaded", function() {
           (["CF-MMSR-034", "CF-MMSR-042"].includes(String(question.id || "")) ||
             /(?:\bcrossed extensor reflex\b|\bcontralateral extension\b|\bipsilateral flexion\b|\bflexor withdrawal reflex\b)/i.test(directContext));
       }
+    },
+    {
+      key: "flexor-withdrawal-pain-reflex",
+      title: "Flexor Withdrawal / Pain Reflex",
+      subtitle: "Nociceptive withdrawal from a painful stimulus",
+      cardText: "A polysynaptic pain reflex activates ipsilateral flexors and inhibits ipsilateral extensors so the limb pulls away.",
+      src: "assets/visual-guides/flexor-withdrawal-pain-reflex.png",
+      alt: "Flexor withdrawal pain reflex visual guide showing nociceptor input, polysynaptic spinal circuitry, flexor activation, and extensor inhibition",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          (["CF-MMSR-034", "CF-MMSR-042"].includes(String(question.id || "")) ||
+            /(?:\bflexor (?:withdrawal|pain) reflex\b|\bwithdrawal reflex\b|\bnociceptive reflex\b|\bpain reflex\b|\bpainful stimulus\b|\bpull(?:s|ing)? (?:the )?(?:limb|foot|hand) away\b)/i.test(directContext));
+      }
     }
   ];
 
