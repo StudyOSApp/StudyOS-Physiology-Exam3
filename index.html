@@ -43208,6 +43208,18 @@ document.addEventListener("DOMContentLoaded", function() {
         return /^CF-LUNG-/.test(String(question.id || "")) &&
           /\b(?:tidal volume|inspiratory reserve volume|expiratory reserve volume|residual volumes?|total lung capacity|vital capacity|inspiratory capacity|functional residual capacity|lung capacity|lung volumes?)\b/i.test(directContext);
       }
+    },
+    {
+      key: "mitral-stenosis",
+      title: "Mitral Stenosis",
+      subtitle: "Narrowed mitral valve and diastolic murmur",
+      cardText: "Restricted mitral opening, mid-diastolic murmur, and association with rheumatic fever.",
+      src: "assets/visual-guides/mitral-stenosis.png",
+      alt: "Mitral stenosis visual guide showing a narrowed mitral valve and its diastolic murmur",
+      matches: function(question) {
+        return ["CF-CV-086", "CF-CV-089"].includes(String(question.id || "")) ||
+          /\bmitral (?:valve )?stenosis\b/i.test([question.q, question.question].join(" "));
+      }
     }
   ];
 
