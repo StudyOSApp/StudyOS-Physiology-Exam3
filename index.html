@@ -43245,6 +43245,19 @@ document.addEventListener("DOMContentLoaded", function() {
         return ["CF-CV-084", "CF-CV-085", "CF-CV-088"].includes(String(question.id || "")) ||
           /\bmitral (?:valve )?regurgitation\b/i.test([question.q, question.question].join(" "));
       }
+    },
+    {
+      key: "s3-ventricular-gallop",
+      title: "S3 Heart Sound — Ventricular Gallop",
+      subtitle: "Early-diastolic sound during rapid ventricular filling",
+      cardText: "Rapid filling, ventricular-wall vibration, and normal versus pathologic S3 findings.",
+      src: "assets/visual-guides/s3-ventricular-gallop.png",
+      alt: "S3 heart sound visual guide showing ventricular gallop during rapid ventricular filling",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return question.id === "CF-CV-078" ||
+          /(?:\bS3\b|S₃|\bventricular gallop\b|\bthird heart sound\b)/i.test(directContext);
+      }
     }
   ];
 
