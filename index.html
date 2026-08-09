@@ -1738,14 +1738,14 @@
       overflow:hidden;
     }
 
-    .cardiac-visual-modal {
+    .question-visual-modal {
       z-index:90;
       place-items:stretch;
       padding:0;
       background:rgba(15,23,42,.58);
     }
 
-    .cardiac-visual-modal .modal-box {
+    .question-visual-modal .modal-box {
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -1759,7 +1759,7 @@
       overflow:hidden;
     }
 
-    .cardiac-visual-frame {
+    .question-visual-frame {
       flex:1 1 auto;
       min-height:0;
       overflow:auto;
@@ -1768,7 +1768,7 @@
       background:#f7fbff;
     }
 
-    .cardiac-visual-frame img {
+    .question-visual-frame img {
       display:block;
       width:100%;
       height:auto;
@@ -2084,7 +2084,7 @@
         border-radius:0;
       }
 
-      .cardiac-visual-modal .modal-box {
+      .question-visual-modal .modal-box {
         width:100vw;
         border-radius:0;
       }
@@ -2398,9 +2398,9 @@
 
       <div class="card answer-panel">
         <div id="contextVisualGuideCard" class="context-visual-guide-card hidden">
-          <div class="context-visual-guide-title">Cardiac Ventricular Action Potential</div>
-          <div class="context-visual-guide-text">Phases 0–4, ion movements, plateau, and refractory period.</div>
-          <button id="openCardiacVisualGuide" class="context-visual-guide-button" type="button">View Visual Guide</button>
+          <div id="contextVisualGuideTitle" class="context-visual-guide-title">Visual Guide</div>
+          <div id="contextVisualGuideText" class="context-visual-guide-text"></div>
+          <button id="openQuestionVisualGuide" class="context-visual-guide-button" type="button">View Visual Guide</button>
         </div>
         <div id="questionGlossaryTerms" class="question-term-list" aria-live="polite"></div>
         <div id="qAnswer" class="answer"></div>
@@ -2577,17 +2577,17 @@
       </div>
     </div>
 
-    <div id="cardiacVisualGuideModal" class="modal-backdrop cardiac-visual-modal hidden" role="dialog" aria-modal="true" aria-labelledby="cardiacVisualGuideTitle">
+    <div id="questionVisualGuideModal" class="modal-backdrop question-visual-modal hidden" role="dialog" aria-modal="true" aria-labelledby="questionVisualGuideTitle">
       <div class="modal-box">
         <div class="study-guide-header">
           <div>
-            <h3 id="cardiacVisualGuideTitle">Cardiac Ventricular Action Potential</h3>
-            <div class="study-guide-subtitle">Contractile-cell phases 0–4</div>
+            <h3 id="questionVisualGuideTitle">Visual Guide</h3>
+            <div id="questionVisualGuideSubtitle" class="study-guide-subtitle"></div>
           </div>
-          <button id="closeCardiacVisualGuide" class="study-guide-close" type="button" aria-label="Close cardiac action-potential visual guide">×</button>
+          <button id="closeQuestionVisualGuide" class="study-guide-close" type="button" aria-label="Close visual guide">×</button>
         </div>
-        <div class="cardiac-visual-frame">
-          <img id="cardiacVisualGuideImage" data-src="assets/visual-guides/cardiac-ventricular-action-potential-phases-0-4.png" alt="Cardiac ventricular action potential visual guide showing phases zero through four">
+        <div class="question-visual-frame">
+          <img id="questionVisualGuideImage" alt="">
         </div>
       </div>
     </div>
@@ -43118,16 +43118,50 @@ document.addEventListener("DOMContentLoaded", function() {
     updateScore();
   }
 
-  function questionHasCardiacVisualGuide(question) {
-    if (!question || !/^CF-CV-/.test(String(question.id || ""))) return false;
-    var context = [question.q, question.question, question.explanation, question.conceptBlock].join(" ");
-    return question.conceptBlock === "Contractile-Cell Action Potential" || /\bphase\s*[0-4]\b|\bplateau\b/i.test(context);
+  var questionVisualGuideDefinitions = [
+    {
+      key: "cardiac-ventricular-action-potential",
+      title: "Cardiac Ventricular Action Potential",
+      subtitle: "Contractile-cell phases 0–4",
+      cardText: "Phases 0–4, ion movements, plateau, and refractory period.",
+      src: "assets/visual-guides/cardiac-ventricular-action-potential-phases-0-4.png",
+      alt: "Cardiac ventricular action potential visual guide showing phases zero through four",
+      matches: function(question, context) {
+        return /^CF-CV-/.test(String(question.id || "")) &&
+          (question.conceptBlock === "Contractile-Cell Action Potential" || /\bphase\s*[0-4]\b|\bplateau\b/i.test(context));
+      }
+    },
+    {
+      key: "golgi-tendon-organ",
+      title: "Golgi Tendon Organ",
+      subtitle: "Tension sensing and autogenic inhibition",
+      cardText: "Type Ib afferents, tendon tension, inhibitory interneurons, and muscle relaxation.",
+      src: "assets/visual-guides/golgi-tendon-organ.png",
+      alt: "Golgi tendon organ visual guide showing tension sensing and inhibition of the contracting muscle",
+      matches: function(question, context) {
+        return /\bgolgi tendon organ\b/i.test(context);
+      }
+    }
+  ];
+
+  var activeQuestionVisualGuide = null;
+
+  function questionVisualGuideFor(question) {
+    if (!question || question.contentGroup !== "cumulative-final") return null;
+    var context = [question.q, question.question, question.explanation, question.conceptBlock, question.subtopic].join(" ");
+    return questionVisualGuideDefinitions.find(function(guide) {
+      return guide.matches(question, context);
+    }) || null;
   }
 
   function updateContextVisualGuide(question) {
     var card = document.getElementById("contextVisualGuideCard");
     if (!card) return;
-    card.className = "context-visual-guide-card" + (questionHasCardiacVisualGuide(question) ? "" : " hidden");
+    activeQuestionVisualGuide = questionVisualGuideFor(question);
+    card.className = "context-visual-guide-card" + (activeQuestionVisualGuide ? "" : " hidden");
+    if (!activeQuestionVisualGuide) return;
+    setText("contextVisualGuideTitle", activeQuestionVisualGuide.title);
+    setText("contextVisualGuideText", activeQuestionVisualGuide.cardText);
   }
 
   function showDeckQuestion(options) {
@@ -43598,8 +43632,8 @@ document.addEventListener("DOMContentLoaded", function() {
   document.addEventListener("keydown", function(event) {
     var tag = event.target && event.target.tagName ? event.target.tagName.toLowerCase() : "";
     if (tag === "input" || tag === "select" || tag === "textarea") return;
-    var cardiacGuide = document.getElementById("cardiacVisualGuideModal");
-    if (cardiacGuide && !cardiacGuide.classList.contains("hidden")) return;
+    var questionGuide = document.getElementById("questionVisualGuideModal");
+    if (questionGuide && !questionGuide.classList.contains("hidden")) return;
     if (event.key === "ArrowRight") moveDeck(1);
     if (event.key === "ArrowLeft") moveDeck(-1);
   });
@@ -43640,28 +43674,32 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   var activeStudyGuidePageIndex = 0;
-  var cardiacVisualGuideReturnFocus = null;
+  var questionVisualGuideReturnFocus = null;
 
-  function openCardiacVisualGuide() {
-    if (!questionHasCardiacVisualGuide(current)) return;
-    var modal = document.getElementById("cardiacVisualGuideModal");
-    var image = document.getElementById("cardiacVisualGuideImage");
+  function openQuestionVisualGuide() {
+    var guide = questionVisualGuideFor(current);
+    if (!guide) return;
+    var modal = document.getElementById("questionVisualGuideModal");
+    var image = document.getElementById("questionVisualGuideImage");
     if (!modal || !image) return;
-    if (!image.getAttribute("src")) image.setAttribute("src", image.getAttribute("data-src"));
-    cardiacVisualGuideReturnFocus = document.activeElement;
-    modal.className = "modal-backdrop cardiac-visual-modal";
-    var closeButton = document.getElementById("closeCardiacVisualGuide");
+    setText("questionVisualGuideTitle", guide.title);
+    setText("questionVisualGuideSubtitle", guide.subtitle);
+    image.src = guide.src;
+    image.alt = guide.alt;
+    questionVisualGuideReturnFocus = document.activeElement;
+    modal.className = "modal-backdrop question-visual-modal";
+    var closeButton = document.getElementById("closeQuestionVisualGuide");
     if (closeButton) closeButton.focus();
   }
 
-  function closeCardiacVisualGuide() {
-    var modal = document.getElementById("cardiacVisualGuideModal");
+  function closeQuestionVisualGuide() {
+    var modal = document.getElementById("questionVisualGuideModal");
     if (!modal || modal.classList.contains("hidden")) return;
-    modal.className = "modal-backdrop cardiac-visual-modal hidden";
-    if (cardiacVisualGuideReturnFocus && typeof cardiacVisualGuideReturnFocus.focus === "function") {
-      cardiacVisualGuideReturnFocus.focus();
+    modal.className = "modal-backdrop question-visual-modal hidden";
+    if (questionVisualGuideReturnFocus && typeof questionVisualGuideReturnFocus.focus === "function") {
+      questionVisualGuideReturnFocus.focus();
     }
-    cardiacVisualGuideReturnFocus = null;
+    questionVisualGuideReturnFocus = null;
   }
 
   function studyGuidePagesForActiveUnit() {
@@ -43734,13 +43772,13 @@ document.addEventListener("DOMContentLoaded", function() {
   onId("openStudyGuide", "click", openStudyGuideModal);
   onId("closeStudyGuide", "click", closeStudyGuideModal);
   onId("doneStudyGuide", "click", closeStudyGuideModal);
-  onId("openCardiacVisualGuide", "click", openCardiacVisualGuide);
-  onId("closeCardiacVisualGuide", "click", closeCardiacVisualGuide);
-  onId("cardiacVisualGuideModal", "click", function(event) {
-    if (event.target && event.target.id === "cardiacVisualGuideModal") closeCardiacVisualGuide();
+  onId("openQuestionVisualGuide", "click", openQuestionVisualGuide);
+  onId("closeQuestionVisualGuide", "click", closeQuestionVisualGuide);
+  onId("questionVisualGuideModal", "click", function(event) {
+    if (event.target && event.target.id === "questionVisualGuideModal") closeQuestionVisualGuide();
   });
   document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") closeCardiacVisualGuide();
+    if (event.key === "Escape") closeQuestionVisualGuide();
   });
   onId("closeFullStudyGuide", "click", closeFullStudyGuide);
   onId("fullStudyGuideModal", "click", function(event) {
