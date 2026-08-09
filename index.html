@@ -43195,6 +43195,19 @@ document.addEventListener("DOMContentLoaded", function() {
         return /^CF-LUNG-/.test(String(question.id || "")) &&
           /\b(?:restrictive|restriction|pulmonary fibrosis|fibrosis|low compliance|lung compliance|compliance definition|compliance comparison)\b/i.test(directContext);
       }
+    },
+    {
+      key: "lung-volumes-and-capacities",
+      title: "Lung Volumes & Capacities",
+      subtitle: "Volumes measured across quiet and maximal breathing",
+      cardText: "Tidal, reserve, and residual volumes plus vital, inspiratory, functional residual, and total capacities.",
+      src: "assets/visual-guides/lung-volumes-and-capacities.png",
+      alt: "Lung volumes and capacities visual guide showing tidal, reserve, residual, vital, inspiratory, functional residual, and total lung capacity",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-LUNG-/.test(String(question.id || "")) &&
+          /\b(?:tidal volume|inspiratory reserve volume|expiratory reserve volume|residual volumes?|total lung capacity|vital capacity|inspiratory capacity|functional residual capacity|lung capacity|lung volumes?)\b/i.test(directContext);
+      }
     }
   ];
 
