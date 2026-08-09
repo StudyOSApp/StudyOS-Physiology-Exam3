@@ -43387,6 +43387,20 @@ document.addEventListener("DOMContentLoaded", function() {
           (question.id === "CF-MMSR-015" ||
             /(?:\bsarcomere(?:s)?\b|\bA band\b|\bI band\b|\bH zone\b|\bZ (?:disc|disk|line)s?\b|\bM line\b|\bsarcomere (?:shortening|lengthening)\b)/i.test(directContext));
       }
+    },
+    {
+      key: "crossed-extensor-reflex",
+      title: "Crossed Extensor Reflex",
+      subtitle: "Withdrawal on the injured side and support on the opposite side",
+      cardText: "Follow the polysynaptic circuit: ipsilateral flexion withdraws the injured limb while contralateral extension supports body weight.",
+      src: "assets/visual-guides/crossed-extensor-reflex.png",
+      alt: "Crossed extensor reflex visual guide showing ipsilateral withdrawal and contralateral extension after a painful stimulus",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          (["CF-MMSR-034", "CF-MMSR-042"].includes(String(question.id || "")) ||
+            /(?:\bcrossed extensor reflex\b|\bcontralateral extension\b|\bipsilateral flexion\b|\bflexor withdrawal reflex\b)/i.test(directContext));
+      }
     }
   ];
 
