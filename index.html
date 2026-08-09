@@ -43177,12 +43177,23 @@ document.addEventListener("DOMContentLoaded", function() {
       src: "assets/visual-guides/obstructive-lung-disease.png",
       alt: "Obstructive lung disease visual guide showing airway narrowing, reduced FEV1, and increased residual volume",
       matches: function(question, context) {
-        var choiceText = Object.keys(question.choices || {}).map(function(key) {
-          return question.choices[key];
-        }).join(" ");
-        var fullContext = [question.q, question.question, question.conceptBlock, question.subtopic, choiceText].join(" ");
+        var fullContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
         return /\b(?:obstructive|obstruction|COPD|emphysema|chronic bronchitis|asthma|bronchiectasis|air trapping)\b/i.test(fullContext) ||
-          (/^CF-LUNG-/.test(String(question.id || "")) && question.conceptBlock === "FEV₁");
+          (/^CF-LUNG-/.test(String(question.id || "")) && question.conceptBlock === "FEV₁") ||
+          question.id === "CF-LUNG-082";
+      }
+    },
+    {
+      key: "restrictive-lung-disease-compliance",
+      title: "Restrictive Lung Disease & Compliance",
+      subtitle: "Stiff lungs, reduced volumes, and preserved expiratory ratio",
+      cardText: "Low compliance, pulmonary fibrosis, reduced FVC and TLC, and restrictive causes.",
+      src: "assets/visual-guides/restrictive-lung-disease-compliance.png",
+      alt: "Restrictive lung disease visual guide showing low lung volumes, pulmonary fibrosis, and other restrictive causes",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-LUNG-/.test(String(question.id || "")) &&
+          /\b(?:restrictive|restriction|pulmonary fibrosis|fibrosis|low compliance|lung compliance|compliance definition|compliance comparison)\b/i.test(directContext);
       }
     }
   ];
