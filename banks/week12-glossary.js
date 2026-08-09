@@ -330,8 +330,7 @@ window.WEEK12_GLOSSARY_ENTRIES = [
     "term": "Sympathetic Cholinergic",
     "aliases": [
       "sympathetic cholinergic",
-      "cholinergic fibers",
-      "cholinergic"
+      "cholinergic fibers"
     ],
     "definition": "Sympathetic signaling that uses acetylcholine rather than norepinephrine. Most thermoregulatory sweat glands receive this type of innervation.",
     "module": "Body Temperature"

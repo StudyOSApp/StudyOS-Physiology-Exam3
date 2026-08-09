@@ -2633,8 +2633,9 @@
 <script src="banks/cumulative-final-v1.js"></script>
 <script src="banks/cumulative-final-endocrine-v1.js"></script>
 <script src="banks/cumulative-final-membrane-muscle-reflexes-v1.js"></script>
-<script src="banks/week12-glossary.js"></script>
+<script src="banks/week12-glossary.js?v=20260809-cvglossary"></script>
 <script src="banks/week13-glossary.js"></script>
+<script src="banks/cumulative-final-cardiovascular-glossary.js?v=20260809-cvglossary"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   var EXAM_COUNTDOWN = {
@@ -40585,6 +40586,9 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.WEEK13_GLOSSARY_ENTRIES)) {
     glossaryEntries = glossaryEntries.concat(window.WEEK13_GLOSSARY_ENTRIES);
   }
+  if (Array.isArray(window.CUMULATIVE_FINAL_CARDIOVASCULAR_GLOSSARY_ENTRIES)) {
+    glossaryEntries = glossaryEntries.concat(window.CUMULATIVE_FINAL_CARDIOVASCULAR_GLOSSARY_ENTRIES);
+  }
 
   var studyGuidePages = [];
 
@@ -42602,12 +42606,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var glossaryById = Object.fromEntries(glossaryEntries.map(function(entry) { return [entry.id, entry]; }));
   var glossaryAliasMap = {};
+  var glossaryStrictCaseAliases = {};
   var structuredAliases = glossaryEntries.filter(function(entry) { return entry.standsFor; }).flatMap(function(entry) {
     return (entry.aliases || [entry.term]).map(function(alias) { return String(alias).toLowerCase(); });
   });
   glossaryEntries.forEach(function(entry) {
     (entry.aliases || [entry.term]).forEach(function(alias) {
-      var key = String(alias).toLowerCase();
+      var aliasText = String(alias);
+      var key = aliasText.toLowerCase();
+      if (/^[A-Z][A-Z0-9]{1,3}$/.test(aliasText)) glossaryStrictCaseAliases[key] = aliasText;
       var normalizedKey = " " + key.replace(/[^a-z0-9]+/g, " ").trim() + " ";
       var shadowsStructuredTerm = !entry.standsFor && structuredAliases.some(function(structuredAlias) {
         var normalizedAlias = " " + structuredAlias.replace(/[^a-z0-9]+/g, " ").trim() + " ";
@@ -42710,6 +42717,9 @@ document.addEventListener("DOMContentLoaded", function() {
     glossaryPattern.lastIndex = 0;
     text.replace(glossaryPattern, function(match, prefix, term) {
       var entry = glossaryAliasMap[term.toLowerCase()];
+      var strictAlias = glossaryStrictCaseAliases[term.toLowerCase()];
+      if (strictAlias && term !== strictAlias) return match;
+      if (entry && entry.questionIdPrefix && !String(question.id || "").startsWith(entry.questionIdPrefix)) return match;
       var visibleKey = entry && entry.term.toLowerCase();
       if (entry && !seen[visibleKey]) {
         seen[visibleKey] = true;
