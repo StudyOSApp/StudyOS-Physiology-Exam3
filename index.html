@@ -43359,6 +43359,34 @@ document.addEventListener("DOMContentLoaded", function() {
           (["CF-MMSR-015", "CF-MMSR-021", "CF-MMSR-022"].includes(String(question.id || "")) ||
             /(?:\bcross[- ]bridge cycle\b|\bpower stroke\b|\bmyosin head\b|\bmyosin binding to actin\b|\bATP hydrolysis\b)/i.test(directContext));
       }
+    },
+    {
+      key: "muscle-fiber-myofibril-anatomy",
+      title: "Muscle Fiber & Myofibril Anatomy",
+      subtitle: "From the muscle fiber to sarcomeres and thick/thin filaments",
+      cardText: "Trace the sarcolemma, T-tubules, sarcoplasmic reticulum, myofibrils, sarcomeres, filaments, bands, and contractile proteins.",
+      src: "assets/visual-guides/muscle-fiber-myofibril-anatomy.png",
+      alt: "Skeletal muscle fiber and myofibril anatomy visual guide showing sarcomeres, bands, filaments, T-tubules, and sarcoplasmic reticulum",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          (["CF-MMSR-015", "CF-MMSR-017", "CF-MMSR-020", "CF-MMSR-021", "CF-MMSR-022"].includes(String(question.id || "")) ||
+            /(?:\bmyofibrils?\b|\bmyofilaments?\b|\bsarcomeres?\b|\bthick filaments?\b|\bthin filaments?\b|\bT[- ]tubules?\b|\bsarcoplasmic reticulum\b|\bsarcolemma\b|\btroponin\b|\btropomyosin\b)/i.test(directContext));
+      }
+    },
+    {
+      key: "sarcomere-bands-contraction",
+      title: "Sarcomere Bands & Contraction",
+      subtitle: "Relaxed versus contracted sarcomere anatomy",
+      cardText: "Compare the A band, I band, H zone, Z lines, and M line as the sarcomere shortens during contraction.",
+      src: "assets/visual-guides/sarcomere-bands-contraction.png",
+      alt: "Sarcomere visual guide comparing relaxed and contracted muscle with A bands, I bands, H zones, Z lines, and the M line",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          (question.id === "CF-MMSR-015" ||
+            /(?:\bsarcomere(?:s)?\b|\bA band\b|\bI band\b|\bH zone\b|\bZ (?:disc|disk|line)s?\b|\bM line\b|\bsarcomere (?:shortening|lengthening)\b)/i.test(directContext));
+      }
     }
   ];
 
