@@ -43299,6 +43299,23 @@ document.addEventListener("DOMContentLoaded", function() {
           (["CF-CV-035", "CF-CV-074", "CF-CV-076"].includes(String(question.id || "")) ||
             /(?:\bS1\b|S₁|\bfirst heart sound\b|\bheart sound one\b)/i.test(directContext));
       }
+    },
+    {
+      key: "heart-auscultation-locations",
+      title: "Heart Auscultation Locations",
+      subtitle: "Aortic, pulmonic, Erb’s, tricuspid, and mitral areas",
+      cardText: "APET Monkey locations by intercostal space, parasternal border, apex, and midclavicular line.",
+      src: "assets/visual-guides/heart-auscultation-locations.png",
+      alt: "Heart auscultation visual guide showing aortic, pulmonic, Erb's point, tricuspid, and mitral listening locations",
+      matches: function(question) {
+        var choiceText = Object.keys(question.choices || {}).map(function(key) {
+          return question.choices[key];
+        }).join(" ");
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic, choiceText].join(" ");
+        return /^CF-CV-/.test(String(question.id || "")) &&
+          (question.conceptBlock === "Auscultation Points" ||
+            /(?:intercostal space|parasternal|midclavicular|Erb['’]s point|aortic area|pulmonic area|tricuspid area|mitral area|heard best at the apex|heard best at the base|murmur at the apex|murmur at Erb['’]s point)/i.test(directContext));
+      }
     }
   ];
 
