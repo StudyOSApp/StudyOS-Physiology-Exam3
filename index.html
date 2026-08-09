@@ -43330,6 +43330,21 @@ document.addEventListener("DOMContentLoaded", function() {
           (["CF-MMSR-018", "CF-MMSR-019"].includes(String(question.id || "")) ||
             /(?:\bneuromuscular junction\b|\bmotor end[- ]plate\b|\bend[- ]plate potential\b)/i.test(directContext));
       }
+    },
+    {
+      key: "muscle-fiber-types",
+      title: "Muscle Fiber Types",
+      subtitle: "Type I, Type IIa, and Type IIb/IIx skeletal muscle fibers",
+      cardText: "Compare contraction speed, metabolism, aerobic capacity, myoglobin, diameter, power, and fatigue resistance.",
+      src: "assets/visual-guides/muscle-fiber-types.png",
+      alt: "Muscle fiber types visual guide comparing Type I, Type IIa, and Type IIb or IIx fibers",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          (["CF-MMSR-024", "CF-MMSR-027", "CF-MMSR-028"].includes(String(question.id || "")) ||
+            question.conceptBlock === "Fiber Type Comparison" ||
+            /(?:\bmuscle fiber types?\b|\bslow[- ]twitch\b|\bfast[- ]twitch\b|\bslow oxidative\b|\bfast oxidative glycolytic\b|\bfast glycolytic\b)/i.test(directContext));
+      }
     }
   ];
 
