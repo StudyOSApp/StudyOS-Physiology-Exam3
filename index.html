@@ -2138,6 +2138,7 @@
     .context-visual-guide-card { flex: 0 0 auto; display: grid; gap: 7px; padding: 11px 12px; border: 1px solid color-mix(in srgb, var(--blue) 58%, var(--line)); border-radius: 9px; background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 12%, var(--panel)), var(--panel)); }
     .context-visual-guide-title { color: var(--ink); font-weight: 900; line-height: 1.25; }
     .context-visual-guide-text { color: var(--muted); font-size: .84rem; font-weight: 750; line-height: 1.35; }
+    .context-visual-guide-actions { display: grid; gap: 7px; }
     .context-visual-guide-button { width: 100%; min-height: 38px; border-color: var(--blue); background: var(--active); color: var(--ink); }
     .question-term-list { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 6px 4px 8px; }
     .question-term-list.hidden { display: none; }
@@ -2400,7 +2401,7 @@
         <div id="contextVisualGuideCard" class="context-visual-guide-card hidden">
           <div id="contextVisualGuideTitle" class="context-visual-guide-title">Visual Guide</div>
           <div id="contextVisualGuideText" class="context-visual-guide-text"></div>
-          <button id="openQuestionVisualGuide" class="context-visual-guide-button" type="button">View Visual Guide</button>
+          <div id="contextVisualGuideActions" class="context-visual-guide-actions"></div>
         </div>
         <div id="questionGlossaryTerms" class="question-term-list" aria-live="polite"></div>
         <div id="qAnswer" class="answer"></div>
@@ -43220,27 +43221,51 @@ document.addEventListener("DOMContentLoaded", function() {
         return ["CF-CV-086", "CF-CV-089"].includes(String(question.id || "")) ||
           /\bmitral (?:valve )?stenosis\b/i.test([question.q, question.question].join(" "));
       }
+    },
+    {
+      key: "aortic-regurgitation",
+      title: "Aortic Regurgitation",
+      subtitle: "Incomplete aortic-valve closure and diastolic backflow",
+      cardText: "High-frequency diastolic blowing murmur, aortic-valve backflow, and Erb’s point.",
+      src: "assets/visual-guides/aortic-regurgitation.png",
+      alt: "Aortic regurgitation visual guide showing diastolic backflow and a blowing murmur heard at Erb's point",
+      matches: function(question) {
+        return ["CF-CV-082", "CF-CV-086", "CF-CV-090"].includes(String(question.id || "")) ||
+          /\baortic (?:valve )?regurgitation\b/i.test([question.q, question.question].join(" "));
+      }
     }
   ];
 
-  var activeQuestionVisualGuide = null;
+  var activeQuestionVisualGuides = [];
 
-  function questionVisualGuideFor(question) {
-    if (!question || question.contentGroup !== "cumulative-final") return null;
+  function questionVisualGuidesFor(question) {
+    if (!question || question.contentGroup !== "cumulative-final") return [];
     var context = [question.q, question.question, question.explanation, question.conceptBlock, question.subtopic].join(" ");
-    return questionVisualGuideDefinitions.find(function(guide) {
+    return questionVisualGuideDefinitions.filter(function(guide) {
       return guide.matches(question, context);
-    }) || null;
+    });
   }
 
   function updateContextVisualGuide(question) {
     var card = document.getElementById("contextVisualGuideCard");
-    if (!card) return;
-    activeQuestionVisualGuide = questionVisualGuideFor(question);
-    card.className = "context-visual-guide-card" + (activeQuestionVisualGuide ? "" : " hidden");
-    if (!activeQuestionVisualGuide) return;
-    setText("contextVisualGuideTitle", activeQuestionVisualGuide.title);
-    setText("contextVisualGuideText", activeQuestionVisualGuide.cardText);
+    var actions = document.getElementById("contextVisualGuideActions");
+    if (!card || !actions) return;
+    activeQuestionVisualGuides = questionVisualGuidesFor(question);
+    card.className = "context-visual-guide-card" + (activeQuestionVisualGuides.length ? "" : " hidden");
+    actions.textContent = "";
+    if (!activeQuestionVisualGuides.length) return;
+    setText("contextVisualGuideTitle", activeQuestionVisualGuides.length === 1 ? activeQuestionVisualGuides[0].title : "Visual Guides");
+    setText("contextVisualGuideText", activeQuestionVisualGuides.length === 1 ? activeQuestionVisualGuides[0].cardText : "Choose the guide you want to review for this question.");
+    activeQuestionVisualGuides.forEach(function(guide) {
+      var button = document.createElement("button");
+      button.className = "context-visual-guide-button";
+      button.type = "button";
+      button.textContent = activeQuestionVisualGuides.length === 1 ? "View Visual Guide" : "View " + guide.title;
+      button.addEventListener("click", function() {
+        openQuestionVisualGuide(guide.key);
+      });
+      actions.appendChild(button);
+    });
   }
 
   function showDeckQuestion(options) {
@@ -43755,8 +43780,11 @@ document.addEventListener("DOMContentLoaded", function() {
   var activeStudyGuidePageIndex = 0;
   var questionVisualGuideReturnFocus = null;
 
-  function openQuestionVisualGuide() {
-    var guide = questionVisualGuideFor(current);
+  function openQuestionVisualGuide(guideKey) {
+    var guides = questionVisualGuidesFor(current);
+    var guide = guides.find(function(candidate) {
+      return candidate.key === guideKey;
+    }) || guides[0];
     if (!guide) return;
     var modal = document.getElementById("questionVisualGuideModal");
     var image = document.getElementById("questionVisualGuideImage");
@@ -43851,7 +43879,6 @@ document.addEventListener("DOMContentLoaded", function() {
   onId("openStudyGuide", "click", openStudyGuideModal);
   onId("closeStudyGuide", "click", closeStudyGuideModal);
   onId("doneStudyGuide", "click", closeStudyGuideModal);
-  onId("openQuestionVisualGuide", "click", openQuestionVisualGuide);
   onId("closeQuestionVisualGuide", "click", closeQuestionVisualGuide);
   onId("questionVisualGuideModal", "click", function(event) {
     if (event.target && event.target.id === "questionVisualGuideModal") closeQuestionVisualGuide();
