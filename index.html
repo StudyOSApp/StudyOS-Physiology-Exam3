@@ -43285,6 +43285,20 @@ document.addEventListener("DOMContentLoaded", function() {
           (["CF-CV-028", "CF-CV-075", "CF-CV-077"].includes(String(question.id || "")) ||
             /(?:\bS2\b|S₂|\bsecond heart sound\b|\bheart sound two\b)/i.test(directContext));
       }
+    },
+    {
+      key: "s1-heart-sound-lub",
+      title: "S1 Heart Sound — “Lub”",
+      subtitle: "AV-valve closure at the start of ventricular systole",
+      cardText: "Mitral and tricuspid valve closure, lower pitch, apical location, and isovolumetric contraction.",
+      src: "assets/visual-guides/s1-heart-sound-lub.png",
+      alt: "S1 heart sound visual guide showing AV valve closure and the lub sound at the start of ventricular systole",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-CV-/.test(String(question.id || "")) &&
+          (["CF-CV-035", "CF-CV-074", "CF-CV-076"].includes(String(question.id || "")) ||
+            /(?:\bS1\b|S₁|\bfirst heart sound\b|\bheart sound one\b)/i.test(directContext));
+      }
     }
   ];
 
