@@ -43316,6 +43316,20 @@ document.addEventListener("DOMContentLoaded", function() {
           (question.conceptBlock === "Auscultation Points" ||
             /(?:intercostal space|parasternal|midclavicular|Erb['’]s point|aortic area|pulmonic area|tricuspid area|mitral area|heard best at the apex|heard best at the base|murmur at the apex|murmur at Erb['’]s point)/i.test(directContext));
       }
+    },
+    {
+      key: "neuromuscular-junction",
+      title: "Neuromuscular Junction",
+      subtitle: "Motor-neuron signaling to skeletal muscle",
+      cardText: "Presynaptic Ca²⁺ entry, acetylcholine release, nicotinic receptors, end-plate depolarization, and ACh breakdown.",
+      src: "assets/visual-guides/neuromuscular-junction.png",
+      alt: "Neuromuscular junction visual guide showing acetylcholine release, nicotinic receptors, and muscle depolarization",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          (["CF-MMSR-018", "CF-MMSR-019"].includes(String(question.id || "")) ||
+            /(?:\bneuromuscular junction\b|\bmotor end[- ]plate\b|\bend[- ]plate potential\b)/i.test(directContext));
+      }
     }
   ];
 
