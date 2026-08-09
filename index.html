@@ -43255,8 +43255,8 @@ document.addEventListener("DOMContentLoaded", function() {
       alt: "S3 heart sound visual guide showing ventricular gallop during rapid ventricular filling",
       matches: function(question) {
         var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
-        return question.id === "CF-CV-078" ||
-          /(?:\bS3\b|S₃|\bventricular gallop\b|\bthird heart sound\b)/i.test(directContext);
+        return /^CF-CV-/.test(String(question.id || "")) &&
+          (question.id === "CF-CV-078" || /(?:\bS3\b|S₃|\bventricular gallop\b|\bthird heart sound\b)/i.test(directContext));
       }
     },
     {
@@ -43268,8 +43268,22 @@ document.addEventListener("DOMContentLoaded", function() {
       alt: "S4 heart sound visual guide showing atrial gallop during atrial contraction",
       matches: function(question) {
         var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
-        return question.id === "CF-CV-079" ||
-          /(?:\bS4\b|S₄|\batrial gallop\b|\bfourth heart sound\b)/i.test(directContext);
+        return /^CF-CV-/.test(String(question.id || "")) &&
+          (question.id === "CF-CV-079" || /(?:\bS4\b|S₄|\batrial gallop\b|\bfourth heart sound\b)/i.test(directContext));
+      }
+    },
+    {
+      key: "s2-heart-sound-dub",
+      title: "S2 Heart Sound — “Dub”",
+      subtitle: "Semilunar-valve closure at the start of diastole",
+      cardText: "Aortic and pulmonic valve closure, higher pitch, cardiac-base location, and isovolumetric relaxation.",
+      src: "assets/visual-guides/s2-heart-sound-dub.png",
+      alt: "S2 heart sound visual guide showing semilunar valve closure and the dub sound at the start of diastole",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-CV-/.test(String(question.id || "")) &&
+          (["CF-CV-028", "CF-CV-075", "CF-CV-077"].includes(String(question.id || "")) ||
+            /(?:\bS2\b|S₂|\bsecond heart sound\b|\bheart sound two\b)/i.test(directContext));
       }
     }
   ];
