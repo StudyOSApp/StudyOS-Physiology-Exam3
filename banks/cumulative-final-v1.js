@@ -2053,7 +2053,7 @@
     "unit": "cumulative-gas-exchange",
     "conceptBlock": "Ventilation–Perfusion Relationships",
     "subtopic": "Ventilation–Perfusion Relationships",
-    "question": "What is the normal ventilation–perfusion ratio shown in the review?",
+    "question": "In healthy lungs at rest, what is the approximate overall ventilation–perfusion (V/Q) ratio?",
     "choices": {
       "A": "0.2",
       "B": "1.8",
@@ -2061,7 +2061,7 @@
       "D": "0.8"
     },
     "correctAnswer": "D",
-    "explanation": "The review identifies 0.8 as the normal V/Q ratio when ventilation and perfusion are appropriately matched.",
+    "explanation": "The normal overall V/Q ratio is approximately 0.8 when alveolar ventilation and pulmonary perfusion are appropriately matched.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -2295,7 +2295,7 @@
     "unit": "cumulative-pulmonary-foundations",
     "conceptBlock": "Key Lung Pressures",
     "subtopic": "Key Lung Pressures",
-    "question": "What is normal atmospheric pressure at sea level in the review?",
+    "question": "What is the approximate atmospheric pressure at sea level?",
     "choices": {
       "A": "760 mmHg",
       "B": "756 mmHg",
@@ -2537,7 +2537,7 @@
     "unit": "cumulative-pulmonary-foundations",
     "conceptBlock": "Low Compliance",
     "subtopic": "Low Compliance",
-    "question": "Which condition is associated with low lung compliance in the review?",
+    "question": "Which condition typically produces abnormally low lung compliance?",
     "choices": {
       "A": "COPD",
       "B": "Pulmonary fibrosis",
@@ -2743,7 +2743,7 @@
       "D": "Decreased CO₂ with increased pH and lower 2,3-BPG"
     },
     "correctAnswer": "B",
-    "explanation": "The review groups increased H⁺, CO₂, temperature, and 2,3-BPG as right-shifting conditions associated with active metabolism.",
+    "explanation": "Increased H⁺, CO₂, temperature, and 2,3-BPG shift the oxygen–hemoglobin dissociation curve to the right and promote oxygen unloading in metabolically active tissue.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -2787,7 +2787,7 @@
       "D": "Central chemoreceptors"
     },
     "correctAnswer": "B",
-    "explanation": "The review identifies red blood cells as the source of 2,3-BPG, a factor that shifts the curve right.",
+    "explanation": "Red blood cells produce 2,3-BPG, which decreases hemoglobin's oxygen affinity and shifts the oxygen–hemoglobin dissociation curve to the right.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -2867,7 +2867,7 @@
     "unit": "cumulative-gas-exchange",
     "conceptBlock": "Carbon Monoxide Poisoning",
     "subtopic": "Carbon Monoxide Poisoning",
-    "question": "Which appearance is associated with carbon monoxide poisoning in the review?",
+    "question": "Which blood appearance is classically associated with carbon monoxide poisoning?",
     "choices": {
       "A": "Dark blue blood with marked cyanosis",
       "B": "Pale blood caused by bicarbonate loss",
@@ -2941,7 +2941,7 @@
       "D": "23%"
     },
     "correctAnswer": "D",
-    "explanation": "The review assigns about 23% of carbon dioxide transport to direct binding with hemoglobin.",
+    "explanation": "Approximately 23% of carbon dioxide is transported by binding directly to hemoglobin as carbaminohemoglobin.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -3403,7 +3403,7 @@
       "D": "Both receptor groups are located in the carotid bodies."
     },
     "correctAnswer": "C",
-    "explanation": "The review contrasts peripheral oxygen sensing with central sensitivity to carbon dioxide and hydrogen ions.",
+    "explanation": "Peripheral chemoreceptors sense low arterial oxygen, whereas central chemoreceptors primarily respond to carbon dioxide–driven changes in hydrogen ions.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -3571,7 +3571,7 @@
     "unit": "cumulative-breathing-control",
     "conceptBlock": "FEV₁",
     "subtopic": "FEV₁",
-    "question": "Which FEV₁ percentage is considered normal in the cumulative review?",
+    "question": "In a healthy adult, approximately what percentage of the forced vital capacity is exhaled during the first second (FEV₁%)?",
     "choices": {
       "A": "About 80%",
       "B": "About 20%",
@@ -3747,7 +3747,7 @@
     "unit": "cumulative-acid-base",
     "conceptBlock": "Metabolic Acidosis",
     "subtopic": "Metabolic Acidosis",
-    "question": "Extreme exercise may produce which acid–base process in the review?",
+    "question": "When extreme exercise causes substantial lactic acid accumulation, which acid–base disturbance may develop?",
     "choices": {
       "A": "Metabolic acidosis",
       "B": "Respiratory acidosis",
@@ -3791,7 +3791,7 @@
     "unit": "cumulative-acid-base",
     "conceptBlock": "Compensation Principles",
     "subtopic": "Compensation Principles",
-    "question": "What general rule describes acid–base compensation in the review?",
+    "question": "What general rule describes physiological compensation for a primary acid–base disturbance?",
     "choices": {
       "A": "Compensation intensifies the original disturbance.",
       "B": "Compensation acts in the opposite direction through the other system.",
@@ -4635,7 +4635,7 @@
       "D": "Glucose and galactose"
     },
     "correctAnswer": "D",
-    "explanation": "Lactase splits lactose into glucose and galactose, an explicit review question.",
+    "explanation": "Lactase splits lactose into the monosaccharides glucose and galactose.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -4737,7 +4737,7 @@
     "unit": "cumulative-gi-absorption",
     "conceptBlock": "Protein Digestion & Absorption",
     "subtopic": "Protein Digestion & Absorption",
-    "question": "Which group contains pancreatic protein-digesting enzymes listed in the review?",
+    "question": "Which group consists of pancreatic enzymes or zymogens involved in protein digestion?",
     "choices": {
       "A": "Secretin, CCK, GIP, and GLP-1",
       "B": "Pepsinogen, histamine, mucus, and gastrin",
@@ -4745,7 +4745,7 @@
       "D": "Trypsin, chymotrypsin, carboxypolypeptidase, and proelastase"
     },
     "correctAnswer": "D",
-    "explanation": "The review lists these pancreatic enzymes as participants in protein breakdown.",
+    "explanation": "Trypsin, chymotrypsin, carboxypolypeptidase, and proelastase are pancreatic enzymes or zymogens involved in protein breakdown.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -4803,7 +4803,7 @@
     "unit": "cumulative-gi-absorption",
     "conceptBlock": "Final Digestive Products",
     "subtopic": "Final Digestive Products",
-    "question": "Which products represent the final absorbed products of fat digestion in the review?",
+    "question": "Which substances are the principal absorbable products of fat digestion?",
     "choices": {
       "A": "Amino acids and peptides",
       "B": "Bicarbonate and water",
@@ -4811,7 +4811,7 @@
       "D": "Glucose and galactose"
     },
     "correctAnswer": "C",
-    "explanation": "The review identifies fatty acids and glycerol as final fat-digestion products.",
+    "explanation": "Fat digestion produces absorbable fatty acids and glycerol-related products.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -4987,7 +4987,7 @@
       "D": "Relaxation of the gut in the direction of the anus"
     },
     "correctAnswer": "D",
-    "explanation": "The review defines receptive relaxation as relaxation toward the anus during peristalsis.",
+    "explanation": "Receptive relaxation is relaxation of the gastrointestinal segment distal to a peristaltic contraction, allowing contents to move toward the anus.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -5273,7 +5273,7 @@
       "D": "Rapid calcium entry"
     },
     "correctAnswer": "D",
-    "explanation": "The review identifies rapid calcium entry during GI spike potentials.",
+    "explanation": "Rapid calcium entry produces the depolarizing phase of gastrointestinal spike potentials.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -5581,7 +5581,7 @@
       "D": "Hormonal control cannot affect motility"
     },
     "correctAnswer": "B",
-    "explanation": "The review states that GI hormonal effects last longer than nervous effects.",
+    "explanation": "Gastrointestinal hormonal effects generally last longer than nervous effects.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -5639,7 +5639,7 @@
     "unit": "cumulative-gi-hormones",
     "conceptBlock": "Gastrin",
     "subtopic": "Gastrin",
-    "question": "In the instructor's review activity, food entering the first part of the duodenum stimulates gastrin. What response follows?",
+    "question": "Food entering the first part of the duodenum stimulates gastrin release. What effect does gastrin then have on gastric secretion?",
     "choices": {
       "A": "Decreased gastric acid secretion",
       "B": "Increased insulin secretion",
@@ -5647,7 +5647,7 @@
       "D": "Decreased intestinal motility"
     },
     "correctAnswer": "C",
-    "explanation": "The instructor's activity links food entering the first duodenal segment with gastrin release and increased HCl secretion.",
+    "explanation": "In this pathway, food entering the first duodenal segment stimulates gastrin, which increases hydrochloric acid secretion.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -6013,7 +6013,7 @@
     "unit": "cumulative-gi-liver-bile",
     "conceptBlock": "Liver Functions",
     "subtopic": "Liver Functions",
-    "question": "Which substances are stored by the liver according to the review?",
+    "question": "Which substances are normally stored by the liver?",
     "choices": {
       "A": "Gastrin and intestinal mucus",
       "B": "Pepsinogen and intrinsic factor",
@@ -6101,7 +6101,7 @@
     "unit": "cumulative-gi-liver-bile",
     "conceptBlock": "Gallbladder Function",
     "subtopic": "Gallbladder Function",
-    "question": "Approximately how much bile can the gallbladder store according to the review?",
+    "question": "Approximately how much bile can the gallbladder store?",
     "choices": {
       "A": "About 5 cc",
       "B": "About 50 cc",
@@ -6109,7 +6109,7 @@
       "D": "About 5,000 cc"
     },
     "correctAnswer": "B",
-    "explanation": "The review lists gallbladder bile storage at approximately 50 cc.",
+    "explanation": "The gallbladder can store approximately 50 cc of bile.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -6167,7 +6167,7 @@
     "unit": "cumulative-gi-liver-bile",
     "conceptBlock": "Bile Composition",
     "subtopic": "Bile Composition",
-    "question": "Which group contains components of bile listed in the review?",
+    "question": "Which group contains normal components of bile?",
     "choices": {
       "A": "Glucose, galactose, amino acids, and pepsinogen",
       "B": "Water, bile salts, phospholipids, cholesterol, and bilirubin",
@@ -6277,7 +6277,7 @@
     "unit": "cumulative-cv-heart-flow",
     "conceptBlock": "Heart Pump & Circulations",
     "subtopic": "Heart Pump & Circulations",
-    "question": "Approximately how much blood does the heart pump each minute at rest according to the review?",
+    "question": "What is the approximate resting cardiac output of a healthy adult?",
     "choices": {
       "A": "About 1–2 L/min",
       "B": "About 10–12 L/min",
@@ -6285,7 +6285,7 @@
       "D": "About 5–6 L/min"
     },
     "correctAnswer": "D",
-    "explanation": "The review lists a typical resting flow of approximately 5–6 liters per minute.",
+    "explanation": "A healthy adult's resting cardiac output is typically approximately 5–6 liters per minute.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -6695,7 +6695,7 @@
     "unit": "cumulative-cv-electrical",
     "conceptBlock": "Contractile-Cell Action Potential",
     "subtopic": "Contractile-Cell Action Potential",
-    "question": "Which balance creates the phase 2 plateau?",
+    "question": "During phase 2 of a ventricular contractile-cell action potential, which opposing ion movements create the plateau?",
     "choices": {
       "A": "Na⁺ efflux balancing Cl⁻ influx",
       "B": "K⁺ influx balancing Ca²⁺ efflux",
@@ -6747,7 +6747,7 @@
       "D": "Approximately +30 mV"
     },
     "correctAnswer": "A",
-    "explanation": "The review identifies phase 4 as a stable resting potential near −90 mV.",
+    "explanation": "In a ventricular contractile cell, phase 4 is a stable resting membrane potential near −90 mV.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -6901,7 +6901,7 @@
       "D": "About 80%"
     },
     "correctAnswer": "D",
-    "explanation": "The review assigns approximately 80% of filling to the rapid passive phase.",
+    "explanation": "Approximately 80% of ventricular filling occurs passively during the rapid filling phase.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -7157,7 +7157,7 @@
     "unit": "cumulative-cv-cycle",
     "conceptBlock": "Cardiac Volumes & Output",
     "subtopic": "Cardiac Volumes & Output",
-    "question": "What end-diastolic volume is listed in the review?",
+    "question": "What is a typical end-diastolic volume for a resting adult ventricle?",
     "choices": {
       "A": "Approximately 50 mL",
       "B": "Approximately 70 mL",
@@ -7165,7 +7165,7 @@
       "D": "Approximately 120 mL"
     },
     "correctAnswer": "D",
-    "explanation": "The review uses an end-diastolic volume of about 120 mL.",
+    "explanation": "A typical resting end-diastolic volume is about 120 mL.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -7179,7 +7179,7 @@
     "unit": "cumulative-cv-cycle",
     "conceptBlock": "Cardiac Volumes & Output",
     "subtopic": "Cardiac Volumes & Output",
-    "question": "What end-systolic volume is listed in the review?",
+    "question": "What is a typical end-systolic volume for a resting adult ventricle?",
     "choices": {
       "A": "Approximately 50 mL",
       "B": "Approximately 120 mL",
@@ -7187,7 +7187,7 @@
       "D": "Approximately 170 mL"
     },
     "correctAnswer": "A",
-    "explanation": "The review uses an end-systolic volume of about 50 mL.",
+    "explanation": "A typical resting end-systolic volume is about 50 mL.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -7267,7 +7267,7 @@
     "unit": "cumulative-cv-autonomic",
     "conceptBlock": "Preload & Frank-Starling",
     "subtopic": "Preload & Frank-Starling",
-    "question": "Which measurements are used as indicators of preload in the review?",
+    "question": "Which ventricular measurements are commonly used as indicators of preload?",
     "choices": {
       "A": "EDV and EDP",
       "B": "ESV and heart rate",
@@ -7399,7 +7399,7 @@
     "unit": "cumulative-cv-autonomic",
     "conceptBlock": "Parasympathetic Cardiac Control",
     "subtopic": "Parasympathetic Cardiac Control",
-    "question": "Which neurotransmitter mediates the cardiac parasympathetic effect emphasized in the review?",
+    "question": "Which neurotransmitter mediates parasympathetic effects on the heart?",
     "choices": {
       "A": "Norepinephrine",
       "B": "Epinephrine",
@@ -7627,7 +7627,7 @@
       "D": "T wave"
     },
     "correctAnswer": "A",
-    "explanation": "The review identifies the Q wave with initial septal depolarization.",
+    "explanation": "The Q wave represents the initial phase of septal depolarization.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -7649,7 +7649,7 @@
       "D": "T wave"
     },
     "correctAnswer": "B",
-    "explanation": "The R wave is associated with full septal depolarization in the review.",
+    "explanation": "The R wave is associated with full septal depolarization.",
     "questionType": "Foundation",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -8155,7 +8155,7 @@
       "D": "A high-frequency murmur at Erb's point"
     },
     "correctAnswer": "A",
-    "explanation": "Mitral stenosis produces a mid-diastolic murmur and is commonly linked to rheumatic fever in the review.",
+    "explanation": "Mitral stenosis produces a mid-diastolic murmur and is commonly associated with rheumatic fever.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -8257,7 +8257,7 @@
     "unit": "cumulative-cv-shunts-flow",
     "conceptBlock": "Tetralogy of Fallot",
     "subtopic": "Tetralogy of Fallot",
-    "question": "Which congenital condition is called blue baby syndrome in the review?",
+    "question": "Which congenital heart condition is classically associated with \"blue baby syndrome\"?",
     "choices": {
       "A": "Patent ductus arteriosus",
       "B": "Tetralogy of Fallot",
@@ -8287,7 +8287,7 @@
       "D": "Aorta to pulmonary trunk"
     },
     "correctAnswer": "C",
-    "explanation": "The review identifies Tetralogy of Fallot as a right-to-left shunt.",
+    "explanation": "Tetralogy of Fallot produces a right-to-left shunt.",
     "questionType": "Applied Reinforcement",
     "bankType": "sprint",
     "bankId": "cumulative_final_v1",
@@ -8367,7 +8367,7 @@
     "unit": "cumulative-cv-shunts-flow",
     "conceptBlock": "Flow & Poiseuille's Law",
     "subtopic": "Flow & Poiseuille's Law",
-    "question": "Which set of changes would reduce vessel flow according to the review?",
+    "question": "Which set of vascular changes would reduce blood flow through a vessel?",
     "choices": {
       "A": "Increased pressure gradient and radius",
       "B": "Decreased viscosity and increased radius",
@@ -8389,7 +8389,7 @@
     "unit": "cumulative-cv-bp",
     "conceptBlock": "Blood Pressure Determinants",
     "subtopic": "Blood Pressure Determinants",
-    "question": "Which three factors determine blood pressure in the review?",
+    "question": "Which three physiological factors are major determinants of arterial blood pressure?",
     "choices": {
       "A": "Heart sounds, ECG waves, and preload",
       "B": "Viscosity, lymph flow, and atrial pressure",
@@ -8455,7 +8455,7 @@
     "unit": "cumulative-cv-bp",
     "conceptBlock": "Short-Term Blood Pressure Control",
     "subtopic": "Short-Term Blood Pressure Control",
-    "question": "Where are the arterial baroreceptors emphasized in the review located?",
+    "question": "Where are the major arterial baroreceptors located?",
     "choices": {
       "A": "Carotid body and medulla",
       "B": "Coronary sinus and pulmonary veins",
@@ -8543,7 +8543,7 @@
     "unit": "cumulative-cv-bp",
     "conceptBlock": "RAAS",
     "subtopic": "RAAS",
-    "question": "How does angiotensin II raise blood pressure in the review pathway?",
+    "question": "How does angiotensin II raise arterial blood pressure?",
     "choices": {
       "A": "It causes vasodilation and suppresses aldosterone",
       "B": "It lowers sodium reabsorption and blood volume",
@@ -8565,7 +8565,7 @@
     "unit": "cumulative-cv-bp",
     "conceptBlock": "Capillary Exchange & Lymph",
     "subtopic": "Capillary Exchange & Lymph",
-    "question": "Which pairing correctly groups the Starling forces emphasized in the instructor review?",
+    "question": "Which pairing correctly identifies Starling forces that favor capillary filtration?",
     "choices": {
       "A": "Capillary hydrostatic and interstitial hydrostatic pressures favor reabsorption",
       "B": "Capillary colloid osmotic and interstitial colloid osmotic pressures favor reabsorption",
