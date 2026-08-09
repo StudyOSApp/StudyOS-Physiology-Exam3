@@ -2169,6 +2169,320 @@
     .glossary-popover-module { margin-top: 9px; color: var(--muted); font-size: 0.76rem; }
     @media(max-width:520px) { .glossary-popover { left: 14px !important; right: 14px; width: auto; } .question-glossary-search-wrap { width: 100%; } }
 
+    .flashcards-open-button {
+      flex:0 0 auto;
+      width:100%;
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-color:#abcdfc;
+      background:var(--panel);
+    }
+
+    body.flashcard-mode-active {
+      overflow:auto;
+      background:var(--paper);
+    }
+
+    body.flashcard-mode-active main {
+      max-width:none;
+      padding:0;
+    }
+
+    body.flashcard-mode-active .app-header,
+    body.flashcard-mode-active #practice {
+      display:none!important;
+    }
+
+    .flashcard-mode {
+      min-height:100vh;
+      padding:20px clamp(18px,4vw,58px) 28px;
+      background:var(--paper);
+    }
+
+    .flashcard-topbar {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      align-items:start;
+      gap:20px;
+      max-width:1380px;
+      margin:0 auto;
+    }
+
+    .flashcard-heading {
+      margin:0;
+      padding:0;
+      border:0;
+      font-size:clamp(1.35rem,2.4vw,2rem);
+    }
+
+    .flashcard-subheading {
+      margin-top:2px;
+      color:var(--muted);
+      font-size:.9rem;
+      font-weight:700;
+    }
+
+    .flashcard-status {
+      display:grid;
+      grid-template-columns:repeat(3,auto);
+      align-items:center;
+      justify-content:end;
+      gap:4px 12px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--panel);
+      color:var(--muted);
+      font-size:.78rem;
+      font-weight:800;
+      box-shadow:0 4px 14px rgba(21,36,56,.04);
+    }
+
+    .flashcard-status-value {
+      color:var(--ink);
+      white-space:nowrap;
+    }
+
+    .flashcard-status-actions {
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:6px;
+      margin-top:2px;
+    }
+
+    .flashcard-status-actions button {
+      min-height:30px;
+      padding:4px 8px;
+      font-size:.76rem;
+      background:var(--soft);
+    }
+
+    .flashcard-stage {
+      width:min(1050px,100%);
+      min-height:calc(100vh - 150px);
+      margin:14px auto 0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+    }
+
+    .flashcard-metadata {
+      min-height:24px;
+      color:var(--muted);
+      font-size:.84rem;
+      font-weight:850;
+      letter-spacing:.02em;
+      text-align:center;
+    }
+
+    .flashcard-card {
+      width:100%;
+      min-height:clamp(360px,56vh,620px);
+      padding:0;
+      border:0;
+      border-radius:20px;
+      background:transparent;
+      perspective:1400px;
+      cursor:pointer;
+      box-shadow:none;
+    }
+
+    .flashcard-card:hover { border-color:transparent; }
+
+    .flashcard-card:focus-visible {
+      outline:3px solid var(--blue);
+      outline-offset:5px;
+    }
+
+    .flashcard-card-inner {
+      position:relative;
+      display:block;
+      width:100%;
+      min-height:inherit;
+      transform-style:preserve-3d;
+      transition:transform .34s ease;
+    }
+
+    .flashcard-card.is-flipped .flashcard-card-inner {
+      transform:rotateY(180deg);
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .flashcard-card-inner { transition:none; }
+    }
+
+    .flashcard-face {
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      padding:clamp(28px,6vw,78px);
+      border:2px solid var(--line);
+      border-radius:20px;
+      background:var(--panel);
+      color:var(--ink);
+      box-shadow:var(--shadow);
+      backface-visibility:hidden;
+      -webkit-backface-visibility:hidden;
+      overflow:auto;
+    }
+
+    .flashcard-face-back {
+      transform:rotateY(180deg);
+      background:var(--answer);
+      border-color:rgba(22,128,60,.38);
+    }
+
+    .flashcard-side-label {
+      color:var(--muted);
+      font-size:.76rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .flashcard-face-text {
+      max-width:850px;
+      font-size:clamp(1.05rem,2.25vw,1.85rem);
+      font-weight:850;
+      line-height:1.35;
+      text-align:center;
+      text-wrap:balance;
+      white-space:pre-line;
+    }
+
+    .flashcard-controls {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .flashcard-controls button {
+      min-width:105px;
+      background:var(--panel);
+    }
+
+    .flashcard-controls .flashcard-know {
+      border-color:rgba(22,128,60,.5);
+      color:var(--green);
+    }
+
+    .flashcard-controls .flashcard-dont-know {
+      border-color:rgba(180,35,24,.45);
+      color:var(--red);
+    }
+
+    .flashcard-key-hint {
+      color:var(--muted);
+      font-size:.8rem;
+      font-weight:750;
+      text-align:center;
+    }
+
+    .flashcard-current-rating {
+      min-height:22px;
+      color:var(--muted);
+      font-size:.8rem;
+      font-weight:800;
+      text-align:center;
+    }
+
+    .flashcard-complete {
+      width:min(700px,100%);
+      margin:clamp(70px,15vh,150px) auto 0;
+      padding:clamp(28px,5vw,52px);
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--panel);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .flashcard-complete h2 {
+      margin:0 0 8px;
+      padding:0;
+      border:0;
+    }
+
+    .flashcard-complete-stats {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:8px;
+      margin:24px 0;
+    }
+
+    .flashcard-complete-stat {
+      padding:12px 8px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--soft);
+    }
+
+    .flashcard-complete-stat b {
+      display:block;
+      font-size:1.35rem;
+    }
+
+    .flashcard-complete-actions {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .flashcard-assessment-modal .modal-box {
+      width:min(650px,94vw);
+      max-height:84vh;
+      overflow:auto;
+    }
+
+    .flashcard-assessment-summary {
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .flashcard-assessment-row {
+      display:grid;
+      grid-template-columns:minmax(130px,1fr) repeat(3,minmax(72px,auto));
+      gap:8px;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:var(--soft);
+      font-size:.86rem;
+    }
+
+    .flashcard-assessment-row.overall {
+      border-color:rgba(31,111,235,.35);
+      background:var(--active);
+    }
+
+    .flashcard-assessment-label { font-weight:900; }
+    .flashcard-assessment-number { white-space:nowrap; }
+
+    @media(max-width:720px) {
+      .flashcard-mode { padding:14px 12px 22px; }
+      .flashcard-topbar { grid-template-columns:1fr; }
+      .flashcard-status { justify-content:stretch; grid-template-columns:repeat(3,1fr); }
+      .flashcard-status-actions button { width:100%; }
+      .flashcard-stage { min-height:auto; margin-top:18px; }
+      .flashcard-card { min-height:52vh; }
+      .flashcard-complete-stats { grid-template-columns:1fr 1fr; }
+      .flashcard-assessment-row { grid-template-columns:1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -2249,6 +2563,7 @@
             <div id="studyGuideSummary" class="dashboard-mini-text">Optional guide pages for this week.</div>
             <button id="openStudyGuide" class="dashboard-mini-action" type="button">Open Topic Guide</button>
           </div>
+          <button id="openFlashcards" class="settings-open-button flashcards-open-button" type="button"><span aria-hidden="true">▣</span><span>Flashcards</span></button>
           <a class="settings-open-button ilg-open-button" href="ilg/index.html"><span aria-hidden="true">◇</span><span>Interactive Learning Guide</span></a>
           <button id="openSettingsDrawer" class="settings-open-button" type="button"><span aria-hidden="true">⚙</span><span>Quiz Settings</span></button>
         </div>
@@ -2609,6 +2924,76 @@
     </div>
 
   </section>
+
+  <section id="flashcardMode" class="flashcard-mode hidden" aria-labelledby="flashcardModeTitle">
+    <div class="flashcard-topbar">
+      <div>
+        <h2 id="flashcardModeTitle" class="flashcard-heading">Flashcards</h2>
+        <div id="flashcardDeckLabel" class="flashcard-subheading">Physiology II · Cumulative Final</div>
+      </div>
+      <div class="flashcard-status" aria-live="polite">
+        <span>Card</span><span>Know</span><span>Don’t Know</span>
+        <span id="flashcardPosition" class="flashcard-status-value">0 / 0</span>
+        <span id="flashcardKnowCount" class="flashcard-status-value">0</span>
+        <span id="flashcardDontKnowCount" class="flashcard-status-value">0</span>
+        <div class="flashcard-status-actions">
+          <button id="openFlashcardAssessment" type="button">Assessment</button>
+          <button id="backToQuiz" type="button">Back to Quiz</button>
+          <button id="reviewUnseenFlashcards" type="button">Unseen Only</button>
+          <button id="resetFlashcardDeck" type="button">Reset Deck</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="flashcardStudyView" class="flashcard-stage">
+      <div id="flashcardMetadata" class="flashcard-metadata"></div>
+      <button id="flashcardCard" class="flashcard-card" type="button" aria-label="Flashcard front. Click to flip." aria-pressed="false">
+        <span class="flashcard-card-inner">
+          <span class="flashcard-face flashcard-face-front">
+            <span class="flashcard-side-label">Question</span>
+            <span id="flashcardFront" class="flashcard-face-text"></span>
+          </span>
+          <span class="flashcard-face flashcard-face-back">
+            <span class="flashcard-side-label">Answer</span>
+            <span id="flashcardBack" class="flashcard-face-text"></span>
+          </span>
+        </span>
+      </button>
+      <div class="flashcard-controls" aria-label="Flashcard controls">
+        <button id="flashcardPrevious" type="button" aria-label="Previous card">← Previous</button>
+        <button id="flashcardForward" type="button" aria-label="Flip or advance">Forward →</button>
+        <button id="flashcardKnow" class="flashcard-know" type="button">↑ Know</button>
+        <button id="flashcardDontKnow" class="flashcard-dont-know" type="button">↓ Don’t Know</button>
+      </div>
+      <div class="flashcard-key-hint">Space / → Flip &amp; Next · ← Previous · ↑ Know · ↓ Don’t Know</div>
+      <div id="flashcardCurrentRating" class="flashcard-current-rating">Unrated</div>
+    </div>
+
+    <div id="flashcardComplete" class="flashcard-complete hidden" aria-live="polite">
+      <h2>Session Complete</h2>
+      <p id="flashcardCompleteMessage">You reached the end of this deck.</p>
+      <div id="flashcardCompleteStats" class="flashcard-complete-stats"></div>
+      <div class="flashcard-complete-actions">
+        <button id="reviewDontKnow" type="button">Review Don’t Know</button>
+        <button id="reviewAllFlashcards" type="button">Review All</button>
+        <button id="viewFlashcardAssessment" type="button">View Assessment</button>
+        <button id="completeBackToQuiz" type="button">Back to Quiz</button>
+      </div>
+    </div>
+
+    <div id="flashcardAssessmentModal" class="modal-backdrop flashcard-assessment-modal hidden" role="dialog" aria-modal="true" aria-labelledby="flashcardAssessmentTitle">
+      <div class="modal-box">
+        <div class="study-guide-header">
+          <div>
+            <h3 id="flashcardAssessmentTitle">Flashcard Assessment</h3>
+            <div class="study-guide-subtitle">Classification totals update immediately and are saved on this device.</div>
+          </div>
+          <button id="closeFlashcardAssessment" class="study-guide-close" type="button" aria-label="Close flashcard assessment">×</button>
+        </div>
+        <div id="flashcardAssessmentBody" class="flashcard-assessment-summary"></div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- Quiz Engine JavaScript -->
@@ -2633,10 +3018,12 @@
 <script src="banks/cumulative-final-v1.js"></script>
 <script src="banks/cumulative-final-endocrine-v1.js"></script>
 <script src="banks/cumulative-final-membrane-muscle-reflexes-v1.js"></script>
+<script src="banks/cumulative-final-flashcards-v1.js?v=20260809-flashcards-v1"></script>
 <script src="banks/week12-glossary.js?v=20260809-cvglossary"></script>
 <script src="banks/week13-glossary.js"></script>
 <script src="banks/cumulative-final-cardiovascular-glossary.js?v=20260809-cvglossary"></script>
 <script src="banks/cumulative-final-gi-glossary.js?v=20260809-giglossary"></script>
+<script src="banks/cumulative-final-membrane-muscle-reflexes-glossary.js?v=20260809-mmsrglossary"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   var EXAM_COUNTDOWN = {
@@ -40593,6 +40980,9 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.CUMULATIVE_FINAL_GI_GLOSSARY_ENTRIES)) {
     glossaryEntries = glossaryEntries.concat(window.CUMULATIVE_FINAL_GI_GLOSSARY_ENTRIES);
   }
+  if (Array.isArray(window.CUMULATIVE_FINAL_MMSR_GLOSSARY_ENTRIES)) {
+    glossaryEntries = glossaryEntries.concat(window.CUMULATIVE_FINAL_MMSR_GLOSSARY_ENTRIES);
+  }
 
   var studyGuidePages = [];
 
@@ -43165,6 +43555,65 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     },
     {
+      key: "neuronal-action-potential",
+      title: "The Action Potential",
+      subtitle: "Voltage-gated channels and the neuronal action-potential sequence",
+      cardText: "Review resting potential, threshold, Na⁺-driven depolarization, K⁺-driven repolarization, hyperpolarization, and channel gating.",
+      src: "assets/visual-guides/neuronal-action-potential.png",
+      alt: "Neurophysiology visual guide showing voltage-gated sodium and potassium channels and the sequence of a neuronal action potential",
+      matches: function(question) {
+        return ["CF-MMSR-005", "CF-MMSR-006", "CF-MMSR-007", "CF-MMSR-008", "CF-MMSR-009", "CF-MMSR-010", "CF-MMSR-011"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
+      key: "cardiac-smooth-skeletal-muscle-comparison",
+      title: "Cardiac vs. Smooth vs. Skeletal Muscle",
+      subtitle: "Structural and functional muscle-type comparison",
+      cardText: "Compare control, striations, nuclei, cell shape, junctions, contraction pattern, and location across the three muscle types.",
+      src: "assets/visual-guides/cardiac-smooth-skeletal-muscle-comparison.png",
+      alt: "Visual comparison chart of cardiac, smooth, and skeletal muscle characteristics",
+      matches: function(question) {
+        return ["CF-MMSR-012", "CF-MMSR-013", "CF-MMSR-014"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
+      key: "smooth-muscle-types-anatomy",
+      title: "Smooth Muscle — Types & Anatomy",
+      subtitle: "Single-unit and multi-unit organization with contraction pathways",
+      cardText: "Review smooth-muscle anatomy, gap-junction coupling, calmodulin, MLCK, myosin phosphorylation, and phosphatase-mediated relaxation.",
+      src: "assets/visual-guides/smooth-muscle-types-anatomy.png",
+      alt: "Smooth muscle visual guide comparing single-unit and multi-unit types and showing anatomy, contraction, and relaxation pathways",
+      matches: function(question) {
+        return ["CF-MMSR-014", "CF-MMSR-029", "CF-MMSR-030", "CF-MMSR-031", "CF-MMSR-032"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
+      key: "smooth-muscle-contraction-regulation",
+      title: "Regulation of Smooth Muscle Contraction",
+      subtitle: "Neural, local, and hormonal control of contraction and relaxation",
+      cardText: "Compare contraction signals such as vasopressin, endothelin, oxytocin, and stretch with relaxation signals such as adenosine, nitric oxide, lactate, and low O₂.",
+      src: "assets/visual-guides/smooth-muscle-contraction-regulation.png",
+      alt: "Visual guide showing neural, local, and hormonal regulation of smooth muscle contraction and relaxation",
+      matches: function(question) {
+        return String(question.id || "") === "CF-MMSR-032";
+      }
+    },
+    {
+      key: "skeletal-muscle-microanatomy",
+      title: "Microanatomy of Skeletal Muscle",
+      subtitle: "Muscle organization, membranes, filaments, and sarcomere zones",
+      cardText: "Review whole muscle, fascicles, fibers, myofibrils, connective-tissue layers, the triad, contractile proteins, and sarcomere landmarks.",
+      src: "assets/visual-guides/skeletal-muscle-microanatomy.png",
+      alt: "Skeletal muscle microanatomy visual guide describing muscle organization, cellular structures, filaments, and sarcomere zones",
+      matches: function(question) {
+        return ["CF-MMSR-015", "CF-MMSR-016", "CF-MMSR-017", "CF-MMSR-020", "CF-MMSR-021", "CF-MMSR-022"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
       key: "golgi-tendon-organ",
       title: "Golgi Tendon Organ",
       subtitle: "Tension sensing and autogenic inhibition",
@@ -43184,6 +43633,18 @@ document.addEventListener("DOMContentLoaded", function() {
       alt: "Muscle stretch reflex visual guide showing the patellar reflex and reciprocal inhibition",
       matches: function(question) {
         return ["CF-MMSR-034", "CF-MMSR-036", "CF-MMSR-038", "CF-MMSR-039", "CF-MMSR-040", "CF-MMSR-043"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
+      key: "spinal-cord-motor-organization",
+      title: "Spinal Cord Organization for Motor Function",
+      subtitle: "Sensory entry, motor output, motor units, and interneurons",
+      cardText: "Review Bell–Magendie organization and alpha/gamma motor neurons. Bank clarification: Renshaw-cell recurrent inhibition is tested as glycinergic, despite the GABA label in this image.",
+      src: "assets/visual-guides/spinal-cord-motor-organization.png",
+      alt: "Spinal cord motor organization visual guide showing sensory and motor roots, alpha and gamma motor neurons, interneurons, and neurotransmitters",
+      matches: function(question) {
+        return ["CF-MMSR-023", "CF-MMSR-033", "CF-MMSR-035", "CF-MMSR-036"]
           .includes(String(question.id || ""));
       }
     },
@@ -43364,6 +43825,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     },
     {
+      key: "excitation-contraction-coupling",
+      title: "Excitation–Contraction Coupling",
+      subtitle: "From neuromuscular signaling to SR calcium release",
+      cardText: "Follow ACh signaling at the motor end plate, T-tubule depolarization, DHP voltage sensing, RyR activation, and Ca²⁺ release from the SR.",
+      src: "assets/visual-guides/excitation-contraction-coupling.png",
+      alt: "Excitation-contraction coupling visual guide showing the neuromuscular junction, DHP receptors, ryanodine receptors, and calcium release",
+      matches: function(question) {
+        return ["CF-MMSR-017", "CF-MMSR-018", "CF-MMSR-019", "CF-MMSR-020"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
       key: "muscle-fiber-types",
       title: "Muscle Fiber Types",
       subtitle: "Type I, Type IIa, and Type IIb/IIx skeletal muscle fibers",
@@ -43379,6 +43852,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     },
     {
+      key: "muscle-fiber-types-comparison-chart",
+      title: "Muscle Fiber Types — Quick Comparison",
+      subtitle: "Type I, Type IIa, and Type IIb characteristics",
+      cardText: "Compare speed, fatigue resistance, metabolism, diameter, force, mitochondria, myoglobin, and best-suited activity.",
+      src: "assets/visual-guides/muscle-fiber-types-comparison-chart.png",
+      alt: "Comparison chart of Type I, Type IIa, and Type IIb skeletal muscle fibers",
+      matches: function(question) {
+        return ["CF-MMSR-024", "CF-MMSR-027", "CF-MMSR-028"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
       key: "skeletal-muscle-cross-bridge-cycle",
       title: "Skeletal Muscle Cross-Bridge Cycle",
       subtitle: "Actin, myosin, ATP, ADP, Pi, and the power stroke",
@@ -43390,6 +43875,30 @@ document.addEventListener("DOMContentLoaded", function() {
         return /^CF-MMSR-/.test(String(question.id || "")) &&
           (["CF-MMSR-015", "CF-MMSR-021", "CF-MMSR-022"].includes(String(question.id || "")) ||
             /(?:\bcross[- ]bridge cycle\b|\bpower stroke\b|\bmyosin head\b|\bmyosin binding to actin\b|\bATP hydrolysis\b)/i.test(directContext));
+      }
+    },
+    {
+      key: "cross-bridge-cycling-steps",
+      title: "Cross-Bridge Cycling — Step by Step",
+      subtitle: "Attachment, power stroke, detachment, and re-cocking",
+      cardText: "Follow the roles of myosin, actin, ADP, Pi, ATP, and Ca²⁺ through one complete cross-bridge cycle.",
+      src: "assets/visual-guides/cross-bridge-cycling-steps.png",
+      alt: "Cross-bridge cycling visual guide listing myosin attachment, the power stroke, ATP-driven detachment, and ATP hydrolysis",
+      matches: function(question) {
+        return ["CF-MMSR-021", "CF-MMSR-022", "CF-MMSR-044"]
+          .includes(String(question.id || ""));
+      }
+    },
+    {
+      key: "skeletal-muscle-contraction-relaxation",
+      title: "Skeletal Muscle Contraction & Relaxation",
+      subtitle: "Calcium activation, filament sliding, and SERCA-mediated relaxation",
+      cardText: "Compare contraction through troponin, tropomyosin, and cross-bridge cycling with relaxation through Ca²⁺ reuptake into the SR.",
+      src: "assets/visual-guides/skeletal-muscle-contraction-relaxation.png",
+      alt: "Skeletal muscle contraction and relaxation visual guide showing troponin activation, cross-bridge cycling, sarcomere shortening, and calcium reuptake",
+      matches: function(question) {
+        return ["CF-MMSR-015", "CF-MMSR-021", "CF-MMSR-022", "CF-MMSR-026", "CF-MMSR-044"]
+          .includes(String(question.id || ""));
       }
     },
     {
@@ -44214,6 +44723,441 @@ document.addEventListener("DOMContentLoaded", function() {
     updateVisualGuideVisibility();
     saveState();
   });
+
+  // Flashcards V1: content and review state are intentionally separate so the
+  // data source can later be replaced by Supabase without changing the UI.
+  var flashcardSource = Array.isArray(window.STUDYOS_FLASHCARDS)
+    ? window.STUDYOS_FLASHCARDS.filter(function(card) {
+        return card && card.id && card.front && card.back && card.category;
+      })
+    : [];
+  var flashcardStatusKey = "studyosFlashcardStatusV1:" + window.location.pathname;
+  var flashcardSeenKey = "studyosFlashcardSeenV1:" + window.location.pathname;
+  var flashcardProgressKey = "studyosFlashcardProgressV1:" + window.location.pathname;
+  var flashcardStatuses = loadFlashcardStatuses();
+  var flashcardSeen = loadFlashcardSeen();
+  var flashcardActiveDeck = flashcardSource.slice();
+  var flashcardIndex = 0;
+  var flashcardShowingBack = false;
+  var flashcardModeIsActive = false;
+  var flashcardSessionIsComplete = false;
+  var flashcardAssessmentReturnFocus = null;
+  var flashcardReturnFocus = null;
+  var flashcardResetArmed = false;
+  var flashcardResetTimer = null;
+
+  function loadFlashcardStatuses() {
+    try {
+      var parsed = JSON.parse(localStorage.getItem(flashcardStatusKey) || "{}");
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+      var valid = {};
+      Object.keys(parsed).forEach(function(id) {
+        if (parsed[id] === "know" || parsed[id] === "dontKnow") valid[id] = parsed[id];
+      });
+      return valid;
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function saveFlashcardStatuses() {
+    try {
+      localStorage.setItem(flashcardStatusKey, JSON.stringify(flashcardStatuses));
+    } catch (error) {}
+  }
+
+  function loadFlashcardSeen() {
+    try {
+      var parsed = JSON.parse(localStorage.getItem(flashcardSeenKey) || "{}");
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+      return parsed;
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function saveFlashcardSeen() {
+    try {
+      localStorage.setItem(flashcardSeenKey, JSON.stringify(flashcardSeen));
+    } catch (error) {}
+  }
+
+  function loadFlashcardProgress() {
+    try {
+      var parsed = JSON.parse(localStorage.getItem(flashcardProgressKey) || "null");
+      return parsed && typeof parsed === "object" ? parsed : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveFlashcardProgress() {
+    var card = currentFlashcard();
+    if (!card) return;
+    try {
+      localStorage.setItem(flashcardProgressKey, JSON.stringify({
+        cardId: card.id,
+        showingBack: flashcardShowingBack
+      }));
+    } catch (error) {}
+  }
+
+  function markFlashcardSeen(card) {
+    if (!card || flashcardSeen[card.id]) return;
+    flashcardSeen[card.id] = true;
+    saveFlashcardSeen();
+  }
+
+  function flashcardStatus(card) {
+    return card && (flashcardStatuses[card.id] === "know" || flashcardStatuses[card.id] === "dontKnow")
+      ? flashcardStatuses[card.id]
+      : "unrated";
+  }
+
+  function flashcardCounts(cards) {
+    return (cards || []).reduce(function(counts, card) {
+      counts[flashcardStatus(card)] += 1;
+      return counts;
+    }, { know: 0, dontKnow: 0, unrated: 0 });
+  }
+
+  function currentFlashcard() {
+    return flashcardActiveDeck[flashcardIndex] || null;
+  }
+
+  function setFlashcardFace(showBack) {
+    flashcardShowingBack = !!showBack;
+    var card = byId("flashcardCard");
+    if (!card) return;
+    card.classList.toggle("is-flipped", flashcardShowingBack);
+    card.setAttribute("aria-pressed", flashcardShowingBack ? "true" : "false");
+    card.setAttribute("aria-label", flashcardShowingBack
+      ? "Flashcard answer. Click to show the question."
+      : "Flashcard question. Click to show the answer.");
+    saveFlashcardProgress();
+  }
+
+  function updateFlashcardStatusArea() {
+    var counts = flashcardCounts(flashcardActiveDeck);
+    var total = flashcardActiveDeck.length;
+    var position = total ? Math.min(flashcardIndex + 1, total) : 0;
+    setText("flashcardPosition", position + " / " + total);
+    setText("flashcardKnowCount", counts.know);
+    setText("flashcardDontKnowCount", counts.dontKnow);
+    var unseenButton = byId("reviewUnseenFlashcards");
+    if (unseenButton) {
+      var unseenCount = flashcardSource.filter(function(card) { return !flashcardSeen[card.id]; }).length;
+      unseenButton.textContent = "Unseen Only (" + unseenCount + ")";
+      unseenButton.disabled = unseenCount === 0;
+    }
+  }
+
+  function updateFlashcardRating() {
+    var status = flashcardStatus(currentFlashcard());
+    var label = status === "know" ? "Marked: Know" : status === "dontKnow" ? "Marked: Don’t Know" : "Unrated";
+    setText("flashcardCurrentRating", label);
+  }
+
+  function focusFlashcard() {
+    var card = byId("flashcardCard");
+    if (card && !card.classList.contains("hidden")) card.focus({ preventScroll: true });
+  }
+
+  function renderFlashcard(shouldFocus, showBack) {
+    var card = currentFlashcard();
+    if (!card) {
+      finishFlashcardSession();
+      return;
+    }
+    flashcardSessionIsComplete = false;
+    setClassName("flashcardStudyView", "flashcard-stage");
+    setClassName("flashcardComplete", "flashcard-complete hidden");
+    setText("flashcardFront", card.front);
+    setText("flashcardBack", card.back);
+    setText("flashcardMetadata", card.category + " · " + card.topic);
+    markFlashcardSeen(card);
+    setFlashcardFace(!!showBack);
+    updateFlashcardStatusArea();
+    updateFlashcardRating();
+    if (shouldFocus) window.requestAnimationFrame(focusFlashcard);
+  }
+
+  function startFlashcardDeck(cards, label) {
+    flashcardActiveDeck = (cards || []).slice();
+    flashcardIndex = 0;
+    flashcardShowingBack = false;
+    flashcardSessionIsComplete = false;
+    setText("flashcardDeckLabel", label || "Physiology II · Cumulative Final");
+    renderFlashcard(true);
+  }
+
+  function openFlashcardMode() {
+    if (!flashcardSource.length) return;
+    flashcardReturnFocus = document.activeElement;
+    saveState();
+    var tour = byId("newModesTour");
+    if (tour && !tour.classList.contains("hidden")) dismissNewModesTour();
+    flashcardModeIsActive = true;
+    document.body.classList.add("flashcard-mode-active");
+    setClassName("flashcardMode", "flashcard-mode");
+    var progress = loadFlashcardProgress();
+    flashcardActiveDeck = flashcardSource.slice();
+    flashcardIndex = 0;
+    if (progress && progress.cardId) {
+      var savedIndex = flashcardActiveDeck.findIndex(function(card) { return card.id === progress.cardId; });
+      if (savedIndex >= 0) flashcardIndex = savedIndex;
+    }
+    flashcardShowingBack = false;
+    flashcardSessionIsComplete = false;
+    setText("flashcardDeckLabel", "Physiology II · Cumulative Final · All Cards");
+    renderFlashcard(true, !!(progress && progress.showingBack));
+    window.scrollTo(0, 0);
+  }
+
+  function closeFlashcardAssessment() {
+    var modal = byId("flashcardAssessmentModal");
+    if (!modal || modal.classList.contains("hidden")) return;
+    setClassName("flashcardAssessmentModal", "modal-backdrop flashcard-assessment-modal hidden");
+    if (flashcardAssessmentReturnFocus && typeof flashcardAssessmentReturnFocus.focus === "function") {
+      flashcardAssessmentReturnFocus.focus({ preventScroll: true });
+    }
+    flashcardAssessmentReturnFocus = null;
+  }
+
+  function backToQuizFromFlashcards() {
+    closeFlashcardAssessment();
+    flashcardModeIsActive = false;
+    document.body.classList.remove("flashcard-mode-active");
+    setClassName("flashcardMode", "flashcard-mode hidden");
+    saveFlashcardStatuses();
+    saveFlashcardSeen();
+    saveFlashcardProgress();
+    saveState();
+    window.scrollTo(0, 0);
+    if (flashcardReturnFocus && typeof flashcardReturnFocus.focus === "function") {
+      flashcardReturnFocus.focus({ preventScroll: true });
+    }
+    flashcardReturnFocus = null;
+  }
+
+  function flashcardForward() {
+    if (flashcardSessionIsComplete) return;
+    if (!flashcardShowingBack) {
+      setFlashcardFace(true);
+      return;
+    }
+    if (flashcardIndex >= flashcardActiveDeck.length - 1) {
+      finishFlashcardSession();
+      return;
+    }
+    flashcardIndex += 1;
+    renderFlashcard(true);
+  }
+
+  function flashcardPrevious() {
+    if (!flashcardActiveDeck.length) return;
+    if (flashcardSessionIsComplete) {
+      flashcardIndex = flashcardActiveDeck.length - 1;
+      renderFlashcard(true);
+      return;
+    }
+    flashcardIndex = Math.max(0, flashcardIndex - 1);
+    renderFlashcard(true);
+  }
+
+  function classifyCurrentFlashcard(status) {
+    var card = currentFlashcard();
+    if (!card || (status !== "know" && status !== "dontKnow")) return;
+    flashcardStatuses[card.id] = status;
+    saveFlashcardStatuses();
+    if (flashcardIndex >= flashcardActiveDeck.length - 1) {
+      updateFlashcardStatusArea();
+      updateFlashcardRating();
+      finishFlashcardSession();
+      return;
+    }
+    flashcardIndex += 1;
+    renderFlashcard(true);
+  }
+
+  function finishFlashcardSession() {
+    flashcardSessionIsComplete = true;
+    setClassName("flashcardStudyView", "flashcard-stage hidden");
+    setClassName("flashcardComplete", "flashcard-complete");
+    var counts = flashcardCounts(flashcardActiveDeck);
+    var rated = counts.know + counts.dontKnow;
+    var percentageKnown = rated ? Math.round((counts.know / rated) * 100) : 0;
+    var stats = byId("flashcardCompleteStats");
+    if (stats) {
+      stats.innerHTML = "";
+      [
+        ["Total", flashcardActiveDeck.length],
+        ["Know", counts.know],
+        ["Don’t Know", counts.dontKnow],
+        ["Unrated", counts.unrated]
+      ].forEach(function(item) {
+        var box = document.createElement("div");
+        box.className = "flashcard-complete-stat";
+        var value = document.createElement("b");
+        value.textContent = item[1];
+        var label = document.createElement("span");
+        label.textContent = item[0];
+        box.appendChild(value);
+        box.appendChild(label);
+        stats.appendChild(box);
+      });
+    }
+    setText("flashcardCompleteMessage", rated
+      ? "Known among rated cards: " + percentageKnown + "% (" + counts.know + " of " + rated + ")"
+      : "No cards were rated. Navigation alone never classifies a card.");
+    var reviewButton = byId("reviewDontKnow");
+    if (reviewButton) reviewButton.disabled = flashcardSource.filter(function(card) {
+      return flashcardStatus(card) === "dontKnow";
+    }).length === 0;
+    updateFlashcardStatusArea();
+    var reviewAll = byId("reviewAllFlashcards");
+    if (reviewAll) window.requestAnimationFrame(function() { reviewAll.focus({ preventScroll: true }); });
+  }
+
+  function assessmentRow(label, counts, overall) {
+    var row = document.createElement("div");
+    row.className = "flashcard-assessment-row" + (overall ? " overall" : "");
+    var name = document.createElement("div");
+    name.className = "flashcard-assessment-label";
+    name.textContent = label;
+    row.appendChild(name);
+    [["Know", counts.know], ["Don’t Know", counts.dontKnow], ["Unrated", counts.unrated]].forEach(function(item) {
+      var value = document.createElement("div");
+      value.className = "flashcard-assessment-number";
+      value.textContent = item[0] + ": " + item[1];
+      row.appendChild(value);
+    });
+    return row;
+  }
+
+  function renderFlashcardAssessment() {
+    var body = byId("flashcardAssessmentBody");
+    if (!body) return;
+    body.innerHTML = "";
+    body.appendChild(assessmentRow("Overall", flashcardCounts(flashcardSource), true));
+    var categories = {};
+    flashcardSource.forEach(function(card) {
+      if (!categories[card.category]) categories[card.category] = [];
+      categories[card.category].push(card);
+    });
+    Object.keys(categories).sort().forEach(function(category) {
+      body.appendChild(assessmentRow(category, flashcardCounts(categories[category]), false));
+    });
+  }
+
+  function openFlashcardAssessment() {
+    renderFlashcardAssessment();
+    flashcardAssessmentReturnFocus = document.activeElement;
+    setClassName("flashcardAssessmentModal", "modal-backdrop flashcard-assessment-modal");
+    var close = byId("closeFlashcardAssessment");
+    if (close) close.focus({ preventScroll: true });
+  }
+
+  function reviewDontKnowFlashcards() {
+    var cards = flashcardSource.filter(function(card) {
+      return flashcardStatus(card) === "dontKnow";
+    });
+    if (!cards.length) return;
+    startFlashcardDeck(cards, "Physiology II · Cumulative Final · Don’t Know Review");
+  }
+
+  function reviewUnseenFlashcards() {
+    var cards = flashcardSource.filter(function(card) { return !flashcardSeen[card.id]; });
+    if (!cards.length) return;
+    startFlashcardDeck(cards, "Physiology II · Cumulative Final · Unseen Cards");
+  }
+
+  function resetFlashcardDeck() {
+    var resetButton = byId("resetFlashcardDeck");
+    if (!flashcardResetArmed) {
+      flashcardResetArmed = true;
+      if (resetButton) resetButton.textContent = "Confirm Reset";
+      if (flashcardResetTimer) window.clearTimeout(flashcardResetTimer);
+      flashcardResetTimer = window.setTimeout(function() {
+        flashcardResetArmed = false;
+        if (resetButton) resetButton.textContent = "Reset Deck";
+      }, 4000);
+      return;
+    }
+    flashcardResetArmed = false;
+    if (flashcardResetTimer) window.clearTimeout(flashcardResetTimer);
+    flashcardResetTimer = null;
+    if (resetButton) resetButton.textContent = "Reset Deck";
+    flashcardStatuses = {};
+    flashcardSeen = {};
+    try {
+      localStorage.removeItem(flashcardStatusKey);
+      localStorage.removeItem(flashcardSeenKey);
+      localStorage.removeItem(flashcardProgressKey);
+    } catch (error) {}
+    startFlashcardDeck(flashcardSource, "Physiology II · Cumulative Final · All Cards");
+  }
+
+  function flashcardTargetIsEditable(target) {
+    if (!target) return false;
+    var tag = String(target.tagName || "").toLowerCase();
+    return tag === "input" || tag === "textarea" || tag === "select" || !!target.isContentEditable;
+  }
+
+  onId("openFlashcards", "click", openFlashcardMode);
+  onId("backToQuiz", "click", backToQuizFromFlashcards);
+  onId("completeBackToQuiz", "click", backToQuizFromFlashcards);
+  onId("flashcardCard", "click", function() {
+    if (!flashcardSessionIsComplete) setFlashcardFace(!flashcardShowingBack);
+  });
+  onId("flashcardPrevious", "click", flashcardPrevious);
+  onId("flashcardForward", "click", flashcardForward);
+  onId("flashcardKnow", "click", function() { classifyCurrentFlashcard("know"); });
+  onId("flashcardDontKnow", "click", function() { classifyCurrentFlashcard("dontKnow"); });
+  onId("openFlashcardAssessment", "click", openFlashcardAssessment);
+  onId("viewFlashcardAssessment", "click", openFlashcardAssessment);
+  onId("closeFlashcardAssessment", "click", closeFlashcardAssessment);
+  onId("flashcardAssessmentModal", "click", function(event) {
+    if (event.target && event.target.id === "flashcardAssessmentModal") closeFlashcardAssessment();
+  });
+  onId("reviewDontKnow", "click", reviewDontKnowFlashcards);
+  onId("reviewUnseenFlashcards", "click", reviewUnseenFlashcards);
+  onId("resetFlashcardDeck", "click", resetFlashcardDeck);
+  onId("reviewAllFlashcards", "click", function() {
+    startFlashcardDeck(flashcardSource, "Physiology II · Cumulative Final · All Cards");
+  });
+
+  document.addEventListener("keydown", function(event) {
+    if (!flashcardModeIsActive || flashcardTargetIsEditable(event.target)) return;
+    var assessment = byId("flashcardAssessmentModal");
+    var assessmentOpen = assessment && !assessment.classList.contains("hidden");
+    if (assessmentOpen) {
+      if ([" ", "Spacebar", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].indexOf(event.key) >= 0) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        closeFlashcardAssessment();
+      }
+      return;
+    }
+    if (event.key === "Escape") {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      backToQuizFromFlashcards();
+      return;
+    }
+    if ([" ", "Spacebar", "ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown"].indexOf(event.key) < 0) return;
+    if ((event.key === " " || event.key === "Spacebar") && event.target && event.target.tagName === "BUTTON" && event.target.id !== "flashcardCard") return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if (event.key === " " || event.key === "Spacebar" || event.key === "ArrowRight") flashcardForward();
+    if (event.key === "ArrowLeft") flashcardPrevious();
+    if (event.key === "ArrowUp") classifyCurrentFlashcard("know");
+    if (event.key === "ArrowDown") classifyCurrentFlashcard("dontKnow");
+  }, true);
 
   updateVisualGuideVisibility();
   rebuildDeck();
