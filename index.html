@@ -43258,6 +43258,19 @@ document.addEventListener("DOMContentLoaded", function() {
         return question.id === "CF-CV-078" ||
           /(?:\bS3\b|S₃|\bventricular gallop\b|\bthird heart sound\b)/i.test(directContext);
       }
+    },
+    {
+      key: "s4-atrial-gallop",
+      title: "S4 Heart Sound — Atrial Gallop",
+      subtitle: "Late-diastolic sound during atrial contraction",
+      cardText: "Atrial contraction against a stiff ventricle, low-pitched S4, and ventricular hypertrophy.",
+      src: "assets/visual-guides/s4-atrial-gallop.png",
+      alt: "S4 heart sound visual guide showing atrial gallop during atrial contraction",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return question.id === "CF-CV-079" ||
+          /(?:\bS4\b|S₄|\batrial gallop\b|\bfourth heart sound\b)/i.test(directContext);
+      }
     }
   ];
 
