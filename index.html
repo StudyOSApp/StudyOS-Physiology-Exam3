@@ -43345,6 +43345,20 @@ document.addEventListener("DOMContentLoaded", function() {
             question.conceptBlock === "Fiber Type Comparison" ||
             /(?:\bmuscle fiber types?\b|\bslow[- ]twitch\b|\bfast[- ]twitch\b|\bslow oxidative\b|\bfast oxidative glycolytic\b|\bfast glycolytic\b)/i.test(directContext));
       }
+    },
+    {
+      key: "skeletal-muscle-cross-bridge-cycle",
+      title: "Skeletal Muscle Cross-Bridge Cycle",
+      subtitle: "Actin, myosin, ATP, ADP, Pi, and the power stroke",
+      cardText: "Follow myosin attachment, phosphate release, the power stroke, ADP release, ATP-driven detachment, and ATP hydrolysis.",
+      src: "assets/visual-guides/skeletal-muscle-cross-bridge-cycle.png",
+      alt: "Skeletal muscle cross-bridge cycle visual guide showing actin, myosin, ATP, ADP, phosphate release, and the power stroke",
+      matches: function(question) {
+        var directContext = [question.q, question.question, question.conceptBlock, question.subtopic].join(" ");
+        return /^CF-MMSR-/.test(String(question.id || "")) &&
+          (["CF-MMSR-015", "CF-MMSR-021", "CF-MMSR-022"].includes(String(question.id || "")) ||
+            /(?:\bcross[- ]bridge cycle\b|\bpower stroke\b|\bmyosin head\b|\bmyosin binding to actin\b|\bATP hydrolysis\b)/i.test(directContext));
+      }
     }
   ];
 
