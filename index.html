@@ -43141,6 +43141,18 @@ document.addEventListener("DOMContentLoaded", function() {
       matches: function(question, context) {
         return /\bgolgi tendon organ\b/i.test(context);
       }
+    },
+    {
+      key: "muscle-stretch-reflex",
+      title: "Muscle Stretch Reflex",
+      subtitle: "Patellar reflex and reciprocal inhibition",
+      cardText: "Muscle spindle sensing, Type Ia input, quadriceps contraction, and hamstring inhibition.",
+      src: "assets/visual-guides/muscle-stretch-reflex.png",
+      alt: "Muscle stretch reflex visual guide showing the patellar reflex and reciprocal inhibition",
+      matches: function(question) {
+        return ["CF-MMSR-034", "CF-MMSR-036", "CF-MMSR-038", "CF-MMSR-039", "CF-MMSR-040", "CF-MMSR-043"]
+          .includes(String(question.id || ""));
+      }
     }
   ];
 
