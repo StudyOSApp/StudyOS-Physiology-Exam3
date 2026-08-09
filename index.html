@@ -2636,6 +2636,7 @@
 <script src="banks/week12-glossary.js?v=20260809-cvglossary"></script>
 <script src="banks/week13-glossary.js"></script>
 <script src="banks/cumulative-final-cardiovascular-glossary.js?v=20260809-cvglossary"></script>
+<script src="banks/cumulative-final-gi-glossary.js?v=20260809-giglossary"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   var EXAM_COUNTDOWN = {
@@ -40589,6 +40590,9 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.CUMULATIVE_FINAL_CARDIOVASCULAR_GLOSSARY_ENTRIES)) {
     glossaryEntries = glossaryEntries.concat(window.CUMULATIVE_FINAL_CARDIOVASCULAR_GLOSSARY_ENTRIES);
   }
+  if (Array.isArray(window.CUMULATIVE_FINAL_GI_GLOSSARY_ENTRIES)) {
+    glossaryEntries = glossaryEntries.concat(window.CUMULATIVE_FINAL_GI_GLOSSARY_ENTRIES);
+  }
 
   var studyGuidePages = [];
 
@@ -42606,6 +42610,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var glossaryById = Object.fromEntries(glossaryEntries.map(function(entry) { return [entry.id, entry]; }));
   var glossaryAliasMap = {};
+  var glossaryAliasCandidates = {};
   var glossaryStrictCaseAliases = {};
   var structuredAliases = glossaryEntries.filter(function(entry) { return entry.standsFor; }).flatMap(function(entry) {
     return (entry.aliases || [entry.term]).map(function(alias) { return String(alias).toLowerCase(); });
@@ -42621,6 +42626,8 @@ document.addEventListener("DOMContentLoaded", function() {
         return normalizedAlias.trim().length >= 2 && normalizedKey.includes(normalizedAlias);
       });
       if (shadowsStructuredTerm) return;
+      if (!glossaryAliasCandidates[key]) glossaryAliasCandidates[key] = [];
+      glossaryAliasCandidates[key].push(entry);
       var current = glossaryAliasMap[key];
       var entryIsCanonicalMatch = entry.term.toLowerCase() === key;
       var currentIsCanonicalMatch = current && current.term.toLowerCase() === key;
@@ -42631,6 +42638,21 @@ document.addEventListener("DOMContentLoaded", function() {
   var glossaryPattern = glossaryAliases.length
     ? new RegExp("(^|[^A-Za-z0-9])(" + glossaryAliases.map(function(value) { return value.replace(/[.*+?^{}()|[\]\\$]/g, "\\$&"); }).join("|") + ")(?=$|[^A-Za-z0-9])", "gi")
     : null;
+
+  function glossaryEntryForAlias(alias, question) {
+    var key = String(alias || "").toLowerCase();
+    var candidates = glossaryAliasCandidates[key] || [];
+    if (question) {
+      var questionId = String(question.id || "");
+      var scoped = candidates.find(function(entry) {
+        return entry.questionIdPrefix && questionId.startsWith(entry.questionIdPrefix);
+      });
+      if (scoped) return scoped;
+      var unscoped = candidates.find(function(entry) { return !entry.questionIdPrefix; });
+      if (unscoped) return unscoped;
+    }
+    return glossaryAliasMap[key];
+  }
 
   function closeGlossaryPopover() {
     setClassName("glossaryPopover", "glossary-popover hidden");
@@ -42687,7 +42709,7 @@ document.addEventListener("DOMContentLoaded", function() {
       text.replace(glossaryPattern, function(match, prefix, term, offset) {
         var termStart = offset + prefix.length;
         if (termStart > cursor) fragment.appendChild(document.createTextNode(text.slice(cursor, termStart)));
-        var entry = glossaryAliasMap[term.toLowerCase()];
+        var entry = glossaryEntryForAlias(term);
         var span = document.createElement("span");
         span.className = "glossary-term";
         span.tabIndex = 0;
@@ -42716,7 +42738,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var seen = {};
     glossaryPattern.lastIndex = 0;
     text.replace(glossaryPattern, function(match, prefix, term) {
-      var entry = glossaryAliasMap[term.toLowerCase()];
+      var entry = glossaryEntryForAlias(term, question);
       var strictAlias = glossaryStrictCaseAliases[term.toLowerCase()];
       if (strictAlias && term !== strictAlias) return match;
       if (entry && entry.questionIdPrefix && !String(question.id || "").startsWith(entry.questionIdPrefix)) return match;
