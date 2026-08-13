@@ -308,6 +308,9 @@
 
     .pituitary-mode-selector {
       display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      max-width:100%;
       align-items:center;
       gap:3px;
       margin:0;
@@ -2509,6 +2512,7 @@
         <button class="pituitary-mode-button" type="button" data-session-mode="labs">Labs</button>
         <button class="pituitary-mode-button" type="button" data-session-mode="lab-practical">Lab Practical 2</button>
         <button class="pituitary-mode-button" type="button" data-session-mode="lecture-exam-3">Lecture Exam 3</button>
+        <button class="pituitary-mode-button" type="button" data-session-mode="dr-m">Dr. M</button>
       </div>
       <span id="examCountdownPill" class="exam-countdown-pill hidden" aria-live="polite"></span>
     </div>
@@ -2929,7 +2933,7 @@
     <div class="flashcard-topbar">
       <div>
         <h2 id="flashcardModeTitle" class="flashcard-heading">Flashcards</h2>
-        <div id="flashcardDeckLabel" class="flashcard-subheading">Physiology II · Cumulative Final</div>
+        <div id="flashcardDeckLabel" class="flashcard-subheading">Physiology II · Cardiovascular Flashcards V2</div>
       </div>
       <div class="flashcard-status" aria-live="polite">
         <span>Card</span><span>Know</span><span>Don’t Know</span>
@@ -3015,10 +3019,11 @@
 <script src="banks/lab12-calcium-diabetes-sprint-v2.3.js"></script>
 <script src="banks/endocrine-lab-practical-challenge-v1.js"></script>
 <script src="banks/lecture-exam-3-curated-v1.js"></script>
+<script src="banks/dr-m-cumulative-6-quizzes-v1.js"></script>
 <script src="banks/cumulative-final-v1.js"></script>
 <script src="banks/cumulative-final-endocrine-v1.js"></script>
 <script src="banks/cumulative-final-membrane-muscle-reflexes-v1.js"></script>
-<script src="banks/cumulative-final-flashcards-v1.js?v=20260809-flashcards-v1"></script>
+<script src="banks/cardiovascular-flashcards-v2.js?v=20260810-cardiovascular-v2"></script>
 <script src="banks/week12-glossary.js?v=20260809-cvglossary"></script>
 <script src="banks/week13-glossary.js"></script>
 <script src="banks/cumulative-final-cardiovascular-glossary.js?v=20260809-cvglossary"></script>
@@ -26374,6 +26379,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (Array.isArray(window.LAB12_SPRINT_QUESTIONS)) questions = questions.concat(window.LAB12_SPRINT_QUESTIONS);
   if (Array.isArray(window.ENDOCRINE_LAB_PRACTICAL_QUESTIONS)) questions = questions.concat(window.ENDOCRINE_LAB_PRACTICAL_QUESTIONS);
   if (Array.isArray(window.LECTURE_EXAM_3_REPLACEMENT_QUESTIONS)) questions = questions.concat(window.LECTURE_EXAM_3_REPLACEMENT_QUESTIONS);
+  if (Array.isArray(window.DR_M_QUESTIONS)) questions = questions.concat(window.DR_M_QUESTIONS);
   if (Array.isArray(window.CUMULATIVE_FINAL_QUESTIONS)) questions = questions.concat(window.CUMULATIVE_FINAL_QUESTIONS);
 
   var lectureExam3QuestionIds = Array.isArray(window.LECTURE_EXAM_3_QUESTION_IDS)
@@ -26401,6 +26407,30 @@ document.addEventListener("DOMContentLoaded", function() {
   }).filter(Boolean);
   if (lectureExam3Questions.length !== 200) {
     console.error("Lecture Exam 3 expected 200 questions but loaded " + lectureExam3Questions.length + ".");
+  }
+
+  var drMQuestions = Array.isArray(window.DR_M_QUESTIONS)
+    ? window.DR_M_QUESTIONS.slice()
+    : [];
+  var drMCategories = Array.isArray(window.DR_M_CATEGORIES)
+    ? window.DR_M_CATEGORIES.map(function(category) {
+        return {
+          order: category.order,
+          name: category.name,
+          title: category.title,
+          ids: Array.isArray(category.ids) ? category.ids.slice() : [],
+          blocks: []
+        };
+      })
+    : [];
+  var drMQuestionMap = {};
+  drMQuestions.forEach(function(question) {
+    if (question && question.id && !drMQuestionMap[question.id]) {
+      drMQuestionMap[question.id] = question;
+    }
+  });
+  if (drMQuestions.length !== 300) {
+    console.error("Dr. M expected 300 questions but loaded " + drMQuestions.length + ".");
   }
 
   var cumulativeFinalQuestions = Array.isArray(window.CUMULATIVE_FINAL_QUESTIONS)
@@ -26561,6 +26591,15 @@ document.addEventListener("DOMContentLoaded", function() {
       topic: "All Questions",
       lectureOrder: 15,
       group: "cumulative-final",
+      enabled: true
+    },
+    {
+      id: "dr_m_cumulative_6_quizzes_v1",
+      label: "Dr. M Cumulative Physiology 6 Quizzes",
+      shortLabel: "Dr. M",
+      topic: "All Questions",
+      lectureOrder: 16,
+      group: "dr-m",
       enabled: true
     }
   ];
@@ -41072,7 +41111,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var activeLabQuestionType = "all";
   var activeLabPracticalType = "all";
   var showVisualGuide = false;
-  var modeIntroSeenThisSession = { "cumulative-final": true, learn: false, practice: false, labs: false, "lab-practical": false, "lecture-exam-3": false };
+  var modeIntroSeenThisSession = { "cumulative-final": true, learn: false, practice: false, labs: false, "lab-practical": false, "lecture-exam-3": false, "dr-m": false };
   var modeIntroReturnFocus = null;
   var launchSessionRequested = false;
   var unitProgress = {};
@@ -41085,6 +41124,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var labsModeIntroSeenKey = "studyos_labs_mode_intro_seen";
   var labPracticalModeIntroSeenKey = "studyos_lab_practical_mode_intro_seen";
   var lectureExam3ModeIntroSeenKey = "studyos_lecture_exam_3_focused_review_intro_v2_seen";
+  var drMModeIntroSeenKey = "studyos_dr_m_cumulative_quizzes_intro_v1_seen";
   var newModesTourSeenKey = "studyos_physiology_exam3_new_modes_tour_v1";
   var defaultFeedbackSettings = {
     soundsEnabled: false,
@@ -41118,6 +41158,17 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!category) return [];
     return category.ids.map(function(questionId) {
       return lectureExam3QuestionMap[questionId];
+    }).filter(Boolean);
+  }
+
+  function drMQuestionsForUnit(unitName) {
+    if (isAllWeeksUnit(unitName)) return drMQuestions.slice();
+    var category = drMCategories.find(function(item) {
+      return item.name === unitName;
+    });
+    if (!category) return [];
+    return category.ids.map(function(questionId) {
+      return drMQuestionMap[questionId];
     }).filter(Boolean);
   }
 
@@ -41174,7 +41225,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function isStudyBankMode(mode) {
-    return mode === "cumulative-final" || mode === "learn" || mode === "labs" || mode === "lab-practical" || mode === "lecture-exam-3";
+    return mode === "cumulative-final" || mode === "learn" || mode === "labs" || mode === "lab-practical" || mode === "lecture-exam-3" || mode === "dr-m";
   }
 
   function labQuestionTypeMatches(question) {
@@ -41197,7 +41248,9 @@ document.addEventListener("DOMContentLoaded", function() {
         ? "lab-practical"
         : requestedMode === "lecture-exam-3"
           ? "lecture-exam-3"
-          : requestedMode === "cumulative-final" ? "cumulative-final" : "learn";
+          : requestedMode === "dr-m"
+            ? "dr-m"
+            : requestedMode === "cumulative-final" ? "cumulative-final" : "learn";
     return learnBanks.filter(function(bank) {
       return bank.enabled &&
         (bank.group || "learn") === requestedGroup &&
@@ -41230,6 +41283,11 @@ document.addEventListener("DOMContentLoaded", function() {
         ? lectureExam3Questions.slice()
         : [];
     }
+    if (activeSessionMode === "dr-m") {
+      return bankId === "all" || bankId === "dr_m_cumulative_6_quizzes_v1"
+        ? drMQuestions.slice()
+        : [];
+    }
     var enabledBankIds = enabledLearnBanks().map(function(bank) { return bank.id; });
     return questions.filter(function(question) {
       return isSprintQuestion(question) &&
@@ -41246,6 +41304,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if (activeSessionMode === "lecture-exam-3") {
       return lectureExam3QuestionsForUnit(unitName);
+    }
+    if (activeSessionMode === "dr-m") {
+      return drMQuestionsForUnit(unitName);
     }
     if (isAllWeeksUnit(unitName)) return learnQuestions("all");
     var bankIds = enabledLearnBanks().filter(function(bank) {
@@ -41270,6 +41331,10 @@ document.addEventListener("DOMContentLoaded", function() {
       activeLearnBankId = "lecture_exam_3_curated_v1";
       return;
     }
+    if (activeSessionMode === "dr-m") {
+      activeLearnBankId = "dr_m_cumulative_6_quizzes_v1";
+      return;
+    }
     if (isAllWeeksUnit(activeUnit)) {
       activeLearnBankId = "all";
       return;
@@ -41284,6 +41349,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (isStudyBankMode(activeSessionMode)) {
       if (activeSessionMode === "cumulative-final") return "cumulative-final::" + unitName;
       if (activeSessionMode === "lecture-exam-3") return "lecture-exam-3::" + unitName;
+      if (activeSessionMode === "dr-m") return "dr-m::" + unitName;
       var bank = enabledLearnBanks().find(function(item) { return item.topic === unitName; });
       return activeSessionMode + "::" +
         (activeSessionMode === "labs" ? activeLabQuestionType + "::" : "") +
@@ -41299,6 +41365,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (mode === "labs") return "Labs";
     if (mode === "lab-practical") return "Lab Practical 2";
     if (mode === "lecture-exam-3") return "Lecture Exam 3";
+    if (mode === "dr-m") return "Dr. M";
     if (mode === "exam") return "Exam";
     return "Practice";
   }
@@ -41313,6 +41380,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (mode === "labs") return "Lab Review · " + learnQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "lab-practical") return "Practical Challenge · " + learnQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "lecture-exam-3") return "Instructor-Focused Review · " + lectureExam3QuestionsForUnit(activeUnit).length + " Questions";
+    if (mode === "dr-m") return "Cumulative Source Quiz Review · " + drMQuestionsForUnit(activeUnit).length + " Questions";
     if (mode === "exam") return "Comprehensive Bank";
     return "Mixed Reinforcement";
   }
@@ -41603,6 +41671,11 @@ document.addEventListener("DOMContentLoaded", function() {
         return item.id === question.id;
       });
     }
+    if (activeSessionMode === "dr-m") {
+      return drMQuestionsForUnit(activeUnit).some(function(item) {
+        return item.id === question.id;
+      });
+    }
     if (isSprintQuestion(question)) {
       if (!isStudyBankMode(activeSessionMode)) return false;
       if (!labQuestionTypeMatches(question)) return false;
@@ -41733,6 +41806,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (mode === "labs") return labsModeIntroSeenKey;
     if (mode === "lab-practical") return labPracticalModeIntroSeenKey;
     if (mode === "lecture-exam-3") return lectureExam3ModeIntroSeenKey;
+    if (mode === "dr-m") return drMModeIntroSeenKey;
     return practiceModeIntroSeenKey;
   }
 
@@ -41822,7 +41896,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function showModeIntro(mode, returnFocus) {
-    if (["learn", "practice", "labs", "lab-practical", "lecture-exam-3"].indexOf(mode) < 0 || hasSeenModeIntro(mode)) return;
+    if (["learn", "practice", "labs", "lab-practical", "lecture-exam-3", "dr-m"].indexOf(mode) < 0 || hasSeenModeIntro(mode)) return;
     var modal = document.getElementById("modeIntroModal");
     var title = document.getElementById("modeIntroTitle");
     var body = document.getElementById("modeIntroBody");
@@ -41835,6 +41909,7 @@ document.addEventListener("DOMContentLoaded", function() {
       : mode === "labs" ? "Labs Mode"
       : mode === "lab-practical" ? "Lab Practical Mode"
       : mode === "lecture-exam-3" ? "Lecture Exam 3"
+      : mode === "dr-m" ? "Dr. M"
       : "Practice Mode";
     body.innerHTML = mode === "learn"
       ? "<p>Learn questions reinforce the foundational concepts in the selected topic. They support lecture review, concept recognition, and confidence-building before you move into the full practice bank.</p><p><strong>Learn and Practice use separate question banks, so the questions are not identical.</strong></p>"
@@ -41844,6 +41919,8 @@ document.addEventListener("DOMContentLoaded", function() {
           ? "<p>Lab Practical Mode contains 75 endocrine pathway-reasoning questions grounded in Labs 9–12. Use the filters to study the standard questions, the clinical vignettes, or the complete bank together.</p><p><strong>Practical progress is tracked separately from the other modes.</strong></p>"
           : mode === "lecture-exam-3"
             ? "<p><strong>This Lecture Exam 3 section contains only questions related to the instructor’s Exam 3 review.</strong></p><p>It includes multiple questions covering each topic she said would be on the exam, so you can practice recognizing the facts, understanding the mechanisms, applying cause and effect, and avoiding common traps.</p>"
+          : mode === "dr-m"
+            ? "<p><strong>This section contains all 300 questions from Dr. M’s six cumulative physiology practice quizzes.</strong></p><p>Use All Questions for the complete set, or choose one of the six subject quizzes for a focused 50-question review.</p>"
         : "<p>Practice questions include the full range of questions available for the selected topic. This bank is separate from Learn Mode and is intended for broader review and exam preparation.</p><p><strong>Learn and Practice use separate question banks, so the questions are not identical.</strong></p>";
     modal.className = "modal-backdrop mode-intro-modal";
     dismiss.focus();
@@ -42061,7 +42138,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     setSelectValue(modeFilter, saved.settings.mode, "mc");
-    if (["cumulative-final", "learn", "practice", "labs", "lab-practical", "lecture-exam-3"].indexOf(saved.settings.sessionMode) > -1) activeSessionMode = saved.settings.sessionMode;
+    if (["cumulative-final", "learn", "practice", "labs", "lab-practical", "lecture-exam-3", "dr-m"].indexOf(saved.settings.sessionMode) > -1) activeSessionMode = saved.settings.sessionMode;
     if (activeSessionMode === "cumulative-final") {
       var savedSubject = cumulativeFinalSubjectByName(saved.settings.unit);
       var savedLegacyCategory = cumulativeFinalCategories.find(function(category) {
@@ -42075,6 +42152,10 @@ document.addEventListener("DOMContentLoaded", function() {
       } else if (isAllWeeksUnit(saved.settings.unit)) {
         activeUnit = units[0].name;
       }
+    } else if (activeSessionMode === "dr-m") {
+      activeUnit = isAllWeeksUnit(saved.settings.unit) || drMCategories.some(function(category) {
+        return category.name === saved.settings.unit;
+      }) ? saved.settings.unit : units[0].name;
     } else if (unitExists(saved.settings.unit)) {
       activeUnit = saved.settings.unit;
     }
@@ -42092,7 +42173,7 @@ document.addEventListener("DOMContentLoaded", function() {
     populateConceptFilter();
     setSelectValue(topicFilter, saved.settings.conceptBlock || saved.settings.topic, "");
     setSelectValue(countFilter, saved.settings.count, "10");
-    if ((isAllWeeksUnit(activeUnit) || activeSessionMode === "cumulative-final") && countFilter) countFilter.value = "all";
+    if ((isAllWeeksUnit(activeUnit) || activeSessionMode === "cumulative-final" || activeSessionMode === "dr-m") && countFilter) countFilter.value = "all";
     setShuffleQuestionsValue(saved.settings.shuffle || "on");
     if (explainToggle) explainToggle.checked = saved.settings.explain !== false;
     if (teachingCardsToggle) teachingCardsToggle.checked = !!saved.settings.teachingCards;
@@ -42353,7 +42434,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return questionInActiveUnit(question) && (!conceptBlock || question.conceptBlock === conceptBlock);
     });
     if (
-      activeSessionMode === "cumulative-final" &&
+      (activeSessionMode === "cumulative-final" || activeSessionMode === "dr-m") &&
       !restoredConceptBlock &&
       !checkedOf(missedOnlyToggle, false) &&
       !flaggedOnlyEnabled()
@@ -42508,6 +42589,8 @@ document.addEventListener("DOMContentLoaded", function() {
           ? "Review missed lab practical questions."
           : activeSessionMode === "lecture-exam-3"
             ? "Review missed Lecture Exam 3 questions."
+            : activeSessionMode === "dr-m"
+              ? "Review missed Dr. M questions."
             : "Review missed lecture questions.";
     }
     return concepts.slice(0, 2).map(function(concept) {
@@ -42525,7 +42608,9 @@ document.addEventListener("DOMContentLoaded", function() {
           ? "All Practical Questions"
           : activeSessionMode === "lecture-exam-3"
             ? "All 200 Questions"
-            : activeSessionMode === "cumulative-final" ? "All " + cumulativeFinalQuestions.length + " Questions" : "All Learn Questions";
+            : activeSessionMode === "dr-m"
+              ? "All 300 Questions"
+              : activeSessionMode === "cumulative-final" ? "All " + cumulativeFinalQuestions.length + " Questions" : "All Learn Questions";
       return (isAllWeeksUnit(activeUnit) ? allLabel : learnBank ? learnBank.shortLabel : unitCardLabel(activeUnit)) + " · " + sessionModeLabel(activeSessionMode);
     }
     var modeLabel = " · " + sessionModeLabel(activeSessionMode);
@@ -42871,7 +42956,7 @@ document.addEventListener("DOMContentLoaded", function() {
           ? "Lab Review concepts"
           : activeSessionMode === "lab-practical"
             ? "Lab Practical concepts"
-            : activeSessionMode === "lecture-exam-3" ? "Lecture Exam 3 concepts" : "Lecture Review concepts")
+            : activeSessionMode === "lecture-exam-3" ? "Lecture Exam 3 concepts" : activeSessionMode === "dr-m" ? "Dr. M concepts" : "Lecture Review concepts")
         : "None";
       catCounts = {};
     }
@@ -43352,6 +43437,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if (activeSessionMode === "lecture-exam-3") {
       return "<span class=\"tag\">Lecture Exam 3</span>";
+    }
+    if (activeSessionMode === "dr-m") {
+      return "<span class=\"tag\">Dr. M</span>";
     }
     if (isSprintQuestion(question)) {
       var label = question.contentGroup === "lab-practical"
@@ -44076,6 +44164,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "<summary>" + htmlEscape(activeSessionMode === "cumulative-final"
           ? "Cumulative Final"
           : activeSessionMode === "lecture-exam-3" ? "Lecture Exam 3"
+          : activeSessionMode === "dr-m" ? "Dr. M"
           : isSprintQuestion(q)
             ? (q.contentGroup === "lab-practical" ? "Lab Practical" : q.contentGroup === "labs" ? "Lab Review" : "Lecture Review")
             : summaryLabel) + " - " + htmlEscape(q.q) + "</summary>" +
@@ -44092,6 +44181,8 @@ document.addEventListener("DOMContentLoaded", function() {
     return units.some(function(unit) {
       return unit.name === unitName;
     }) || lectureExam3Categories.some(function(category) {
+      return category.name === unitName;
+    }) || drMCategories.some(function(category) {
       return category.name === unitName;
     }) || cumulativeFinalSubjects.some(function(subject) {
       return subject.name === unitName;
@@ -44116,6 +44207,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if (activeSessionMode === "lecture-exam-3") {
       return [units[0]].concat(lectureExam3Categories.slice().sort(function(a, b) {
+        return a.order - b.order;
+      }));
+    }
+    if (activeSessionMode === "dr-m") {
+      return [units[0]].concat(drMCategories.slice().sort(function(a, b) {
         return a.order - b.order;
       }));
     }
@@ -44302,7 +44398,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function setSessionMode(mode, returnFocus) {
-    if (["cumulative-final", "learn", "practice", "labs", "lab-practical", "lecture-exam-3", "exam"].indexOf(mode) < 0) return;
+    if (["cumulative-final", "learn", "practice", "labs", "lab-practical", "lecture-exam-3", "dr-m", "exam"].indexOf(mode) < 0) return;
     if (mode === activeSessionMode) {
       showModeIntro(mode, returnFocus);
       return;
@@ -44342,7 +44438,9 @@ document.addEventListener("DOMContentLoaded", function() {
           ? "All Practical Questions"
           : activeSessionMode === "lecture-exam-3"
             ? "All 200 Questions"
-            : activeSessionMode === "cumulative-final" ? "All " + cumulativeFinalQuestions.length + " Questions" : "All Learn Questions";
+            : activeSessionMode === "dr-m"
+              ? "All 300 Questions"
+              : activeSessionMode === "cumulative-final" ? "All " + cumulativeFinalQuestions.length + " Questions" : "All Learn Questions";
       var selectedTitle = isAllWeeksUnit(activeUnit) ? allTitle : selectedBank ? selectedBank.shortLabel : unitCardLabel(activeUnit);
       if (activeSessionMode === "cumulative-final") {
         title = isAllWeeksUnit(activeUnit)
@@ -44372,7 +44470,7 @@ document.addEventListener("DOMContentLoaded", function() {
     activeUnit = unitName;
     if (isStudyBankMode(activeSessionMode)) syncActiveLearnBankId();
     if (topicFilter) topicFilter.value = "";
-    if ((isAllWeeksUnit(activeUnit) || activeSessionMode === "cumulative-final") && countFilter) countFilter.value = "all";
+    if ((isAllWeeksUnit(activeUnit) || activeSessionMode === "cumulative-final" || activeSessionMode === "dr-m") && countFilter) countFilter.value = "all";
     populateConceptFilter();
     renderUnitTabs();
     renderPituitaryModeSelector();
@@ -44400,7 +44498,7 @@ document.addEventListener("DOMContentLoaded", function() {
     activeUnit = launchParams.get("unit");
     launchSessionRequested = true;
   }
-  if (["cumulative-final", "learn", "practice", "labs", "lab-practical", "lecture-exam-3", "exam"].indexOf(launchParams.get("session")) > -1) {
+  if (["cumulative-final", "learn", "practice", "labs", "lab-practical", "lecture-exam-3", "dr-m", "exam"].indexOf(launchParams.get("session")) > -1) {
     activeSessionMode = launchParams.get("session");
     launchSessionRequested = true;
   } else {
@@ -44419,7 +44517,15 @@ document.addEventListener("DOMContentLoaded", function() {
       activeUnit = units[0].name;
     }
   }
+  if (activeSessionMode === "dr-m" && !isAllWeeksUnit(activeUnit) && !drMCategories.some(function(category) {
+    return category.name === activeUnit;
+  })) {
+    activeUnit = units[0].name;
+  }
   if (activeSessionMode === "cumulative-final" && countFilter) {
+    countFilter.value = "all";
+  }
+  if (activeSessionMode === "dr-m" && countFilter) {
     countFilter.value = "all";
   }
   if (!unitQuestions(activeUnit).length) {
@@ -44724,16 +44830,19 @@ document.addEventListener("DOMContentLoaded", function() {
     saveState();
   });
 
-  // Flashcards V1: content and review state are intentionally separate so the
+  // Flashcards V2: content and review state are intentionally separate so the
   // data source can later be replaced by Supabase without changing the UI.
   var flashcardSource = Array.isArray(window.STUDYOS_FLASHCARDS)
     ? window.STUDYOS_FLASHCARDS.filter(function(card) {
         return card && card.id && card.front && card.back && card.category;
       })
     : [];
-  var flashcardStatusKey = "studyosFlashcardStatusV1:" + window.location.pathname;
-  var flashcardSeenKey = "studyosFlashcardSeenV1:" + window.location.pathname;
-  var flashcardProgressKey = "studyosFlashcardProgressV1:" + window.location.pathname;
+  var flashcardDeckTitle = window.STUDYOS_FLASHCARD_DECK_META && window.STUDYOS_FLASHCARD_DECK_META.title
+    ? window.STUDYOS_FLASHCARD_DECK_META.title
+    : "Physiology II · Cumulative Final";
+  var flashcardStatusKey = "studyosFlashcardStatusV2:" + window.location.pathname;
+  var flashcardSeenKey = "studyosFlashcardSeenV2:" + window.location.pathname;
+  var flashcardProgressKey = "studyosFlashcardProgressV2:" + window.location.pathname;
   var flashcardStatuses = loadFlashcardStatuses();
   var flashcardSeen = loadFlashcardSeen();
   var flashcardActiveDeck = flashcardSource.slice();
@@ -44874,7 +44983,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setClassName("flashcardComplete", "flashcard-complete hidden");
     setText("flashcardFront", card.front);
     setText("flashcardBack", card.back);
-    setText("flashcardMetadata", card.category + " · " + card.topic);
+    setText("flashcardMetadata", [card.category, card.topic, card.subtopic, card.cardLevel].filter(Boolean).join(" · "));
     markFlashcardSeen(card);
     setFlashcardFace(!!showBack);
     updateFlashcardStatusArea();
@@ -44887,7 +44996,7 @@ document.addEventListener("DOMContentLoaded", function() {
     flashcardIndex = 0;
     flashcardShowingBack = false;
     flashcardSessionIsComplete = false;
-    setText("flashcardDeckLabel", label || "Physiology II · Cumulative Final");
+    setText("flashcardDeckLabel", label || flashcardDeckTitle);
     renderFlashcard(true);
   }
 
@@ -44909,7 +45018,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     flashcardShowingBack = false;
     flashcardSessionIsComplete = false;
-    setText("flashcardDeckLabel", "Physiology II · Cumulative Final · All Cards");
+    setText("flashcardDeckLabel", flashcardDeckTitle + " · All Cards");
     renderFlashcard(true, !!(progress && progress.showingBack));
     window.scrollTo(0, 0);
   }
@@ -45063,13 +45172,13 @@ document.addEventListener("DOMContentLoaded", function() {
       return flashcardStatus(card) === "dontKnow";
     });
     if (!cards.length) return;
-    startFlashcardDeck(cards, "Physiology II · Cumulative Final · Don’t Know Review");
+    startFlashcardDeck(cards, flashcardDeckTitle + " · Don’t Know Review");
   }
 
   function reviewUnseenFlashcards() {
     var cards = flashcardSource.filter(function(card) { return !flashcardSeen[card.id]; });
     if (!cards.length) return;
-    startFlashcardDeck(cards, "Physiology II · Cumulative Final · Unseen Cards");
+    startFlashcardDeck(cards, flashcardDeckTitle + " · Unseen Cards");
   }
 
   function resetFlashcardDeck() {
@@ -45095,7 +45204,7 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.removeItem(flashcardSeenKey);
       localStorage.removeItem(flashcardProgressKey);
     } catch (error) {}
-    startFlashcardDeck(flashcardSource, "Physiology II · Cumulative Final · All Cards");
+    startFlashcardDeck(flashcardSource, flashcardDeckTitle + " · All Cards");
   }
 
   function flashcardTargetIsEditable(target) {
@@ -45124,7 +45233,7 @@ document.addEventListener("DOMContentLoaded", function() {
   onId("reviewUnseenFlashcards", "click", reviewUnseenFlashcards);
   onId("resetFlashcardDeck", "click", resetFlashcardDeck);
   onId("reviewAllFlashcards", "click", function() {
-    startFlashcardDeck(flashcardSource, "Physiology II · Cumulative Final · All Cards");
+    startFlashcardDeck(flashcardSource, flashcardDeckTitle + " · All Cards");
   });
 
   document.addEventListener("keydown", function(event) {
